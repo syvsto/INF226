@@ -1,13 +1,19 @@
 \documentclass{article}
+
+\usepackage[backend=bibtex, style=verbose-trad2]{biblatex}
+\bibliography{kilder}
+
 \title{INF226 Obligatory assignment}
 \date{2016-10-02}
-\author{Håvar Eggereide & Syver Storm-Furru}
+\author{Håvar Eggereide and Syver Storm-Furru}
 
 \begin{document}
 \maketitle
 \pagenumbering{gobble}
 \newpage
 \pagenumbering{arabic}
+\tableofcontents
+\newpage
 \section{Introduction}
 
   For our obligatory assignment we were tasked with analyzing OpenMRS, a medical
@@ -16,7 +22,7 @@
 \subsection{OpenMRS}
 
   OpenMRS is, according to the website, the ``world's leading open source
-  enterprice electronic medical record system platform''. It is used in
+  enterprice electronic medical record system platform'' \autocite[]{OpenMRSAbout}. It is used in
   hospitals all over the world, for example in Nigeria, South Africa, India
   and the United States, and is supported by many different governments, NGOs,
   and both for- and non-profit organizations. The software has a stated goal of
@@ -65,7 +71,22 @@
 
 \subsubsection{Usage}
 
+
 \subsection{HPE Fortify}
+
+  Fortify is a static code analysis tool suite, developed by Hewlett-Packard
+  Enterprise. It aims to ``make application security a natural part of the new
+  SDLC, enabling time to market by building security in''\autocite[]{Fortify}.
+
+  Fortify is a propietary solution, but is available with an academic license
+  for free.
+
+\subsubsection{Audit Workbench}
+
+  
+
 \subsection{OWASP ZAP}
 \subsection{FindBugs}
+
+
 \end{document}
