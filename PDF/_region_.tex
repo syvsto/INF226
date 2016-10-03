@@ -1,4 +1,4 @@
-\documentclass{article}
+\message{ !name(innlevering.tex)}\documentclass{article}
 
 \usepackage[backend=bibtex, style=verbose-trad2]{biblatex}
 \bibliography{kilder}
@@ -8,6 +8,9 @@
 \author{Håvar Eggereide and Syver Storm-Furru}
 
 \begin{document}
+
+\message{ !name(innlevering.tex) !offset(-3) }
+
 \maketitle
 \pagenumbering{gobble}
 \newpage
@@ -17,14 +20,8 @@
 \section{Introduction}
 
   For our obligatory assignment we were tasked with analyzing OpenMRS, a medical
-  patient journal system. The analysis is performed both using static and
-  dynamic code analysis tools (HPE Fortify and FindBugs for static analysis and
-  OWASP ZAP for dynamic), as well as a thorough run-through of the installation
-  process and software usage.
+  patient journal system.
 
-\newpage
-\section{Software}
-  
 \subsection{OpenMRS}
 
   OpenMRS is, according to the website, the ``world's leading open source
@@ -89,19 +86,11 @@
 
 \subsubsection{Audit Workbench}
 
-  Audit Workbench is the static code analysis software contained in the Fortify
-  package. It is an IDE built on top of Eclipse, specially designed for static
-  analysis. 
   
 
 \subsection{OWASP ZAP}
-
-ZAP is a dynamic analysis tool developed by OWASP, the Open Web Security
-Project. The software acts as a proxy between the host computer and a web
-application, performing different types of automatic scans, as well as having
-tools for manual searches for security vulnerabilities\autocite[]{ZAP}.
-
 \subsection{FindBugs}
 
 
 \end{document}
+\message{ !name(innlevering.tex) !offset(-96) }
