@@ -29,20 +29,20 @@
 
   OpenMRS is, according to the website, the ``world's leading open source
   enterprice electronic medical record system platform'' \autocite[]{OpenMRSAbout}. It is used in
-  hospitals all over the world, for example in Nigeria, South Africa, India
+  hospitals and medical facilities all over the world, for example in Nigeria, South Africa, India
   and the United States, and is supported by many different governments, NGOs,
   and both for- and non-profit organizations. The software has a stated goal of
   being uasble with no programmming knowledge, and to be a common platform for
   which medical informatics efforts in developing can be built.
 
-  \subsubsection{Technical Specifications}
+  \paragraph{Technical Specifications}
 
   OpenMRS is a client-server platform, with a web frontend. It is programmed in
   Java 7, using Tomcat 6 or 7 as the server framework, and MySQL 5.6 as the
   database backend. It also exposes a programming API to users, and is modular
   and extendable.
 
-\subsubsection{Setup}
+  \paragraph{Setup}
 
   The setup process of OpenMRS is quite involved and time consuming when
   attempting to do so on a personal computer, requiring both Tomcat, Java and
@@ -75,7 +75,7 @@
   MySQL was in place. You were also given a first username and password that
   was, respectively, `admin' and `Admin123'.
 
-\subsubsection{Usage}
+  \paragraph{Usage}
 
 
 \subsection{HPE Fortify}
@@ -87,7 +87,7 @@
   Fortify is a propietary solution, but is available with an academic license
   for free.
 
-\subsubsection{Audit Workbench}
+\paragraph{Audit Workbench}
 
   Audit Workbench is the static code analysis software contained in the Fortify
   package. It is an IDE built on top of Eclipse, specially designed for static
@@ -100,6 +100,8 @@ ZAP is a dynamic analysis tool developed by OWASP, the Open Web Security
 Project. The software acts as a proxy between the host computer and a web
 application, performing different types of automatic scans, as well as having
 tools for manual searches for security vulnerabilities\autocite[]{ZAP}.
+
+We ran ZAP version 2.5.0 for our tests.
 
 \subsection{FindBugs}
 
