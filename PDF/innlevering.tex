@@ -84,15 +84,21 @@
   Enterprise. It aims to ``make application security a natural part of the new
   SDLC, enabling time to market by building security in''\autocite[]{Fortify}.
 
-  Fortify is a propietary solution, but is available with an academic license
+  Fortify is a proprietary solution, but is available with an academic license
   for free.
 
 \paragraph{Audit Workbench}
 
   Audit Workbench is the static code analysis software contained in the Fortify
   package. It is an IDE built on top of Eclipse, specially designed for static
-  analysis. 
-  
+  analysis. To be able to run Audit Workbench on our local osx system the
+  eclipse settings had to be altered to allow for more memory usage.
+
+\paragraph{Audit Workbench Rapport}  
+
+  The first scan yielded a few messages of high concern. The OpenMRS core
+  includes unit-test which gives quite a few erroneous warnings concerning
+  security risks and more general bad coding practices. 
 
 \subsection{OWASP ZAP}
 
@@ -101,9 +107,13 @@ Project. The software acts as a proxy between the host computer and a web
 application, performing different types of automatic scans, as well as having
 tools for manual searches for security vulnerabilities\autocite[]{ZAP}.
 
+%  LocalWords:  HPE
+
 We ran ZAP version 2.5.0 for our tests.
 
 \subsection{FindBugs}
 
 
+
+%  LocalWords:  SDLC
 \end{document}
