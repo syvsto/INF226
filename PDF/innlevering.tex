@@ -23,7 +23,7 @@
   process and software usage.
 
 \newpage
-\section{Software}
+\section{Software involved}
   
 \subsection{OpenMRS}
 
@@ -61,14 +61,12 @@
   complete install (which did not work properly), or a .war file that should be
   uploaded to the Tomcat server.
 
-
   We first attempted setting up OpenMRS on OSX 10.11, but ran into problems when
   trying to install the correct version of MySQL, and therefore retried in an
   empty virtual machine running Linux (tested with both Lubuntu and Kali Linux).
   Following the install instructions were a lot easier when running Debian based
   distributions containing Aptitude, but we still had to find and install a
   previous version of MySQL. 
-
 
   Once everything was installed OpenMRS had some extra setup that was required,
   done through a web interface. This was mostly easy once the correct version of
@@ -77,6 +75,11 @@
 
   \paragraph{Usage}
 
+  OpenMRS is operated through a web browser, and is centered around a main dashboard that,
+  with just the base installation, will give you access to patient journals, as well as
+  showing currently active patients. The system also lets you categorize patients/other registered
+  in different persons in different categories, easing the process of generating statical analyses.
+  The system also lets your register and book future meetings with patients.
 
 \subsection{HPE Fortify}
 
@@ -103,14 +106,13 @@
   project (OpenMRS) The software also was a large RAM consumer, needing 5
   gigabytes of RAM to analyze a relatively large project (OpenMRS.)
 
-\paragraph{Audit Workbench Rapport}  
+\subsection{FindBugs}
 
-  The first scan yielded a few messages of high concern. The OpenMRS core
-  includes unit-test which gives quite a few erroneous warnings concerning
-  security risks and more general bad coding practices. 
+FindBugs is a tool for scanning java code looking for potential errors in the
+implementation. It is distributed under Lesser GNU Public License. The project
+originated from the University of Maryland.\autocite[]{FindBugs}
 
-  There was an error concerning how the cookie was coded which may be
-  interesting to look more into.
+We ran FindBugs 3.0.1 for our tests.
  
 
 \subsection{OWASP ZAP}
@@ -124,26 +126,47 @@ tools for manual searches for security vulnerabilities\autocite[]{ZAP}.
 
 We ran ZAP version 2.5.0 for our tests.
 
-\paragraph{Scan of Front End}
+\section{Preliminary results}
+
+\subsection{Visible potential issues}
+  During the install process we were on the lookout for potential vulnerabilities that
+  were visible to us. Two things stood out:
+  1) The program was set up with a static username and password (resepctively `admin'
+  and `Admin123'), and we were never prompted to change this. This means that if the system
+  installer doesn't notice this is the case, the is a user with administrator priviledges
+  available to anyone, which is pretty bad.
+  2) The system didn't work with the newest version of MySQL. The latest version it can run (newest 5.6 version)
+  has several vulnerabilities, some very serious \autocite[]{CVEDetails}. While some of these
+  also are present in newer versions of MySQL, others are not, making the database slightly more vulnerable.
+
+\subsection{Tests of the software tools}
+
+  After we set everything up, we ran a test run of each analysis tool, to make sure
+  everything was functioning properly and to find any glaring issues, if any.
+
+\paragraph{Dynamic analysis of the OpenMRS Web GUI}
   
   The initial Quick Start scan of our test setup of the OpenMRS service only had
   the login front page to crawl. This yielded very few results considering this
   is just one page. It found some information about jQuery, ZAP also warned
   about the implementation of the cookie.
 
-\subsection{FindBugs}
+  
+\paragraph{Audit Workbench Rapport}  
 
-FindBugs is a tool for scanning java code looking for potential errors in the
-implementation. It is distributed under Lesser GNU Public License. The project
-originated from the University of Maryland.\autocite[]{FindBugs}
+  The first scan yielded a few messages of high concern. The OpenMRS core
+  includes unit-test which gives quite a few erroneous warnings concerning
+  security risks and more general bad coding practices. 
 
-We ran FindBugs 3.0.1 for our tests.
+  There was an error concerning how the cookie was coded which may be
+  interesting to look more into.
 
-\paragraph{scanning code}
+\paragraph{FindBugs code scan}
 
   Running the scan seems easy and most of the work is obviously analysing the
   results. The reports might be a bit hard to navigate and there was some
   trouble generating a html report that potentially is more readable. Again the
   unit-test generated false positives.
 %  LocalWords:  SDLC
+
 \end{document}
