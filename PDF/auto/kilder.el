@@ -4,6 +4,7 @@
    (LaTeX-add-bibitems
     "OpenMRSAbout"
     "Fortify"
-    "ZAP"))
+    "ZAP"
+    "FindBugs"))
  :bibtex)
 
