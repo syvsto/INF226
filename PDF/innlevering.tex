@@ -80,25 +80,35 @@
 
 \subsection{HPE Fortify}
 
-  Fortify is a static code analysis tool suite, developed by Hewlett-Packard
-  Enterprise. It aims to ``make application security a natural part of the new
+  Fortify is a code security tool suite, developed by Hewlett-Packard
+  Enterprise (HPE). It aims to ``make application security a natural part of the new
   SDLC, enabling time to market by building security in''\autocite[]{Fortify}.
+  It contains such tools as WebInspect, a dynamic code analsis tool, and the
+  Fortify Static Code Analysis tool.
 
   Fortify is a proprietary solution, but is available with an academic license
   for free.
 
 \paragraph{Audit Workbench}
 
-  Audit Workbench is the static code analysis software contained in the Fortify
-  package. It is an IDE built on top of Eclipse, specially designed for static
-  analysis. To be able to run Audit Workbench on our local osx system the
-  eclipse settings had to be altered to allow for more memory usage.
+  Audit Workbench is the tool used to organize the the output of HPE's static
+  code analysis software contained in the Fortify package. It is a GUI
+  application built on top of Eclipse, specially designed for organizing and
+  presenting output for the HPE tools. 
+  
+  The installation process for Audit Workbench was straight-forward, but running
+  the program required changing variables for the Eclipse backend, without
+  information about how this is done readily available. The software also was a
+  large RAM consumer, needing 5 gigabytes of RAM to analyze a relatively large
+  project (OpenMRS) The software also was a large RAM consumer, needing 5
+  gigabytes of RAM to analyze a relatively large project (OpenMRS.)
 
 \paragraph{Audit Workbench Rapport}  
 
   The first scan yielded a few messages of high concern. The OpenMRS core
   includes unit-test which gives quite a few erroneous warnings concerning
   security risks and more general bad coding practices. 
+ 
 
 \subsection{OWASP ZAP}
 
