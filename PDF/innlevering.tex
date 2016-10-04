@@ -16,7 +16,7 @@
 \newpage
 \section{Introduction}
 
-  For our obligatory assignment we were tasked with analyzing OpenMRS, a medical
+  For our obligatory assignment we were tasked with analysing OpenMRS, a medical
   patient journal system. The analysis is performed both using static and
   dynamic code analysis tools (HPE Fortify and FindBugs for static analysis and
   OWASP ZAP for dynamic), as well as a thorough run-through of the installation
@@ -28,16 +28,16 @@
 \subsection{OpenMRS}
 
   OpenMRS is, according to the website, the ``world's leading open source
-  enterprice electronic medical record system platform'' \autocite[]{OpenMRSAbout}. It is used in
+  enterprise electronic medical record system platform'' \autocite[]{OpenMRSAbout}. It is used in
   hospitals and medical facilities all over the world, for example in Nigeria, South Africa, India
   and the United States, and is supported by many different governments, NGOs,
-  and both for- and non-profit organizations. The software has a stated goal of
-  being uasble with no programmming knowledge, and to be a common platform for
+  and both for- and non-profit organisations. The software has a stated goal of
+  being usable with no programming knowledge, and to be a common platform for
   which medical informatics efforts in developing can be built.
 
   \paragraph{Technical Specifications}
 
-  OpenMRS is a client-server platform, with a web frontend. It is programmed in
+  OpenMRS is a client-server platform, with a web front end. It is programmed in
   Java 7, using Tomcat 6 or 7 as the server framework, and MySQL 5.6 as the
   database backend. It also exposes a programming API to users, and is modular
   and extendable.
@@ -83,7 +83,7 @@
   Fortify is a code security tool suite, developed by Hewlett-Packard
   Enterprise (HPE). It aims to ``make application security a natural part of the new
   SDLC, enabling time to market by building security in''\autocite[]{Fortify}.
-  It contains such tools as WebInspect, a dynamic code analsis tool, and the
+  It contains such tools as WebInspect, a dynamic code analysis tool, and the
   Fortify Static Code Analysis tool.
 
   Fortify is a proprietary solution, but is available with an academic license
@@ -91,9 +91,9 @@
 
 \paragraph{Audit Workbench}
 
-  Audit Workbench is the tool used to organize the the output of HPE's static
+  Audit Workbench is the tool used to organise the the output of HPE's static
   code analysis software contained in the Fortify package. It is a GUI
-  application built on top of Eclipse, specially designed for organizing and
+  application built on top of Eclipse, specially designed for organising and
   presenting output for the HPE tools. 
   
   The installation process for Audit Workbench was straight-forward, but running
@@ -108,6 +108,9 @@
   The first scan yielded a few messages of high concern. The OpenMRS core
   includes unit-test which gives quite a few erroneous warnings concerning
   security risks and more general bad coding practices. 
+
+  There was an error concerning how the cookie was coded which may be
+  interesting to look more into.
  
 
 \subsection{OWASP ZAP}
@@ -121,9 +124,26 @@ tools for manual searches for security vulnerabilities\autocite[]{ZAP}.
 
 We ran ZAP version 2.5.0 for our tests.
 
+\paragraph{Scan of Front End}
+  
+  The initial Quick Start scan of our test setup of the OpenMRS service only had
+  the login front page to crawl. This yielded very few results considering this
+  is just one page. It found some information about jQuery, ZAP also warned
+  about the implementation of the cookie.
+
 \subsection{FindBugs}
 
+FindBugs is a tool for scanning java code looking for potential errors in the
+implementation. It is distributed under Lesser GNU Public License. The project
+originated from the University of Maryland.
 
+We ran FindBugs 3.0.1 for our tests.
 
+\paragraph{scanning code}
+
+  Running the scan seems easy and most of the work is obviously analysing the
+  results. The reports might be a bit hard to navigate and there was some
+  trouble generating a html report that potentially is more readable. Again the
+  unit-test generated false positives.
 %  LocalWords:  SDLC
 \end{document}
