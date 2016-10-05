@@ -5,6 +5,7 @@
     "OpenMRSAbout"
     "Fortify"
     "ZAP"
-    "FindBugs"))
+    "FindBugs"
+    "SVEDetails"))
  :bibtex)
 
