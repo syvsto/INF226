@@ -24,7 +24,36 @@
   process and software usage.
 
   \paragraph{The goals of software testing}
+
+  It is now common practice  for a developer to adhere to a software architect's
+  plan for the development of the software components, and many utilizes
+  unit-testing as a supporting tool for developing code without errors. So what
+  is then the benefit of having a separate plan and procedure for system testing
+  from the view of security?
+
+  Is has been demonstrated with many grim examples during this course and in the
+  curriculum texts, the importance of security and the heavy consequences to the
+  whole enterprise if it is neglected. The issue is of such a big scope that
+  approaching it as just another design or implementation issue fails to
+  appreciate the complexity it presents.
+
+  The goal of testing the security as a separate process is to try to map as
+  much as possible of the potential security issues and security considerations
+  that has to be kept in mind walking thru the process of development. To
+  accomplish this it is necessary to approach the software and the architecture
+  from the point of view of a agent with malicious intent.
+
+  In the end it is  most likely not possible to make the software completely
+  immune to security faults. It's a natural part of security testing to find
+  problems where a full repair might not be achievable, it is then also the
+  responsibility of the security testing process to develop mitigation plans for
+  these vulnerabilities.
+
+  So the goal of security testing is to find, repair and prepare for security
+  vulnerabilities.
+  
   \paragraph{Static and dynamic analysis}
+
   Static and dynamic analysis are methods for checking the software for vulnerabilities.
   They are both done using software tools that help the user analyze. Static
   analysis is performed before any code is run, and checks the code base for
@@ -117,14 +146,15 @@
   the program required changing variables for the Eclipse backend, without
   information about how this is done readily available. The software also was a
   large RAM consumer, needing 5 gigabytes of RAM to analyze a relatively large
-  project (OpenMRS) The software also was a large RAM consumer, needing 5
-  gigabytes of RAM to analyze a relatively large project (OpenMRS.)
+  project (OpenMRS).
 
 \subsection{FindBugs}
 
-FindBugs is a tool for scanning java code looking for potential errors in the
+FindBugs is a static analysis tool for scanning java code looking for potential errors in the
 implementation. It is distributed under Lesser GNU Public License. The project
-originated from the University of Maryland.\autocite[]{FindBugs}
+originated from the University of Maryland.\autocite[]{FindBugs} It runs on java
+1.7 ether initiated from a terminal or you may use a simple GUI which makes it
+easier to get familiar with the program. 
 
 We ran FindBugs 3.0.1 for our tests.
  
@@ -183,15 +213,4 @@ We ran ZAP version 2.5.0 for our tests.
   unit-test generated false positives.
 %  LocalWords:  SDLC
 
-\section{The Goals of Software Security Testing}
-
-\subsection{Separate testing of Security}
-
-  It is now common practice  for a developer to adhere to a software architect's
-  plan for the development of the software components, and many utilizes
-  unit-testing as a supporting too for developing code without errors. So what
-  is then the benefit of having a separate plan and procedure for system testing
-  from the view of security?
-
-  As the stated in the 
 \end{document}
