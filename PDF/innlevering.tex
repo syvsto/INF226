@@ -130,10 +130,10 @@
   Enterprise (HPE). It aims to ``make application security a natural part of the new
   SDLC, enabling time to market by building security in''\autocite[]{Fortify}.
   It contains such tools as WebInspect, a dynamic code analysis tool, and the
-  Fortify Static Code Analysis tool.
+  Fortify Static Code Analysis tool. Fortify is a proprietary solution, but is
+  available with an academic license for free.
 
-  Fortify is a proprietary solution, but is available with an academic license
-  for free.
+  We ran the Audit Workbench version bundled with Fortify version 16.10.
 
 \paragraph{Audit Workbench}
 
@@ -194,9 +194,8 @@ We ran ZAP version 2.5.0 for our tests.
   the login front page to crawl. This yielded very few results considering this
   is just one page. It found some information about jQuery, ZAP also warned
   about the implementation of the cookie.
-
   
-\paragraph{Audit Workbench Rapport}  
+\paragraph{Audit Workbench report}  
 
   The first scan yielded a few messages of high concern. The OpenMRS core
   includes unit-test which gives quite a few erroneous warnings concerning
