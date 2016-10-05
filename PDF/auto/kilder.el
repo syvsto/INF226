@@ -6,6 +6,6 @@
     "Fortify"
     "ZAP"
     "FindBugs"
-    "SVEDetails"))
+    "CVEDetails"))
  :bibtex)
 

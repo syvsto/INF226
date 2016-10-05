@@ -20,8 +20,21 @@
   For our obligatory assignment we were tasked with analysing OpenMRS, a medical
   patient journal system. The analysis is performed both using static and
   dynamic code analysis tools (HPE Fortify and FindBugs for static analysis and
-  OWASP ZAP for dynamic), as well as a thorough run-through of the installation
+  OWASP ZAP for dynamic), as well as a thorough manual run-through of the installation
   process and software usage.
+
+  \paragraph{The goals of software testing}
+  \paragraph{Static and dynamic analysis}
+  Static and dynamic analysis are methods for checking the software for vulnerabilities.
+  They are both done using software tools that help the user analyze. Static
+  analysis is performed before any code is run, and checks the code base for
+  vulnerable code that can be abused. It checks different runtime behaviours,
+  both standard and non-standard, in order to find potential backdoors, weak
+  code and other vulnerabilities. Dynamic analysis on the other hand is done
+  while the application is running, and works a lot like how an actual attacker
+  would target the application, performing such things as XSS and SQL incjection
+  attacks, as well as monitoring the system runtime, for example performance and
+  HTTP requests \autocite[]{VERACODE}.
 
 \newpage
 \section{Software involved}
