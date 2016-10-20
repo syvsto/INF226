@@ -2,6 +2,7 @@
 
 \usepackage[backend=bibtex, style=verbose-trad2]{biblatex}
 \usepackage[utf8]{inputenc}
+\usepackage[]{enumitem}
 \bibliography{kilder}
 
 \title{INF226 Obligatory assignment}
@@ -211,5 +212,57 @@ We ran ZAP version 2.5.0 for our tests.
   trouble generating a html report that potentially is more readable. Again the
   unit-test generated false positives.
 %  LocalWords:  SDLC
+  \newpage
+
+\section{Findings and results}
+
+\subsection{Raw data}
+
+\paragraph{Fortify}
+
+  Audit Workbench found 60 critical vulnerablities, as well as 115 issues
+  considered highly vulnerable. Following is a list of the categories designated
+  by Audit Workbench for these vulnerabilities, as well as the number of
+  occurences of each vulnerability and a short explanation.
+
+  The critical vulnerabilities were in the
+  following categories:
+  
+  \begin{itemize}
+  \item Command injections (4): The program tries to call an external command
+    without validating where the command is from.
+  \item Insecure SSL (3): Uses SSL certificates are based on default system
+    Cerftificate Authorities, which may be compromised, and sometimes are.
+  \item Hardcoded passwords (3): Lets an attacker log in if he or she has access
+    to the source code, which in this case means anyone.
+  \item Path manipulation (2): The program accesses a file with an filepath that
+    can be chosen by the attacker.
+  \item Privacy violation (49): The program mishandles confidential information
+    in some way or another, for example by writing it to disk.
+  \end{itemize}
+
+  The vulnerabilities rated high are as follows:
+
+  \begin{itemize}[noitemsep]
+  \item Header manipulation with cookies (1): The program doesn't validate data
+    in an HTTP request, so cookies can be tampered or spoofed.
+  \item Hardcoded encryption key (3): Same issue as with hardcoded passwords.
+  \item Log forging (12): The program doesn't validate inputs that get written
+    to the log, meaning malicious data could be entered.
+  \item Empty passwords (6): The program assigns empty passwords, making it much
+    easier to break into the application.
+  \item Hardcoded passwords (25): Same issue as with the critcal hardcoded passwords.
+  \item Passwords in Configuration File (36): Passwords are stored in plaintext
+    in a configuration file, meaning an attacker can get the password by getting
+    the file.
+  \item Privacy violation (10): Same issue as in the critical privacy violations.
+  \item Privacy violation from heap inspection (3): The program stores
+    confidential information in strings, which are immutable and thus stored in
+    memory until the JVM garbage collector is run (which may not occur for a
+    while). 
+  \item Race Conditions from Singleton member field (19): The program uses a
+    singleton class which takes concurrent connections, meaning data can be
+    shared between users.
+      
 
 \end{document}
