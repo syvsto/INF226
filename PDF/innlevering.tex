@@ -266,3 +266,22 @@ We ran ZAP version 2.5.0 for our tests.
       
 
 \end{document}
+
+
+\paragraph{OWASP ZAP}
+A passive run of ZAP returns the following four possible vulnerabilities:
+
+\begin{itemize}
+ \item X-Frame-Options header is not included in the HTTP response to protect against
+  'ClickJacking' attacks: Considered a medium vulnerability, this
+  vulnerability can let unknown sites be loaded inside frames or iframes.
+ \item A cookie has been set without the HttpOnly flag: A low vulnerability that
+   makes it possible to access the cookie using Javascript. 
+ \item Web browser XSS protection not enabled: A low vulnerability where the
+   HTTP header X-XSS-Protection isn't set, so that the browser doesn't use it's
+   own cross site scripting protection.
+ \item X-Content-Type-Options Header missing: Some older browsers try to
+   automatically figure out the content type if X-Content-Type-Options is not
+   set to 'nosniff', making it possible to do such operations as cross-site
+   scripting \autocite[]{XFrameOptions}.
+
