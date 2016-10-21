@@ -2,7 +2,6 @@
 
 \usepackage[backend=bibtex, style=verbose-trad2]{biblatex}
 \usepackage[utf8]{inputenc}
-\usepackage[]{enumitem}
 \bibliography{kilder}
 
 \title{INF226 Obligatory assignment}
@@ -243,7 +242,7 @@ We ran ZAP version 2.5.0 for our tests.
 
   The vulnerabilities rated high are as follows:
 
-  \begin{itemize}[noitemsep]
+  \begin{itemize}
   \item Header manipulation with cookies (1): The program doesn't validate data
     in an HTTP request, so cookies can be tampered or spoofed.
   \item Hardcoded encryption key (3): Same issue as with hardcoded passwords.
@@ -263,6 +262,7 @@ We ran ZAP version 2.5.0 for our tests.
   \item Race Conditions from Singleton member field (19): The program uses a
     singleton class which takes concurrent connections, meaning data can be
     shared between users.
+  \end{itemize}
       
 
 \end{document}
