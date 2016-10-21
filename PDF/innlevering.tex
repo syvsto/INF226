@@ -213,6 +213,14 @@ We ran ZAP version 2.5.0 for our tests.
 %  LocalWords:  SDLC
   \newpage
 
+\paragraph{Dependencies}
+  \begin{itemize}
+    \item MySQL 1.6
+    \item tomcat 7
+    \item spring framework
+    \item jsp
+    \item java .. 1.7
+
 \section{Findings and results}
 
 \subsection{Raw data}
@@ -264,6 +272,35 @@ We ran ZAP version 2.5.0 for our tests.
     shared between users.
   \end{itemize}
       
+\paragraph{Configuration Files}  
+
+\paragraph{FindBugs}
+
+  The first scan detected 1058 potential bugs. Some of them are from test clases
+  and will not be mentioned here.
+  
+  \begin{itemize}
+    \item Correctness
+      \item Bad use of return value from method
+      \item Masked Field
+      \item Null pointer dereference
+      \item Questionable use of reference equality rather than calling equals
+      \item Superfluous instanceof
+    \item Bad practice
+      \item Bad use of return value from method
+    \item Experimental
+    \item Internationalization 
+    \item Malicious code vulnerability
+    \item Multithreaded code vulnerability
+    \item Performance
+    \item Security
+      \item Potential SQL Problem
+        \item Nonconstant string passed to execute or addBatch method on an SQL
+          statement (8)
+        \item A prepared statement is generated from a nonconstant String (6)
+    \item Dodgy code
+        
+\paragraph{OWASP ZAP}
 
 \end{document}
 
