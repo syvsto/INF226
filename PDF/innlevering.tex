@@ -242,7 +242,7 @@ We ran ZAP version 2.5.0 for our tests.
     Cerftificate Authorities, which may be compromised, and sometimes are.
   \item Hardcoded passwords (3): Lets an attacker log in if he or she has access
     to the source code, which in this case means anyone.
-  \item Path manipulation (2): The program accesses a file with an filepath that
+  \item Path manipulation (2): The program accesses a file with a filepath that
     can be chosen by the attacker.
   \item Privacy violation (49): The program mishandles confidential information
     in some way or another, for example by writing it to disk.
@@ -380,7 +380,33 @@ application runs commands from external sources without validating them
 beforehand.
 
 \paragraph{External files}
-   
+The vulnerabilities concerning passwords in cleartext found by Fortify are
+mostly false positives, as they are found in localization files, and don't
+contain real passwords (instead containing the translation of the noun
+password). We will therefore disregard any vulnerability found in localization
+files. However, some files containing cleartext passwords are used for setting
+up the server, and are thus relevant.
 
-   
+\paragraph{Privacy violations}
+Many vulnerabilities found by Fortify were in the category Privacy Violations.
+Considering the type of application OpenMRS is (it manages patient journals),
+these are more important than for other applications, as patient jounals
+contain lots of personal and sensitive information such as (possibly) social security
+numbers and medications used. Many of these files are about the the application
+logging login information and search terms, and the security of the logger is therefore of
+particular interest.
+
+The other privacy violation needs the attacker to access the JVM memory, and
+therefore requires the attacker to have root access. Since the program runs on a
+server, if the attacker has root access you've probably lost your database and
+similar serious problems, and thus problems requiring memory access aren't as
+important. This might be more of a problem if the server is external (e.g.
+hosted on Amazon AWS or CloudFlare), but then, it is up to Amazon or CloudFlare
+to secure their servers.
+
+\paragraph{Race conditions}
+These errors arise from Servlet being a singleton. Since the application changes
+member fields of this singleton, multiple request to get information can return
+wrong results (if the member field is changed during requests). 
+
 \end{document}
