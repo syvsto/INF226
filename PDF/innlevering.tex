@@ -409,4 +409,11 @@ These errors arise from Servlet being a singleton. Since the application changes
 member fields of this singleton, multiple request to get information can return
 wrong results (if the member field is changed during requests). 
 
+\paragraph{Dynamic analysis}
+The run of OWASP ZAP didn't find any critical or highly vulnerable issues,
+indicating that the front end is relatively well secured. The ZAP issues were
+related to Http headers (for example no SQL injection issues and direct XSS
+issues). Since the critical issues were found by static analysis, we will focus
+more on the server errors.
+
 \end{document}
