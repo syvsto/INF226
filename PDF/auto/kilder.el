@@ -7,6 +7,7 @@
     "ZAP"
     "FindBugs"
     "CVEDetails"
+    "XFrame"
     "SRSD"
     "VERACODE"))
  :bibtex)

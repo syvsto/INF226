@@ -221,7 +221,7 @@ We ran ZAP version 2.5.0 for our tests.
     \item jsp
     \item java .. 1.7
 
-\section{Findings and results}
+\section{Findings}
 
 \subsection{Raw data}
 
@@ -276,7 +276,7 @@ We ran ZAP version 2.5.0 for our tests.
 
 \paragraph{FindBugs}
 
-  The first scan detected 1058 potential bugs. Some of them are from test clases
+  The first scan detected 1058 potential bugs. Some of them are from test classes
   and will not be mentioned here.
   
   \begin{itemize}
@@ -318,4 +318,18 @@ A passive run of ZAP returns the following four possible vulnerabilities:
    set to 'nosniff', making it possible to do such operations as cross-site
    scripting \autocite[]{XFrameOptions}.
 
+\subsection{Interpretations of the raw data}
+
+\paragraph{Tests}
+Some of the critical errors found by both Fortify and FindBugs were in test
+classes, and are therefore not going to run while the application is deployed.
+These bugs and vulnerabilities are therefore disregarded. This especially
+applies to the Fortify results in the category Command Injection: The
+application runs commands from external sources without validating them
+beforehand.
+
+\paragraph{External files}
+   
+
+   
 \end{document}
