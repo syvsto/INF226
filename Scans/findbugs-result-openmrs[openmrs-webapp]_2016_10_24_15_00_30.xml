@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://findbugs.sourceforge.net/xsl/default.xsl"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1477313373584" analysisTimestamp="1477313373286" release="">
+  <Project projectName="openmrs[openmrs-webapp]">
+    <AuxClasspathEntry>/Users/azaralsharif/inf226/openmrscore/openmrs-core/api/target/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/azaralsharif/inf226/openmrscore/openmrs-core/webapp/target/classes</AuxClasspathEntry>
+    <SrcDir>/Users/azaralsharif/inf226/openmrscore/openmrs-core/webapp/src/main/resources</SrcDir>
+    <SrcDir>/Users/azaralsharif/inf226/openmrscore/openmrs-core/webapp/src/main/webapp</SrcDir>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Mon, 24 Oct 2016 14:49:33 +0200" total_classes="0" referenced_classes="0" total_bugs="0" total_size="0" num_packages="0" java_version="1.8.0_40-release" vm_version="25.40-b25" cpu_seconds="136.40" clock_seconds="657.52" peak_mbytes="737.79" alloc_mbytes="725.00" gc_seconds="1.29">
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.FindBugs2" totalMilliseconds="153" invocations="2" avgMicrosecondsPerInvocation="76594" maxMicrosecondsPerInvocation="131534" standardDeviationMircosecondsPerInvocation="54940"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="124" invocations="149" avgMicrosecondsPerInvocation="834" maxMicrosecondsPerInvocation="28799" standardDeviationMircosecondsPerInvocation="2758"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

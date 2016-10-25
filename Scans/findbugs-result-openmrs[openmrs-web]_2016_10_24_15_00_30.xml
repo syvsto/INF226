@@ -1,0 +1,1763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://findbugs.sourceforge.net/xsl/default.xsl"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1477313373285" analysisTimestamp="1477313366232" release="">
+  <Project projectName="openmrs[openmrs-web]">
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/module/web/filter/ModuleFilter.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/module/web/filter/ModuleFilterChain.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/module/web/filter/ModuleFilterConfig.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/module/web/filter/ModuleFilterDefinition.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/module/web/filter/ModuleFilterMapping.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/module/web/ModuleResourcesServlet.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/module/web/ModuleServlet$SimpleServletConfig.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/module/web/ModuleServlet.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/module/web/WebModuleUtil$1.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/module/web/WebModuleUtil.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/OpenmrsCharacterEscapes.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/controller/PseudoStaticContentController.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/DispatcherServlet.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/GZIPFilter.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/GZIPRequestStream.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/GZIPRequestWrapper.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/GZIPResponseStream.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/GZIPResponseWrapper.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/initialization/InitializationFilter$InitializationCompletion$1$1PrintingChangeSetExecutorCallback.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/initialization/InitializationFilter$InitializationCompletion$1.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/initialization/InitializationFilter$InitializationCompletion.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/initialization/InitializationFilter.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/initialization/InitializationWizardModel.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/initialization/TestInstallUtil.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/initialization/WizardTask.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/JspClassLoaderFilter.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/OpenmrsFilter.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/startuperror/StartupErrorFilter.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/startuperror/StartupErrorFilterModel.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/StartupFilter.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/update/UpdateFilter$UpdateFilterCompletion$1$1PrintingChangeSetExecutorCallback.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/update/UpdateFilter$UpdateFilterCompletion$1.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/update/UpdateFilter$UpdateFilterCompletion.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/update/UpdateFilter.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/update/UpdateFilterModel.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/util/CustomResourceLoader.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/util/ErrorMessageConstants.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/util/FilterUtil.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/filter/util/LocalizationTool.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/Listener$1.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/Listener.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/OpenmrsBindingInitializer.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/StaticDispatcherServlet.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/WebConstants.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/WebDaemon$1.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/WebDaemon.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/openmrs/web/WebUtil.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/springframework/http/converter/json/MappingJacksonHttpMessageConverter.class</Jar>
+    <Jar>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes/org/springframework/web/servlet/view/json/MappingJacksonJsonView.class</Jar>
+    <AuxClasspathEntry>/Users/azaralsharif/inf226/openmrscore/openmrs-core/api/target/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/target/classes</AuxClasspathEntry>
+    <SrcDir>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/src/main/java</SrcDir>
+    <SrcDir>/Users/azaralsharif/inf226/openmrscore/openmrs-core/web/src/main/resources</SrcDir>
+  </Project>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="f9947d2dbdc58f3792b574172ca04487" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>org.openmrs.OpenmrsCharacterEscapes.getEscapeCodesForAscii() may expose internal representation by returning OpenmrsCharacterEscapes.asciiEscapes</LongMessage>
+    <Class classname="org.openmrs.OpenmrsCharacterEscapes" primary="true">
+      <SourceLine classname="org.openmrs.OpenmrsCharacterEscapes" sourcefile="OpenmrsCharacterEscapes.java" sourcepath="org/openmrs/OpenmrsCharacterEscapes.java" relSourcepath="java/org/openmrs/OpenmrsCharacterEscapes.java">
+        <Message>In OpenmrsCharacterEscapes.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.OpenmrsCharacterEscapes</Message>
+    </Class>
+    <Method classname="org.openmrs.OpenmrsCharacterEscapes" name="getEscapeCodesForAscii" signature="()[I" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.OpenmrsCharacterEscapes" start="37" end="37" startBytecode="0" endBytecode="46" sourcefile="OpenmrsCharacterEscapes.java" sourcepath="org/openmrs/OpenmrsCharacterEscapes.java" relSourcepath="java/org/openmrs/OpenmrsCharacterEscapes.java"/>
+      <Message>In method org.openmrs.OpenmrsCharacterEscapes.getEscapeCodesForAscii()</Message>
+    </Method>
+    <Field classname="org.openmrs.OpenmrsCharacterEscapes" name="asciiEscapes" signature="[I" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.OpenmrsCharacterEscapes" sourcefile="OpenmrsCharacterEscapes.java" sourcepath="org/openmrs/OpenmrsCharacterEscapes.java" relSourcepath="java/org/openmrs/OpenmrsCharacterEscapes.java">
+        <Message>In OpenmrsCharacterEscapes.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.OpenmrsCharacterEscapes.asciiEscapes</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.OpenmrsCharacterEscapes" primary="true" start="37" end="37" startBytecode="4" endBytecode="4" sourcefile="OpenmrsCharacterEscapes.java" sourcepath="org/openmrs/OpenmrsCharacterEscapes.java" relSourcepath="java/org/openmrs/OpenmrsCharacterEscapes.java">
+      <Message>At OpenmrsCharacterEscapes.java:[line 37]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.OpenmrsCharacterEscapes" primary="true" start="37" end="37" startBytecode="4" endBytecode="4" sourcefile="OpenmrsCharacterEscapes.java" sourcepath="org/openmrs/OpenmrsCharacterEscapes.java" relSourcepath="java/org/openmrs/OpenmrsCharacterEscapes.java">
+      <Message>At OpenmrsCharacterEscapes.java:[line 37]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE" priority="2" rank="13" abbrev="NP" category="STYLE" instanceHash="7fa924063a1f5c6fbf48b9c0b8d8e129" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Possible null pointer dereference due to return value of called method</ShortMessage>
+    <LongMessage>Possible null pointer dereference in org.openmrs.module.web.WebModuleUtil.shutdownModules(ServletContext) due to return value of called method</LongMessage>
+    <Class classname="org.openmrs.module.web.WebModuleUtil" primary="true">
+      <SourceLine classname="org.openmrs.module.web.WebModuleUtil" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+        <Message>In WebModuleUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.module.web.WebModuleUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.module.web.WebModuleUtil" name="shutdownModules" signature="(Ljavax/servlet/ServletContext;)V" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.module.web.WebModuleUtil" start="693" end="713" startBytecode="0" endBytecode="371" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java"/>
+      <Message>In method org.openmrs.module.web.WebModuleUtil.shutdownModules(ServletContext)</Message>
+    </Method>
+    <LocalVariable name="mod" register="5" pc="66" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from mod</Message>
+    </LocalVariable>
+    <SourceLine classname="org.openmrs.module.web.WebModuleUtil" primary="true" start="701" end="701" startBytecode="66" endBytecode="66" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java" role="SOURCE_LINE_DEREF">
+      <Message>Dereferenced at WebModuleUtil.java:[line 701]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.module.web.WebModuleUtil" start="701" end="701" startBytecode="59" endBytecode="59" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at WebModuleUtil.java:[line 701]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE" instanceHash="857511725855706524a4ebadad63a288" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="253">
+    <ShortMessage>Method ignores exceptional return value</ShortMessage>
+    <LongMessage>Exceptional return value of java.io.File.mkdir() ignored in org.openmrs.module.web.WebModuleUtil.startModule(Module, ServletContext, boolean)</LongMessage>
+    <Class classname="org.openmrs.module.web.WebModuleUtil" primary="true">
+      <SourceLine classname="org.openmrs.module.web.WebModuleUtil" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+        <Message>In WebModuleUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.module.web.WebModuleUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.module.web.WebModuleUtil" name="startModule" signature="(Lorg/openmrs/module/Module;Ljavax/servlet/ServletContext;Z)Z" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.module.web.WebModuleUtil" start="115" end="362" startBytecode="0" endBytecode="3545" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java"/>
+      <Message>In method org.openmrs.module.web.WebModuleUtil.startModule(Module, ServletContext, boolean)</Message>
+    </Method>
+    <Method classname="java.io.File" name="mkdir" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1309" end="1316" startBytecode="0" endBytecode="91" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <Message>Called method java.io.File.mkdir()</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.module.web.WebModuleUtil" primary="true" start="131" end="131" startBytecode="116" endBytecode="116" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+      <Message>At WebModuleUtil.java:[line 131]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.module.web.WebModuleUtil" primary="true" start="131" end="131" startBytecode="116" endBytecode="116" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+      <Message>At WebModuleUtil.java:[line 131]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE" instanceHash="1be2e35748e613b566073db195fe6618" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="253">
+    <ShortMessage>Method ignores exceptional return value</ShortMessage>
+    <LongMessage>Exceptional return value of java.io.File.mkdirs() ignored in org.openmrs.module.web.WebModuleUtil.startModule(Module, ServletContext, boolean)</LongMessage>
+    <Class classname="org.openmrs.module.web.WebModuleUtil" primary="true">
+      <SourceLine classname="org.openmrs.module.web.WebModuleUtil" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+        <Message>In WebModuleUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.module.web.WebModuleUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.module.web.WebModuleUtil" name="startModule" signature="(Lorg/openmrs/module/Module;Ljavax/servlet/ServletContext;Z)Z" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.module.web.WebModuleUtil" start="115" end="362" startBytecode="0" endBytecode="3545" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java"/>
+      <Message>In method org.openmrs.module.web.WebModuleUtil.startModule(Module, ServletContext, boolean)</Message>
+    </Method>
+    <Method classname="java.io.File" name="mkdirs" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1340" end="1355" startBytecode="0" endBytecode="178" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <Message>Called method java.io.File.mkdirs()</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.module.web.WebModuleUtil" primary="true" start="179" end="179" startBytecode="419" endBytecode="419" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+      <Message>At WebModuleUtil.java:[line 179]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.module.web.WebModuleUtil" primary="true" start="179" end="179" startBytecode="419" endBytecode="419" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+      <Message>At WebModuleUtil.java:[line 179]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="WMI_WRONG_MAP_ITERATOR" priority="2" rank="18" abbrev="WMI" category="PERFORMANCE" instanceHash="8efe555e8770691f1b9a14ce6bbb9fea" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Inefficient use of keySet iterator instead of entrySet iterator</ShortMessage>
+    <LongMessage>org.openmrs.module.web.WebModuleUtil.unloadFilters(Module) makes inefficient use of keySet iterator instead of entrySet iterator</LongMessage>
+    <Class classname="org.openmrs.module.web.WebModuleUtil" primary="true">
+      <SourceLine classname="org.openmrs.module.web.WebModuleUtil" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+        <Message>In WebModuleUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.module.web.WebModuleUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.module.web.WebModuleUtil" name="unloadFilters" signature="(Lorg/openmrs/module/Module;)V" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.module.web.WebModuleUtil" start="573" end="603" startBytecode="0" endBytecode="569" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java"/>
+      <Message>In method org.openmrs.module.web.WebModuleUtil.unloadFilters(Module)</Message>
+    </Method>
+    <Field classname="org.openmrs.module.web.WebModuleUtil" name="moduleFiltersByName" signature="Ljava/util/Map;" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.module.web.WebModuleUtil" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+        <Message>In WebModuleUtil.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.module.web.WebModuleUtil.moduleFiltersByName</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.module.web.WebModuleUtil" primary="true" start="597" end="597" startBytecode="238" endBytecode="238" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+      <Message>At WebModuleUtil.java:[line 597]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.module.web.WebModuleUtil" primary="true" start="597" end="597" startBytecode="238" endBytecode="238" sourcefile="WebModuleUtil.java" sourcepath="org/openmrs/module/web/WebModuleUtil.java" relSourcepath="java/org/openmrs/module/web/WebModuleUtil.java">
+      <Message>At WebModuleUtil.java:[line 597]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" rank="14" abbrev="Se" category="BAD_PRACTICE" instanceHash="c5fcf27c66c19743aa9a3f87c667593" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class org.openmrs.module.web.filter.ModuleFilterDefinition defines non-transient non-serializable instance field module</LongMessage>
+    <Class classname="org.openmrs.module.web.filter.ModuleFilterDefinition" primary="true">
+      <SourceLine classname="org.openmrs.module.web.filter.ModuleFilterDefinition" sourcefile="ModuleFilterDefinition.java" sourcepath="org/openmrs/module/web/filter/ModuleFilterDefinition.java" relSourcepath="java/org/openmrs/module/web/filter/ModuleFilterDefinition.java">
+        <Message>In ModuleFilterDefinition.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.module.web.filter.ModuleFilterDefinition</Message>
+    </Class>
+    <Field classname="org.openmrs.module.web.filter.ModuleFilterDefinition" name="module" signature="Lorg/openmrs/module/Module;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.module.web.filter.ModuleFilterDefinition" sourcefile="ModuleFilterDefinition.java" sourcepath="org/openmrs/module/web/filter/ModuleFilterDefinition.java" relSourcepath="java/org/openmrs/module/web/filter/ModuleFilterDefinition.java">
+        <Message>In ModuleFilterDefinition.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.module.web.filter.ModuleFilterDefinition.module</Message>
+    </Field>
+    <Type descriptor="Lorg/openmrs/module/Module;" role="TYPE_FOUND">
+      <SourceLine classname="org.openmrs.module.Module" start="37" end="810" sourcefile="Module.java" sourcepath="org/openmrs/module/Module.java">
+        <Message>At Module.java:[lines 37-810]</Message>
+      </SourceLine>
+      <Message>Actual type org.openmrs.module.Module</Message>
+    </Type>
+    <SourceLine classname="org.openmrs.module.web.filter.ModuleFilterDefinition" sourcefile="ModuleFilterDefinition.java" sourcepath="org/openmrs/module/web/filter/ModuleFilterDefinition.java" relSourcepath="java/org/openmrs/module/web/filter/ModuleFilterDefinition.java" synthetic="true">
+      <Message>In ModuleFilterDefinition.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" rank="14" abbrev="Se" category="BAD_PRACTICE" instanceHash="870b68df27365843c868382afdf3b51f" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class org.openmrs.module.web.filter.ModuleFilterMapping defines non-transient non-serializable instance field module</LongMessage>
+    <Class classname="org.openmrs.module.web.filter.ModuleFilterMapping" primary="true">
+      <SourceLine classname="org.openmrs.module.web.filter.ModuleFilterMapping" sourcefile="ModuleFilterMapping.java" sourcepath="org/openmrs/module/web/filter/ModuleFilterMapping.java" relSourcepath="java/org/openmrs/module/web/filter/ModuleFilterMapping.java">
+        <Message>In ModuleFilterMapping.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.module.web.filter.ModuleFilterMapping</Message>
+    </Class>
+    <Field classname="org.openmrs.module.web.filter.ModuleFilterMapping" name="module" signature="Lorg/openmrs/module/Module;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.module.web.filter.ModuleFilterMapping" sourcefile="ModuleFilterMapping.java" sourcepath="org/openmrs/module/web/filter/ModuleFilterMapping.java" relSourcepath="java/org/openmrs/module/web/filter/ModuleFilterMapping.java">
+        <Message>In ModuleFilterMapping.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.module.web.filter.ModuleFilterMapping.module</Message>
+    </Field>
+    <Type descriptor="Lorg/openmrs/module/Module;" role="TYPE_FOUND">
+      <SourceLine classname="org.openmrs.module.Module" start="37" end="810" sourcefile="Module.java" sourcepath="org/openmrs/module/Module.java">
+        <Message>At Module.java:[lines 37-810]</Message>
+      </SourceLine>
+      <Message>Actual type org.openmrs.module.Module</Message>
+    </Type>
+    <SourceLine classname="org.openmrs.module.web.filter.ModuleFilterMapping" sourcefile="ModuleFilterMapping.java" sourcepath="org/openmrs/module/web/filter/ModuleFilterMapping.java" relSourcepath="java/org/openmrs/module/web/filter/ModuleFilterMapping.java" synthetic="true">
+      <Message>In ModuleFilterMapping.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_SAME_SIMPLE_NAME_AS_SUPERCLASS" priority="1" rank="14" abbrev="Nm" category="BAD_PRACTICE" instanceHash="4ceafb0d029679ae314ddd235f42e289" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names shouldn&apos;t shadow simple name of superclass</ShortMessage>
+    <LongMessage>The class name org.openmrs.web.DispatcherServlet shadows the simple name of the superclass org.springframework.web.servlet.DispatcherServlet</LongMessage>
+    <Class classname="org.openmrs.web.DispatcherServlet" primary="true">
+      <SourceLine classname="org.openmrs.web.DispatcherServlet" start="35" end="107" sourcefile="DispatcherServlet.java" sourcepath="org/openmrs/web/DispatcherServlet.java" relSourcepath="java/org/openmrs/web/DispatcherServlet.java">
+        <Message>At DispatcherServlet.java:[lines 35-107]</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.DispatcherServlet</Message>
+    </Class>
+    <Class classname="org.springframework.web.servlet.DispatcherServlet">
+      <SourceLine classname="org.springframework.web.servlet.DispatcherServlet">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class org.springframework.web.servlet.DispatcherServlet</Message>
+    </Class>
+    <SourceLine classname="org.openmrs.web.DispatcherServlet" start="35" end="107" sourcefile="DispatcherServlet.java" sourcepath="org/openmrs/web/DispatcherServlet.java" relSourcepath="java/org/openmrs/web/DispatcherServlet.java" synthetic="true">
+      <Message>At DispatcherServlet.java:[lines 35-107]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" instanceHash="26e969347d291e4bfbb947c67cb2c9bc" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Reliance on default encoding</ShortMessage>
+    <LongMessage>Found reliance on default encoding in org.openmrs.web.Listener.clearDWRFile(ServletContext): new java.io.FileWriter(File)</LongMessage>
+    <Class classname="org.openmrs.web.Listener" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+        <Message>In Listener.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.Listener</Message>
+    </Class>
+    <Method classname="org.openmrs.web.Listener" name="clearDWRFile" signature="(Ljavax/servlet/ServletContext;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" start="348" end="395" startBytecode="0" endBytecode="887" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java"/>
+      <Message>In method org.openmrs.web.Listener.clearDWRFile(ServletContext)</Message>
+    </Method>
+    <Method classname="java.io.FileWriter" name="&lt;init&gt;" signature="(Ljava/io/File;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileWriter" start="90" end="91" startBytecode="0" endBytecode="40" sourcefile="FileWriter.java" sourcepath="java/io/FileWriter.java"/>
+      <Message>Called method new java.io.FileWriter(File)</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.Listener" primary="true" start="376" end="376" startBytecode="144" endBytecode="144" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+      <Message>At Listener.java:[line 376]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.Listener" primary="true" start="376" end="376" startBytecode="144" endBytecode="144" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+      <Message>At Listener.java:[line 376]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DM_GC" priority="1" rank="16" abbrev="Dm" category="PERFORMANCE" instanceHash="5cc09d0aeec67c7103b792fdbbe6216f" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Explicit garbage collection; extremely dubious except in benchmarking code</ShortMessage>
+    <LongMessage>org.openmrs.web.Listener.contextDestroyed(ServletContextEvent) forces garbage collection; extremely dubious except in benchmarking code</LongMessage>
+    <Class classname="org.openmrs.web.Listener" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+        <Message>In Listener.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.Listener</Message>
+    </Class>
+    <Method classname="org.openmrs.web.Listener" name="contextDestroyed" signature="(Ljavax/servlet/ServletContextEvent;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" start="549" end="608" startBytecode="0" endBytecode="901" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java"/>
+      <Message>In method org.openmrs.web.Listener.contextDestroyed(ServletContextEvent)</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.Listener" primary="true" start="606" end="606" startBytecode="442" endBytecode="442" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+      <Message>At Listener.java:[line 606]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE" priority="2" rank="13" abbrev="NP" category="STYLE" instanceHash="fa94edcba40f6e91a8535562faf7e8d7" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Possible null pointer dereference due to return value of called method</ShortMessage>
+    <LongMessage>Possible null pointer dereference in org.openmrs.web.Listener.copyCustomizationIntoWebapp(ServletContext, Properties) due to return value of called method</LongMessage>
+    <Class classname="org.openmrs.web.Listener" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+        <Message>In Listener.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.Listener</Message>
+    </Class>
+    <Method classname="org.openmrs.web.Listener" name="copyCustomizationIntoWebapp" signature="(Ljavax/servlet/ServletContext;Ljava/util/Properties;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" start="403" end="457" startBytecode="0" endBytecode="1045" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java"/>
+      <Message>In method org.openmrs.web.Listener.copyCustomizationIntoWebapp(ServletContext, Properties)</Message>
+    </Method>
+    <LocalVariable name="?" register="13" pc="338" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from ?</Message>
+    </LocalVariable>
+    <SourceLine classname="org.openmrs.web.Listener" primary="true" start="434" end="434" startBytecode="338" endBytecode="338" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java" role="SOURCE_LINE_DEREF">
+      <Message>Dereferenced at Listener.java:[line 434]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.Listener" start="434" end="434" startBytecode="331" endBytecode="331" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at Listener.java:[line 434]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE" priority="2" rank="13" abbrev="NP" category="STYLE" instanceHash="ee093db4918cc8c3492ce999e94b4a66" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Possible null pointer dereference due to return value of called method</ShortMessage>
+    <LongMessage>Possible null pointer dereference in org.openmrs.web.Listener.loadBundledModules(ServletContext) due to return value of called method</LongMessage>
+    <Class classname="org.openmrs.web.Listener" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+        <Message>In Listener.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.Listener</Message>
+    </Class>
+    <Method classname="org.openmrs.web.Listener" name="loadBundledModules" signature="(Ljavax/servlet/ServletContext;)V" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" start="509" end="536" startBytecode="0" endBytecode="506" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java"/>
+      <Message>In method org.openmrs.web.Listener.loadBundledModules(ServletContext)</Message>
+    </Method>
+    <LocalVariable name="?" register="4" pc="141" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from ?</Message>
+    </LocalVariable>
+    <SourceLine classname="org.openmrs.web.Listener" primary="true" start="525" end="525" startBytecode="141" endBytecode="141" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java" role="SOURCE_LINE_DEREF">
+      <Message>Dereferenced at Listener.java:[line 525]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.Listener" start="525" end="525" startBytecode="134" endBytecode="134" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at Listener.java:[line 525]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE" instanceHash="18b0b9e6489d9445fcc5fc1d47058d0d" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="253">
+    <ShortMessage>Method ignores exceptional return value</ShortMessage>
+    <LongMessage>Exceptional return value of java.io.File.delete() ignored in org.openmrs.web.Listener.clearDWRFile(ServletContext)</LongMessage>
+    <Class classname="org.openmrs.web.Listener" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+        <Message>In Listener.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.Listener</Message>
+    </Class>
+    <Method classname="org.openmrs.web.Listener" name="clearDWRFile" signature="(Ljavax/servlet/ServletContext;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" start="348" end="395" startBytecode="0" endBytecode="887" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java"/>
+      <Message>In method org.openmrs.web.Listener.clearDWRFile(ServletContext)</Message>
+    </Method>
+    <Method classname="java.io.File" name="delete" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1034" end="1041" startBytecode="0" endBytecode="91" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <Message>Called method java.io.File.delete()</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.Listener" primary="true" start="373" end="373" startBytecode="131" endBytecode="131" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+      <Message>At Listener.java:[line 373]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.Listener" primary="true" start="373" end="373" startBytecode="131" endBytecode="131" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+      <Message>At Listener.java:[line 373]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" rank="17" abbrev="ST" category="STYLE" instanceHash="704af8208dbd42b32242ec5a05fe9a59" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Write to static field from instance method</ShortMessage>
+    <LongMessage>Write to static field org.openmrs.web.Listener.setupNeeded from instance method org.openmrs.web.Listener.contextInitialized(ServletContextEvent)</LongMessage>
+    <Class classname="org.openmrs.web.Listener" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+        <Message>In Listener.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.Listener</Message>
+    </Class>
+    <Method classname="org.openmrs.web.Listener" name="contextInitialized" signature="(Ljavax/servlet/ServletContextEvent;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" start="139" end="207" startBytecode="0" endBytecode="481" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java"/>
+      <Message>In method org.openmrs.web.Listener.contextInitialized(ServletContextEvent)</Message>
+    </Method>
+    <Field classname="org.openmrs.web.Listener" name="setupNeeded" signature="Z" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.Listener" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+        <Message>In Listener.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.Listener.setupNeeded</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.Listener" primary="true" start="198" end="198" startBytecode="177" endBytecode="177" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+      <Message>At Listener.java:[line 198]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.Listener" primary="true" start="198" end="198" startBytecode="177" endBytecode="177" sourcefile="Listener.java" sourcepath="org/openmrs/web/Listener.java" relSourcepath="java/org/openmrs/web/Listener.java">
+      <Message>At Listener.java:[line 198]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_CANNOT_BE_FINAL" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" instanceHash="c3e428516ae4283d09d853a56334cfc9" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="218">
+    <ShortMessage>Field isn&apos;t final and can&apos;t be protected from malicious code</ShortMessage>
+    <LongMessage>org.openmrs.web.WebConstants.WEBAPP_NAME isn&apos;t final and can&apos;t be protected from malicious code </LongMessage>
+    <Class classname="org.openmrs.web.WebConstants" primary="true">
+      <SourceLine classname="org.openmrs.web.WebConstants" sourcefile="WebConstants.java" sourcepath="org/openmrs/web/WebConstants.java" relSourcepath="java/org/openmrs/web/WebConstants.java">
+        <Message>In WebConstants.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.WebConstants</Message>
+    </Class>
+    <Field classname="org.openmrs.web.WebConstants" name="WEBAPP_NAME" signature="Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.WebConstants" sourcefile="WebConstants.java" sourcepath="org/openmrs/web/WebConstants.java" relSourcepath="java/org/openmrs/web/WebConstants.java">
+        <Message>In WebConstants.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.WebConstants.WEBAPP_NAME</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.WebConstants" primary="true" start="59" end="59" startBytecode="15" endBytecode="15" sourcefile="WebConstants.java" sourcepath="org/openmrs/web/WebConstants.java" relSourcepath="java/org/openmrs/web/WebConstants.java">
+      <Message>At WebConstants.java:[line 59]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_CONDITION" priority="1" rank="14" abbrev="UC" category="STYLE" instanceHash="4179e2310f8e8a8c9577c4a345a255ae" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Condition has no effect</ShortMessage>
+    <LongMessage>Useless condition: it&apos;s known that c &gt;= &apos; &apos; at this point</LongMessage>
+    <Class classname="org.openmrs.web.WebUtil" primary="true">
+      <SourceLine classname="org.openmrs.web.WebUtil" sourcefile="WebUtil.java" sourcepath="org/openmrs/web/WebUtil.java" relSourcepath="java/org/openmrs/web/WebUtil.java">
+        <Message>In WebUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.WebUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.web.WebUtil" name="normalizeLocale" signature="(Ljava/lang/String;)Ljava/util/Locale;" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.WebUtil" start="296" end="320" startBytecode="0" endBytecode="322" sourcefile="WebUtil.java" sourcepath="org/openmrs/web/WebUtil.java" relSourcepath="java/org/openmrs/web/WebUtil.java"/>
+      <Message>In method org.openmrs.web.WebUtil.normalizeLocale(String)</Message>
+    </Method>
+    <String value="c &gt;= &apos; &apos;">
+      <Message>Value c &gt;= &apos; &apos;</Message>
+    </String>
+    <SourceLine classname="org.openmrs.web.WebUtil" start="307" end="307" startBytecode="65" endBytecode="65" sourcefile="WebUtil.java" sourcepath="org/openmrs/web/WebUtil.java" relSourcepath="java/org/openmrs/web/WebUtil.java" role="SOURCE_UNREACHABLE_CODE">
+      <Message>Unreachable code at WebUtil.java:[line 307]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.WebUtil" primary="true" start="307" end="307" startBytecode="62" endBytecode="62" sourcefile="WebUtil.java" sourcepath="org/openmrs/web/WebUtil.java" relSourcepath="java/org/openmrs/web/WebUtil.java">
+      <Message>At WebUtil.java:[line 307]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.WebUtil" primary="true" start="307" end="307" startBytecode="62" endBytecode="62" sourcefile="WebUtil.java" sourcepath="org/openmrs/web/WebUtil.java" relSourcepath="java/org/openmrs/web/WebUtil.java">
+      <Message>At WebUtil.java:[line 307]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" instanceHash="333583748aeb1ae0bd781d4dd655f065" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Reliance on default encoding</ShortMessage>
+    <LongMessage>Found reliance on default encoding in org.openmrs.web.filter.StartupFilter.renderTemplate(String, Map, HttpServletResponse): new java.io.InputStreamReader(InputStream)</LongMessage>
+    <Class classname="org.openmrs.web.filter.StartupFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.StartupFilter" sourcefile="StartupFilter.java" sourcepath="org/openmrs/web/filter/StartupFilter.java" relSourcepath="java/org/openmrs/web/filter/StartupFilter.java">
+        <Message>In StartupFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.StartupFilter</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.StartupFilter" name="renderTemplate" signature="(Ljava/lang/String;Ljava/util/Map;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.StartupFilter" start="228" end="275" startBytecode="0" endBytecode="961" sourcefile="StartupFilter.java" sourcepath="org/openmrs/web/filter/StartupFilter.java" relSourcepath="java/org/openmrs/web/filter/StartupFilter.java"/>
+      <Message>In method org.openmrs.web.filter.StartupFilter.renderTemplate(String, Map, HttpServletResponse)</Message>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+      <Message>Called method new java.io.InputStreamReader(InputStream)</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.StartupFilter" primary="true" start="269" end="269" startBytecode="384" endBytecode="384" sourcefile="StartupFilter.java" sourcepath="org/openmrs/web/filter/StartupFilter.java" relSourcepath="java/org/openmrs/web/filter/StartupFilter.java">
+      <Message>At StartupFilter.java:[line 269]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.StartupFilter" primary="true" start="269" end="269" startBytecode="384" endBytecode="384" sourcefile="StartupFilter.java" sourcepath="org/openmrs/web/filter/StartupFilter.java" relSourcepath="java/org/openmrs/web/filter/StartupFilter.java">
+      <Message>At StartupFilter.java:[line 269]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" instanceHash="c9e8115ebcd81a9531c6003790d103c6" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="218">
+    <ShortMessage>Field should be package protected</ShortMessage>
+    <LongMessage>org.openmrs.web.filter.StartupFilter.velocityEngine should be package protected</LongMessage>
+    <Class classname="org.openmrs.web.filter.StartupFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.StartupFilter" sourcefile="StartupFilter.java" sourcepath="org/openmrs/web/filter/StartupFilter.java" relSourcepath="java/org/openmrs/web/filter/StartupFilter.java">
+        <Message>In StartupFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.StartupFilter</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.StartupFilter" name="velocityEngine" signature="Lorg/apache/velocity/app/VelocityEngine;" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.StartupFilter" sourcefile="StartupFilter.java" sourcepath="org/openmrs/web/filter/StartupFilter.java" relSourcepath="java/org/openmrs/web/filter/StartupFilter.java">
+        <Message>In StartupFilter.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.StartupFilter.velocityEngine</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.StartupFilter" primary="true" start="71" end="71" startBytecode="1" endBytecode="1" sourcefile="StartupFilter.java" sourcepath="org/openmrs/web/filter/StartupFilter.java" relSourcepath="java/org/openmrs/web/filter/StartupFilter.java">
+      <Message>At StartupFilter.java:[line 71]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL" instanceHash="4b1457e542e3a3417fbf036502870085" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method may fail to clean up stream or resource on checked exception</ShortMessage>
+    <LongMessage>org.openmrs.web.filter.initialization.InitializationFilter.executeStatement(boolean, String, String, String, String[]) may fail to clean up java.sql.Statement on checked exception</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+        <Message>In InitializationFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationFilter</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.InitializationFilter" name="executeStatement" signature="(ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="1135" end="1205" startBytecode="0" endBytecode="1863" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.InitializationFilter.executeStatement(boolean, String, String, String, String[])</Message>
+    </Method>
+    <Class classname="java.sql.Statement" role="CLASS_REFTYPE">
+      <SourceLine classname="java.sql.Statement" sourcefile="Statement.java" sourcepath="java/sql/Statement.java">
+        <Message>In Statement.java</Message>
+      </SourceLine>
+      <Message>Reference type java.sql.Statement</Message>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING">
+      <Message>1 instances of obligation remaining</Message>
+    </Int>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="1162" end="1162" startBytecode="177" endBytecode="177" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at InitializationFilter.java:[line 1162] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="1164" end="1164" startBytecode="184" endBytecode="184" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at InitializationFilter.java:[line 1164]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="1169" end="1169" startBytecode="277" endBytecode="277" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at InitializationFilter.java:[line 1169]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="1170" end="1170" startBytecode="279" endBytecode="279" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at InitializationFilter.java:[line 1170]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="1187" end="1187" startBytecode="360" endBytecode="360" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at InitializationFilter.java:[line 1187]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="1191" end="1191" startBytecode="385" endBytecode="385" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at InitializationFilter.java:[line 1191]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="1192" end="1192" startBytecode="387" endBytecode="387" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at InitializationFilter.java:[line 1192]</Message>
+    </SourceLine>
+    <String value="{Statement x 1}" role="STRING_REMAINING_OBLIGATIONS">
+      <Message>Remaining obligations: {Statement x 1}</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="2" rank="17" abbrev="REC" category="STYLE" instanceHash="606ce09028e8d13fdcbfb98f88e019a8" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="396">
+    <ShortMessage>Exception is caught when Exception is not thrown</ShortMessage>
+    <LongMessage>Exception is caught when Exception is not thrown in org.openmrs.web.filter.initialization.InitializationFilter.isDatabaseEmpty(Properties)</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+        <Message>In InitializationFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationFilter</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.InitializationFilter" name="isDatabaseEmpty" signature="(Ljava/util/Properties;)Z" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="1813" end="1866" startBytecode="0" endBytecode="801" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.InitializationFilter.isDatabaseEmpty(Properties)</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="1850" end="1850" startBytecode="188" endBytecode="188" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 1850]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="1850" end="1850" startBytecode="188" endBytecode="188" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 1850]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE" instanceHash="89c9b9e1c393e54c9384751dff47abe8" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="253">
+    <ShortMessage>Method ignores exceptional return value</ShortMessage>
+    <LongMessage>Exceptional return value of java.io.File.createNewFile() ignored in org.openmrs.web.filter.initialization.InitializationFilter.doGet(HttpServletRequest, HttpServletResponse)</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+        <Message>In InitializationFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationFilter</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.InitializationFilter" name="doGet" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="199" end="307" startBytecode="0" endBytecode="1298" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.InitializationFilter.doGet(HttpServletRequest, HttpServletResponse)</Message>
+    </Method>
+    <Method classname="java.io.File" name="createNewFile" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1007" end="1012" startBytecode="0" endBytecode="98" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <Message>Called method java.io.File.createNewFile()</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="270" end="270" startBytecode="576" endBytecode="576" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 270]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="270" end="270" startBytecode="576" endBytecode="576" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 270]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE" instanceHash="6238d4f248e1e7ee61ec359460b423a0" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="253">
+    <ShortMessage>Method ignores exceptional return value</ShortMessage>
+    <LongMessage>Exceptional return value of java.io.File.delete() ignored in org.openmrs.web.filter.initialization.InitializationFilter.doGet(HttpServletRequest, HttpServletResponse)</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+        <Message>In InitializationFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationFilter</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.InitializationFilter" name="doGet" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="199" end="307" startBytecode="0" endBytecode="1298" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.InitializationFilter.doGet(HttpServletRequest, HttpServletResponse)</Message>
+    </Method>
+    <Method classname="java.io.File" name="delete" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1034" end="1041" startBytecode="0" endBytecode="91" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <Message>Called method java.io.File.delete()</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="286" end="286" startBytecode="636" endBytecode="636" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 286]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="286" end="286" startBytecode="636" endBytecode="636" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 286]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE" instanceHash="d381444b613a147b3ecb93df347d5c4d" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="253">
+    <ShortMessage>Method ignores exceptional return value</ShortMessage>
+    <LongMessage>Exceptional return value of java.io.File.createNewFile() ignored in org.openmrs.web.filter.initialization.InitializationFilter.doPost(HttpServletRequest, HttpServletResponse)</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+        <Message>In InitializationFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationFilter</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.InitializationFilter" name="doPost" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="370" end="812" startBytecode="0" endBytecode="4581" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.InitializationFilter.doPost(HttpServletRequest, HttpServletResponse)</Message>
+    </Method>
+    <Method classname="java.io.File" name="createNewFile" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1007" end="1012" startBytecode="0" endBytecode="98" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <Message>Called method java.io.File.createNewFile()</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="391" end="391" startBytecode="120" endBytecode="120" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 391]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="391" end="391" startBytecode="120" endBytecode="120" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 391]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE" instanceHash="de8c491e3fd1e18f5543aec5b149f5a3" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="253">
+    <ShortMessage>Method ignores exceptional return value</ShortMessage>
+    <LongMessage>Exceptional return value of java.io.File.delete() ignored in org.openmrs.web.filter.initialization.InitializationFilter.doPost(HttpServletRequest, HttpServletResponse)</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+        <Message>In InitializationFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationFilter</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.InitializationFilter" name="doPost" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="370" end="812" startBytecode="0" endBytecode="4581" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.InitializationFilter.doPost(HttpServletRequest, HttpServletResponse)</Message>
+    </Method>
+    <Method classname="java.io.File" name="delete" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1034" end="1041" startBytecode="0" endBytecode="91" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <Message>Called method java.io.File.delete()</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="406" end="406" startBytecode="180" endBytecode="180" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 406]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="406" end="406" startBytecode="180" endBytecode="180" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 406]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE" instanceHash="a2f403b12a330c5136debba5b482efc2" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="253">
+    <ShortMessage>Method ignores exceptional return value</ShortMessage>
+    <LongMessage>Exceptional return value of java.io.File.delete() ignored in org.openmrs.web.filter.initialization.InitializationFilter.importTestDataSet(InputStream, String, String, String)</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+        <Message>In InitializationFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationFilter</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.InitializationFilter" name="importTestDataSet" signature="(Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" start="1088" end="1122" startBytecode="0" endBytecode="550" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.InitializationFilter.importTestDataSet(InputStream, String, String, String)</Message>
+    </Method>
+    <Method classname="java.io.File" name="delete" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1034" end="1041" startBytecode="0" endBytecode="91" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <Message>Called method java.io.File.delete()</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="1119" end="1119" startBytecode="146" endBytecode="146" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 1119]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter" primary="true" start="1119" end="1119" startBytecode="146" endBytecode="146" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+      <Message>At InitializationFilter.java:[line 1119]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE" priority="2" rank="18" abbrev="RCN" category="STYLE" instanceHash="f8cfbb6e94cbc1f79581ae815f37ac9a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Redundant nullcheck of value known to be non-null</ShortMessage>
+    <LongMessage>Redundant nullcheck of inData, which is known to be non-null in org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1.run()</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+        <Message>In InitializationFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" name="run" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" start="1370" end="1798" startBytecode="0" endBytecode="6602" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1.run()</Message>
+    </Method>
+    <LocalVariable name="inData" register="6" pc="1728" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from inData</Message>
+    </LocalVariable>
+    <Method classname="org.openmrs.web.filter.initialization.TestInstallUtil" name="getResourceInputStream" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/io/InputStream;" isStatic="true" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" start="265" end="290" startBytecode="0" endBytecode="411" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java"/>
+      <Message>Return value of org.openmrs.web.filter.initialization.TestInstallUtil.getResourceInputStream(String, String, String) of type java.io.InputStream</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" primary="true" start="1571" end="1571" startBytecode="1730" endBytecode="1730" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_REDUNDANT_NULL_CHECK">
+      <Message>Redundant null check at InitializationFilter.java:[line 1571]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" primary="true" start="1571" end="1571" startBytecode="1730" endBytecode="1730" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_REDUNDANT_NULL_CHECK">
+      <Message>Redundant null check at InitializationFilter.java:[line 1571]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE" priority="2" rank="18" abbrev="RCN" category="STYLE" instanceHash="fc803d50e914f3177baac47163a55ed4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Redundant nullcheck of value known to be non-null</ShortMessage>
+    <LongMessage>Redundant nullcheck of inModules, which is known to be non-null in org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1.run()</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java">
+        <Message>In InitializationFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" name="run" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" start="1370" end="1798" startBytecode="0" endBytecode="6602" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1.run()</Message>
+    </Method>
+    <LocalVariable name="inModules" register="7" pc="1957" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from inModules</Message>
+    </LocalVariable>
+    <Method classname="org.openmrs.web.filter.initialization.TestInstallUtil" name="getResourceInputStream" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/io/InputStream;" isStatic="true" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" start="265" end="290" startBytecode="0" endBytecode="411" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java"/>
+      <Message>Return value of org.openmrs.web.filter.initialization.TestInstallUtil.getResourceInputStream(String, String, String) of type java.io.InputStream</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" primary="true" start="1591" end="1591" startBytecode="1959" endBytecode="1959" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_REDUNDANT_NULL_CHECK">
+      <Message>Redundant null check at InitializationFilter.java:[line 1591]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" primary="true" start="1591" end="1591" startBytecode="1959" endBytecode="1959" sourcefile="InitializationFilter.java" sourcepath="org/openmrs/web/filter/initialization/InitializationFilter.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationFilter.java" role="SOURCE_REDUNDANT_NULL_CHECK">
+      <Message>Redundant null check at InitializationFilter.java:[line 1591]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="114acf00420cbd7ea2b75056487b5565" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.canCreate</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationWizardModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.initialization.InitializationWizardModel" name="canCreate" signature="Z" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.initialization.InitializationWizardModel.canCreate</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true" start="61" end="61" startBytecode="17" endBytecode="17" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+      <Message>At InitializationWizardModel.java:[line 61]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="e61cda8e66b7803c2b6c6335757d8524" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.canWrite</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationWizardModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.initialization.InitializationWizardModel" name="canWrite" signature="Z" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.initialization.InitializationWizardModel.canWrite</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true" start="74" end="74" startBytecode="28" endBytecode="28" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+      <Message>At InitializationWizardModel.java:[line 74]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="c00e030eb030e2ee9d66799eb171c9b2" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.cannotCreateErrorMessage</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationWizardModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.initialization.InitializationWizardModel" name="cannotCreateErrorMessage" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.initialization.InitializationWizardModel.cannotCreateErrorMessage</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true" start="68" end="68" startBytecode="23" endBytecode="23" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+      <Message>At InitializationWizardModel.java:[line 68]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="f16060cdeee38f4c40d94139df8fb56a" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.hasCurrentDatabaseUser</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationWizardModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.initialization.InitializationWizardModel" name="hasCurrentDatabaseUser" signature="Ljava/lang/Boolean;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.initialization.InitializationWizardModel.hasCurrentDatabaseUser</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true" start="93" end="93" startBytecode="56" endBytecode="56" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+      <Message>At InitializationWizardModel.java:[line 93]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="1ec253d06cb5b29922033dc8d6b1d3af" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.numberOfSteps</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationWizardModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.initialization.InitializationWizardModel" name="numberOfSteps" signature="Ljava/lang/Integer;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.initialization.InitializationWizardModel.numberOfSteps</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true" start="237" end="237" startBytecode="235" endBytecode="235" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+      <Message>At InitializationWizardModel.java:[line 237]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="7f5875b575013d85e42c07b6b1e572f2" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.runtimePropertiesPath</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationWizardModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.initialization.InitializationWizardModel" name="runtimePropertiesPath" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.initialization.InitializationWizardModel.runtimePropertiesPath</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true" start="80" end="80" startBytecode="34" endBytecode="34" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+      <Message>At InitializationWizardModel.java:[line 80]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="817675d6c432c7a566620f1d5f7d28b7" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.setupPageUrl</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.InitializationWizardModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.initialization.InitializationWizardModel" name="setupPageUrl" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+        <Message>In InitializationWizardModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.initialization.InitializationWizardModel.setupPageUrl</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.initialization.InitializationWizardModel" primary="true" start="205" end="205" startBytecode="195" endBytecode="195" sourcefile="InitializationWizardModel.java" sourcepath="org/openmrs/web/filter/initialization/InitializationWizardModel.java" relSourcepath="java/org/openmrs/web/filter/initialization/InitializationWizardModel.java">
+      <Message>At InitializationWizardModel.java:[line 205]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" instanceHash="2a9eaad3c7b3ab3447b229a37ec3843c" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Reliance on default encoding</ShortMessage>
+    <LongMessage>Found reliance on default encoding in org.openmrs.web.filter.initialization.TestInstallUtil.addTestData(String, int, String, String, String, String): new java.io.InputStreamReader(InputStream)</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.TestInstallUtil" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java">
+        <Message>In TestInstallUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.TestInstallUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.TestInstallUtil" name="addTestData" signature="(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" start="62" end="126" startBytecode="0" endBytecode="1266" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.TestInstallUtil.addTestData(String, int, String, String, String, String)</Message>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+      <Message>Called method new java.io.InputStreamReader(InputStream)</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" primary="true" start="80" end="80" startBytecode="269" endBytecode="269" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java">
+      <Message>At TestInstallUtil.java:[line 80]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" primary="true" start="80" end="80" startBytecode="269" endBytecode="269" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java">
+      <Message>At TestInstallUtil.java:[line 80]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" instanceHash="93676869aeda9827b5a1085dccdb393c" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Reliance on default encoding</ShortMessage>
+    <LongMessage>Found reliance on default encoding in org.openmrs.web.filter.initialization.TestInstallUtil.getResourceInputStream(String, String, String): new java.io.OutputStreamWriter(OutputStream)</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.TestInstallUtil" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java">
+        <Message>In TestInstallUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.TestInstallUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.TestInstallUtil" name="getResourceInputStream" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/io/InputStream;" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" start="265" end="290" startBytecode="0" endBytecode="411" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.TestInstallUtil.getResourceInputStream(String, String, String)</Message>
+    </Method>
+    <Method classname="java.io.OutputStreamWriter" name="&lt;init&gt;" signature="(Ljava/io/OutputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.OutputStreamWriter" start="109" end="115" startBytecode="0" endBytecode="108" sourcefile="OutputStreamWriter.java" sourcepath="java/io/OutputStreamWriter.java"/>
+      <Message>Called method new java.io.OutputStreamWriter(OutputStream)</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" primary="true" start="274" end="274" startBytecode="98" endBytecode="98" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java">
+      <Message>At TestInstallUtil.java:[line 274]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" primary="true" start="274" end="274" startBytecode="98" endBytecode="98" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java">
+      <Message>At TestInstallUtil.java:[line 274]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE" instanceHash="1945905f2391c9c9ee4e46875d43b16e" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="253">
+    <ShortMessage>Method ignores exceptional return value</ShortMessage>
+    <LongMessage>Exceptional return value of java.io.File.delete() ignored in org.openmrs.web.filter.initialization.TestInstallUtil.addZippedTestModules(InputStream)</LongMessage>
+    <Class classname="org.openmrs.web.filter.initialization.TestInstallUtil" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java">
+        <Message>In TestInstallUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.initialization.TestInstallUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.initialization.TestInstallUtil" name="addZippedTestModules" signature="(Ljava/io/InputStream;)Z" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" start="138" end="220" startBytecode="0" endBytecode="1128" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java"/>
+      <Message>In method org.openmrs.web.filter.initialization.TestInstallUtil.addZippedTestModules(InputStream)</Message>
+    </Method>
+    <Method classname="java.io.File" name="delete" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1034" end="1041" startBytecode="0" endBytecode="91" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <Message>Called method java.io.File.delete()</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" primary="true" start="216" end="216" startBytecode="379" endBytecode="379" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java">
+      <Message>At TestInstallUtil.java:[line 216]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.initialization.TestInstallUtil" primary="true" start="216" end="216" startBytecode="379" endBytecode="379" sourcefile="TestInstallUtil.java" sourcepath="org/openmrs/web/filter/initialization/TestInstallUtil.java" relSourcepath="java/org/openmrs/web/filter/initialization/TestInstallUtil.java">
+      <Message>At TestInstallUtil.java:[line 216]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL" instanceHash="ef834161d2dd6fd96ff78fe0ccdf823a" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method may fail to clean up stream or resource</ShortMessage>
+    <LongMessage>org.openmrs.web.filter.update.UpdateFilter.isSuperUser(Connection, Integer) may fail to clean up java.sql.Statement</LongMessage>
+    <Class classname="org.openmrs.web.filter.update.UpdateFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java">
+        <Message>In UpdateFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.update.UpdateFilter</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.update.UpdateFilter" name="isSuperUser" signature="(Ljava/sql/Connection;Ljava/lang/Integer;)Z" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" start="466" end="477" startBytecode="0" endBytecode="231" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java"/>
+      <Message>In method org.openmrs.web.filter.update.UpdateFilter.isSuperUser(Connection, Integer)</Message>
+    </Method>
+    <Class classname="java.sql.Statement" role="CLASS_REFTYPE">
+      <SourceLine classname="java.sql.Statement" sourcefile="Statement.java" sourcepath="java/sql/Statement.java">
+        <Message>In Statement.java</Message>
+      </SourceLine>
+      <Message>Reference type java.sql.Statement</Message>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING">
+      <Message>1 instances of obligation remaining</Message>
+    </Int>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" primary="true" start="467" end="467" startBytecode="5" endBytecode="5" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at UpdateFilter.java:[line 467] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" start="468" end="468" startBytecode="12" endBytecode="12" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at UpdateFilter.java:[line 468]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" start="469" end="469" startBytecode="24" endBytecode="24" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at UpdateFilter.java:[line 469]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" start="470" end="470" startBytecode="34" endBytecode="34" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at UpdateFilter.java:[line 470]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" start="477" end="477" startBytecode="81" endBytecode="81" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at UpdateFilter.java:[line 477]</Message>
+    </SourceLine>
+    <String value="{Statement x 1}" role="STRING_REMAINING_OBLIGATIONS">
+      <Message>Remaining obligations: {Statement x 1}</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="SWL_SLEEP_WITH_LOCK_HELD" priority="2" rank="14" abbrev="SWL" category="MT_CORRECTNESS" instanceHash="ff7ad7f7fe514210dc840c13543b5f8b" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method calls Thread.sleep() with a lock held</ShortMessage>
+    <LongMessage>org.openmrs.web.filter.update.UpdateFilter.doPost(HttpServletRequest, HttpServletResponse) calls Thread.sleep() with a lock held</LongMessage>
+    <Class classname="org.openmrs.web.filter.update.UpdateFilter" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java">
+        <Message>In UpdateFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.update.UpdateFilter</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.update.UpdateFilter" name="doPost" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" start="146" end="292" startBytecode="0" endBytecode="1611" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java"/>
+      <Message>In method org.openmrs.web.filter.update.UpdateFilter.doPost(HttpServletRequest, HttpServletResponse)</Message>
+    </Method>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" primary="true" start="205" end="205" startBytecode="293" endBytecode="293" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java">
+      <Message>At UpdateFilter.java:[line 205]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" primary="true" start="205" end="205" startBytecode="293" endBytecode="293" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java">
+      <Message>At UpdateFilter.java:[line 205]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="IS2_INCONSISTENT_SYNC" priority="2" rank="17" abbrev="IS" category="MT_CORRECTNESS" instanceHash="ce92b254e6dee5e19b4188b42fae4a48" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="366">
+    <ShortMessage>Inconsistent synchronization</ShortMessage>
+    <LongMessage>Inconsistent synchronization of org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion.hasUpdateWarnings; locked 66% of time</LongMessage>
+    <Class classname="org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java">
+        <Message>In UpdateFilter.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion" name="hasUpdateWarnings" signature="Z" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java">
+        <Message>In UpdateFilter.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion.hasUpdateWarnings</Message>
+    </Field>
+    <Int value="66" role="INT_SYNC_PERCENT">
+      <Message>Synchronized 66% of the time</Message>
+    </Int>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter" primary="true" start="267" end="267" startBytecode="739" endBytecode="739" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java" role="SOURCE_LINE_UNSYNC_ACCESS">
+      <Message>Unsynchronized access at UpdateFilter.java:[line 267]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion" start="690" end="690" startBytecode="1" endBytecode="1" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java" role="SOURCE_LINE_SYNC_ACCESS">
+      <Message>Synchronized access at UpdateFilter.java:[line 690]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion" start="695" end="695" startBytecode="13" endBytecode="13" sourcefile="UpdateFilter.java" sourcepath="org/openmrs/web/filter/update/UpdateFilter.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilter.java" role="SOURCE_LINE_SYNC_ACCESS">
+      <Message>Synchronized access at UpdateFilter.java:[line 695]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="3408f70ae271305cc1d8951b0eb530b0" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.update.UpdateFilterModel.footerTemplate</LongMessage>
+    <Class classname="org.openmrs.web.filter.update.UpdateFilterModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+        <Message>In UpdateFilterModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.update.UpdateFilterModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.update.UpdateFilterModel" name="footerTemplate" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+        <Message>In UpdateFilterModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.update.UpdateFilterModel.footerTemplate</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" primary="true" start="34" end="34" startBytecode="13" endBytecode="13" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+      <Message>At UpdateFilterModel.java:[line 34]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="994dd39b943cb6fef35e46f436410ab1" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.update.UpdateFilterModel.headerTemplate</LongMessage>
+    <Class classname="org.openmrs.web.filter.update.UpdateFilterModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+        <Message>In UpdateFilterModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.update.UpdateFilterModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.update.UpdateFilterModel" name="headerTemplate" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+        <Message>In UpdateFilterModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.update.UpdateFilterModel.headerTemplate</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" primary="true" start="31" end="31" startBytecode="7" endBytecode="7" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+      <Message>At UpdateFilterModel.java:[line 31]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="c704e383f796bc9d67b93a7d24362ccf" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.update.UpdateFilterModel.setupPageUrl</LongMessage>
+    <Class classname="org.openmrs.web.filter.update.UpdateFilterModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+        <Message>In UpdateFilterModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.update.UpdateFilterModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.update.UpdateFilterModel" name="setupPageUrl" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+        <Message>In UpdateFilterModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.update.UpdateFilterModel.setupPageUrl</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" primary="true" start="40" end="40" startBytecode="30" endBytecode="30" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+      <Message>At UpdateFilterModel.java:[line 40]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="df88faffd7ed53c882511493bfe945f9" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: org.openmrs.web.filter.update.UpdateFilterModel.superuserrole</LongMessage>
+    <Class classname="org.openmrs.web.filter.update.UpdateFilterModel" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+        <Message>In UpdateFilterModel.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.update.UpdateFilterModel</Message>
+    </Class>
+    <Field classname="org.openmrs.web.filter.update.UpdateFilterModel" name="superuserrole" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+        <Message>In UpdateFilterModel.java</Message>
+      </SourceLine>
+      <Message>Field org.openmrs.web.filter.update.UpdateFilterModel.superuserrole</Message>
+    </Field>
+    <SourceLine classname="org.openmrs.web.filter.update.UpdateFilterModel" primary="true" start="38" end="38" startBytecode="24" endBytecode="24" sourcefile="UpdateFilterModel.java" sourcepath="org/openmrs/web/filter/update/UpdateFilterModel.java" relSourcepath="java/org/openmrs/web/filter/update/UpdateFilterModel.java">
+      <Message>At UpdateFilterModel.java:[line 38]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL" instanceHash="1d7615346606f43bf4ca1e44a68f2b0d" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method may fail to clean up stream or resource</ShortMessage>
+    <LongMessage>org.openmrs.web.filter.util.FilterUtil.getUserIdByName(String, Connection) may fail to clean up java.sql.Statement</LongMessage>
+    <Class classname="org.openmrs.web.filter.util.FilterUtil" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java">
+        <Message>In FilterUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.util.FilterUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.util.FilterUtil" name="getUserIdByName" signature="(Ljava/lang/String;Ljava/sql/Connection;)Ljava/lang/Integer;" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="247" end="258" startBytecode="0" endBytecode="220" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java"/>
+      <Message>In method org.openmrs.web.filter.util.FilterUtil.getUserIdByName(String, Connection)</Message>
+    </Method>
+    <Class classname="java.sql.Statement" role="CLASS_REFTYPE">
+      <SourceLine classname="java.sql.Statement" sourcefile="Statement.java" sourcepath="java/sql/Statement.java">
+        <Message>In Statement.java</Message>
+      </SourceLine>
+      <Message>Reference type java.sql.Statement</Message>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING">
+      <Message>1 instances of obligation remaining</Message>
+    </Int>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" primary="true" start="248" end="248" startBytecode="5" endBytecode="5" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at FilterUtil.java:[line 248] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="249" end="249" startBytecode="11" endBytecode="11" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 249]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="250" end="250" startBytecode="19" endBytecode="19" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 250]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="251" end="251" startBytecode="27" endBytecode="27" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 251]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="252" end="252" startBytecode="30" endBytecode="30" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 252]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="258" end="258" startBytecode="70" endBytecode="70" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 258]</Message>
+    </SourceLine>
+    <String value="{Statement x 1}" role="STRING_REMAINING_OBLIGATIONS">
+      <Message>Remaining obligations: {Statement x 1}</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL" instanceHash="9aad60e6310d3b08a99a0159c072484a" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method may fail to clean up stream or resource</ShortMessage>
+    <LongMessage>org.openmrs.web.filter.util.FilterUtil.readSystemDefaultLocale(Connection) may fail to clean up java.sql.Statement</LongMessage>
+    <Class classname="org.openmrs.web.filter.util.FilterUtil" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java">
+        <Message>In FilterUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.util.FilterUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.util.FilterUtil" name="readSystemDefaultLocale" signature="(Ljava/sql/Connection;)Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="120" end="150" startBytecode="0" endBytecode="594" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java"/>
+      <Message>In method org.openmrs.web.filter.util.FilterUtil.readSystemDefaultLocale(Connection)</Message>
+    </Method>
+    <Class classname="java.sql.Statement" role="CLASS_REFTYPE">
+      <SourceLine classname="java.sql.Statement" sourcefile="Statement.java" sourcepath="java/sql/Statement.java">
+        <Message>In Statement.java</Message>
+      </SourceLine>
+      <Message>Reference type java.sql.Statement</Message>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING">
+      <Message>1 instances of obligation remaining</Message>
+    </Int>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" primary="true" start="128" end="128" startBytecode="25" endBytecode="25" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at FilterUtil.java:[line 128] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="129" end="129" startBytecode="32" endBytecode="32" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 129]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="130" end="130" startBytecode="42" endBytecode="42" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 130]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="141" end="141" startBytecode="80" endBytecode="80" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 141]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="150" end="150" startBytecode="201" endBytecode="201" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 150]</Message>
+    </SourceLine>
+    <String value="{Statement x 1}" role="STRING_REMAINING_OBLIGATIONS">
+      <Message>Remaining obligations: {Statement x 1}</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL" instanceHash="9d97a90aba00ba34ee5d454b2e32102" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method may fail to clean up stream or resource on checked exception</ShortMessage>
+    <LongMessage>org.openmrs.web.filter.util.FilterUtil.restoreLocale(String) may fail to clean up java.sql.Statement on checked exception</LongMessage>
+    <Class classname="org.openmrs.web.filter.util.FilterUtil" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java">
+        <Message>In FilterUtil.java</Message>
+      </SourceLine>
+      <Message>In class org.openmrs.web.filter.util.FilterUtil</Message>
+    </Class>
+    <Method classname="org.openmrs.web.filter.util.FilterUtil" name="restoreLocale" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="50" end="109" startBytecode="0" endBytecode="922" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java"/>
+      <Message>In method org.openmrs.web.filter.util.FilterUtil.restoreLocale(String)</Message>
+    </Method>
+    <Class classname="java.sql.Statement" role="CLASS_REFTYPE">
+      <SourceLine classname="java.sql.Statement" sourcefile="Statement.java" sourcepath="java/sql/Statement.java">
+        <Message>In Statement.java</Message>
+      </SourceLine>
+      <Message>Reference type java.sql.Statement</Message>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING">
+      <Message>1 instances of obligation remaining</Message>
+    </Int>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" primary="true" start="62" end="62" startBytecode="36" endBytecode="36" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at FilterUtil.java:[line 62] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="63" end="63" startBytecode="42" endBytecode="42" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 63]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="81" end="81" startBytecode="178" endBytecode="178" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 81]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="82" end="82" startBytecode="180" endBytecode="180" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 82]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="85" end="85" startBytecode="256" endBytecode="256" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 85]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="86" end="86" startBytecode="258" endBytecode="258" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 86]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="90" end="90" startBytecode="280" endBytecode="280" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 90]</Message>
+    </SourceLine>
+    <SourceLine classname="org.openmrs.web.filter.util.FilterUtil" start="91" end="91" startBytecode="282" endBytecode="282" sourcefile="FilterUtil.java" sourcepath="org/openmrs/web/filter/util/FilterUtil.java" relSourcepath="java/org/openmrs/web/filter/util/FilterUtil.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilterUtil.java:[line 91]</Message>
+    </SourceLine>
+    <String value="{Statement x 1}" role="STRING_REMAINING_OBLIGATIONS">
+      <Message>Remaining obligations: {Statement x 1}</Message>
+    </String>
+  </BugInstance>
+  <BugCategory category="BAD_PRACTICE">
+    <Description>Bad practice</Description>
+  </BugCategory>
+  <BugCategory category="MALICIOUS_CODE">
+    <Description>Malicious code vulnerability</Description>
+  </BugCategory>
+  <BugCategory category="PERFORMANCE">
+    <Description>Performance</Description>
+  </BugCategory>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugCategory category="EXPERIMENTAL">
+    <Description>Experimental</Description>
+  </BugCategory>
+  <BugCategory category="MT_CORRECTNESS">
+    <Description>Multithreaded correctness</Description>
+  </BugCategory>
+  <BugCategory category="I18N">
+    <Description>Internationalization</Description>
+  </BugCategory>
+  <BugPattern type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" abbrev="UrF" category="STYLE">
+    <ShortDescription>Unread public/protected field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This field is never read.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="WMI_WRONG_MAP_ITERATOR" abbrev="WMI" category="PERFORMANCE">
+    <ShortDescription>Inefficient use of keySet iterator instead of entrySet iterator</ShortDescription>
+    <Details><![CDATA[
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        ]]></Details>
+  </BugPattern>
+  <BugPattern type="NM_SAME_SIMPLE_NAME_AS_SUPERCLASS" abbrev="Nm" category="BAD_PRACTICE">
+    <ShortDescription>Class names shouldn&apos;t shadow simple name of superclass</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This class has a simple name that is identical to that of its superclass, except
+that its superclass is in a different package (e.g., <code>alpha.Foo</code> extends <code>beta.Foo</code>).
+This can be exceptionally confusing, create lots of situations in which you have to look at import statements
+to resolve references and creates many
+opportunities to accidentally define methods that do not override methods in their superclasses.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE" abbrev="NP" category="STYLE">
+    <ShortDescription>Possible null pointer dereference due to return value of called method</ShortDescription>
+    <Details><![CDATA[
+      
+<p> The return value from a method is dereferenced without a null check,
+and the return value of that method is one that should generally be checked
+for null.  This may lead to a <code>NullPointerException</code> when the code is executed.
+</p>
+      
+   ]]></Details>
+  </BugPattern>
+  <BugPattern type="REC_CATCH_EXCEPTION" abbrev="REC" category="STYLE" cweid="396">
+    <ShortDescription>Exception is caught when Exception is not thrown</ShortDescription>
+    <Details><![CDATA[
+  
+  <p>
+  This method uses a try-catch block that catches Exception objects, but Exception is not
+  thrown within the try block, and RuntimeException is not explicitly caught.  It is a common bug pattern to
+  say try { ... } catch (Exception e) { something } as a shorthand for catching a number of types of exception
+  each of whose catch blocks is identical, but this construct also accidentally catches RuntimeException as well,
+  masking potential bugs.
+  </p>
+  <p>A better approach is to either explicitly catch the specific exceptions that are thrown,
+  or to explicitly catch RuntimeException exception, rethrow it, and then catch all non-Runtime Exceptions, as shown below:</p>
+  <pre>
+  try {
+    ...
+  } catch (RuntimeException e) {
+    throw e;
+  } catch (Exception e) {
+    ... deal with all non-runtime exceptions ...
+  }</pre>
+  
+     ]]></Details>
+  </BugPattern>
+  <BugPattern type="OBL_UNSATISFIED_OBLIGATION" abbrev="OBL" category="EXPERIMENTAL">
+    <ShortDescription>Method may fail to clean up stream or resource</ShortDescription>
+    <Details><![CDATA[
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          To send feedback, either:
+          </p>
+          <ul>
+            <li>send email to findbugs@cs.umd.edu</li>
+            <li>file a bug report: <a href="http://findbugs.sourceforge.net/reportingBugs.html">http://findbugs.sourceforge.net/reportingBugs.html</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      ]]></Details>
+  </BugPattern>
+  <BugPattern type="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE" abbrev="RCN" category="STYLE">
+    <ShortDescription>Redundant nullcheck of value known to be non-null</ShortDescription>
+    <Details><![CDATA[
+
+<p> This method contains a redundant check of a known non-null value against
+the constant null.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="MS_PKGPROTECT" abbrev="MS" category="MALICIOUS_CODE">
+    <ShortDescription>Field should be package protected</ShortDescription>
+    <Details><![CDATA[
+
+  <p> A mutable static field could be changed by malicious code or
+   by accident.
+   The field could be made package protected to avoid
+   this vulnerability.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="DM_GC" abbrev="Dm" category="PERFORMANCE">
+    <ShortDescription>Explicit garbage collection; extremely dubious except in benchmarking code</ShortDescription>
+    <Details><![CDATA[
+
+  <p> Code explicitly invokes garbage collection.
+  Except for specific use in benchmarking, this is very dubious.</p>
+  <p>In the past, situations where people have explicitly invoked
+  the garbage collector in routines such as close or finalize methods
+  has led to huge performance black holes. Garbage collection
+   can be expensive. Any situation that forces hundreds or thousands
+   of garbage collections will bring the machine to a crawl.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" abbrev="ST" category="STYLE">
+    <ShortDescription>Write to static field from instance method</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This instance method writes to a static field. This is tricky to get
+correct if multiple instances are being manipulated,
+and generally bad practice.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="SWL_SLEEP_WITH_LOCK_HELD" abbrev="SWL" category="MT_CORRECTNESS">
+    <ShortDescription>Method calls Thread.sleep() with a lock held</ShortDescription>
+    <Details><![CDATA[
+      
+      <p>
+      This method calls Thread.sleep() with a lock held.  This may result
+      in very poor performance and scalability, or a deadlock, since other threads may
+      be waiting to acquire the lock.  It is a much better idea to call
+      wait() on the lock, which releases the lock and allows other threads
+      to run.
+      </p>
+      
+   ]]></Details>
+  </BugPattern>
+  <BugPattern type="EI_EXPOSE_REP" abbrev="EI" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by returning reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="MS_CANNOT_BE_FINAL" abbrev="MS" category="MALICIOUS_CODE">
+    <ShortDescription>Field isn&apos;t final and can&apos;t be protected from malicious code</ShortDescription>
+    <Details><![CDATA[
+
+  <p>
+ A mutable static field could be changed by malicious code or
+        by accident from another package.
+   Unfortunately, the way the field is used doesn't allow
+   any easy fix to this problem.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="DM_DEFAULT_ENCODING" abbrev="Dm" category="I18N">
+    <ShortDescription>Reliance on default encoding</ShortDescription>
+    <Details><![CDATA[
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      ]]></Details>
+  </BugPattern>
+  <BugPattern type="SE_BAD_FIELD" abbrev="Se" category="BAD_PRACTICE">
+    <ShortDescription>Non-transient non-serializable instance field in serializable class</ShortDescription>
+    <Details><![CDATA[
+
+<p> This Serializable class defines a non-primitive instance field which is neither transient,
+Serializable, or <code>java.lang.Object</code>, and does not appear to implement
+the <code>Externalizable</code> interface or the
+<code>readObject()</code> and <code>writeObject()</code> methods.&nbsp;
+Objects of this class will not be deserialized correctly if a non-Serializable
+object is stored in this field.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="IS2_INCONSISTENT_SYNC" abbrev="IS" category="MT_CORRECTNESS">
+    <ShortDescription>Inconsistent synchronization</ShortDescription>
+    <Details><![CDATA[
+
+  <p> The fields of this class appear to be accessed inconsistently with respect
+  to synchronization.&nbsp; This bug report indicates that the bug pattern detector
+  judged that
+  </p>
+  <ul>
+  <li> The class contains a mix of locked and unlocked accesses,</li>
+  <li> The class is <b>not</b> annotated as javax.annotation.concurrent.NotThreadSafe,</li>
+  <li> At least one locked access was performed by one of the class's own methods, and</li>
+  <li> The number of unsynchronized field accesses (reads and writes) was no more than
+       one third of all accesses, with writes being weighed twice as high as reads</li>
+  </ul>
+
+  <p> A typical bug matching this bug pattern is forgetting to synchronize
+  one of the methods in a class that is intended to be thread-safe.</p>
+
+  <p> You can select the nodes labeled "Unsynchronized access" to show the
+  code locations where the detector believed that a field was accessed
+  without synchronization.</p>
+
+  <p> Note that there are various sources of inaccuracy in this detector;
+  for example, the detector cannot statically detect all situations in which
+  a lock is held.&nbsp; Also, even when the detector is accurate in
+  distinguishing locked vs. unlocked accesses, the code in question may still
+  be correct.</p>
+
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE" abbrev="OBL" category="EXPERIMENTAL">
+    <ShortDescription>Method may fail to clean up stream or resource on checked exception</ShortDescription>
+    <Details><![CDATA[
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          To send feedback, either:
+          </p>
+          <ul>
+            <li>send email to findbugs@cs.umd.edu</li>
+            <li>file a bug report: <a href="http://findbugs.sourceforge.net/reportingBugs.html">http://findbugs.sourceforge.net/reportingBugs.html</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      ]]></Details>
+  </BugPattern>
+  <BugPattern type="UC_USELESS_CONDITION" abbrev="UC" category="STYLE">
+    <ShortDescription>Condition has no effect</ShortDescription>
+    <Details><![CDATA[
+
+<p>This condition always produces the same result as the value of the involved variable was narrowed before. 
+Probably something else was meant or condition can be removed.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" abbrev="RV" category="BAD_PRACTICE" cweid="253">
+    <ShortDescription>Method ignores exceptional return value</ShortDescription>
+    <Details><![CDATA[
+
+   <p> This method returns a value that is not checked. The return value should be checked
+since it can indicate an unusual or unexpected function execution. For
+example, the <code>File.delete()</code> method returns false
+if the file could not be successfully deleted (rather than
+throwing an Exception).
+If you don't check the result, you won't notice if the method invocation
+signals unexpected behavior by returning an atypical return value.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="ST">
+    <Description>Misuse of static fields</Description>
+  </BugCode>
+  <BugCode abbrev="NP" cweid="476">
+    <Description>Null pointer dereference</Description>
+  </BugCode>
+  <BugCode abbrev="EI">
+    <Description>Method returning array may expose internal representation</Description>
+  </BugCode>
+  <BugCode abbrev="RV" cweid="440">
+    <Description>Bad use of return value from method</Description>
+  </BugCode>
+  <BugCode abbrev="MS" cweid="218">
+    <Description>Mutable static field</Description>
+  </BugCode>
+  <BugCode abbrev="UrF">
+    <Description>Unread field</Description>
+  </BugCode>
+  <BugCode abbrev="Dm">
+    <Description>Dubious method used</Description>
+  </BugCode>
+  <BugCode abbrev="SWL">
+    <Description>Sleep with lock held</Description>
+  </BugCode>
+  <BugCode abbrev="IS" cweid="366">
+    <Description>Inconsistent synchronization</Description>
+  </BugCode>
+  <BugCode abbrev="UC">
+    <Description>Useless code</Description>
+  </BugCode>
+  <BugCode abbrev="REC">
+    <Description>RuntimeException capture</Description>
+  </BugCode>
+  <BugCode abbrev="WMI">
+    <Description>Inefficient Map Iterator</Description>
+  </BugCode>
+  <BugCode abbrev="Se">
+    <Description>Incorrect definition of Serializable class</Description>
+  </BugCode>
+  <BugCode abbrev="OBL">
+    <Description>Unsatisfied obligation to clean up stream or resource</Description>
+  </BugCode>
+  <BugCode abbrev="RCN" cweid="476">
+    <Description>Redundant comparison to null</Description>
+  </BugCode>
+  <BugCode abbrev="Nm">
+    <Description>Confusing method name</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Mon, 24 Oct 2016 14:48:26 +0200" total_classes="49" referenced_classes="324" total_bugs="47" total_size="4010" num_packages="12" java_version="1.8.0_40-release" vm_version="25.40-b25" cpu_seconds="159.20" clock_seconds="665.34" peak_mbytes="741.50" alloc_mbytes="725.00" gc_seconds="1.77" priority_2="38" priority_1="9">
+    <FileStats path="org/openmrs/OpenmrsCharacterEscapes.java" bugCount="1" size="17" bugHash="f6c1d1354daf029607de9940c5d03871"/>
+    <FileStats path="org/openmrs/module/web/ModuleResourcesServlet.java" bugCount="0" size="44"/>
+    <FileStats path="org/openmrs/module/web/ModuleServlet.java" bugCount="0" size="47"/>
+    <FileStats path="org/openmrs/module/web/WebModuleUtil.java" bugCount="4" size="433" bugHash="913c0feaab78de424ee2011ce82aef46"/>
+    <FileStats path="org/openmrs/module/web/filter/ModuleFilter.java" bugCount="0" size="15"/>
+    <FileStats path="org/openmrs/module/web/filter/ModuleFilterChain.java" bugCount="0" size="17"/>
+    <FileStats path="org/openmrs/module/web/filter/ModuleFilterConfig.java" bugCount="0" size="27"/>
+    <FileStats path="org/openmrs/module/web/filter/ModuleFilterDefinition.java" bugCount="1" size="69" bugHash="a58f981bcca8fa9892e4d56ca1d022c0"/>
+    <FileStats path="org/openmrs/module/web/filter/ModuleFilterMapping.java" bugCount="1" size="105" bugHash="5139467b6aaaca2f0de0cc68601a4900"/>
+    <FileStats path="org/openmrs/web/DispatcherServlet.java" bugCount="1" size="36" bugHash="274fd086ec5538fb229b05ab904c7193"/>
+    <FileStats path="org/openmrs/web/Listener.java" bugCount="6" size="311" bugHash="5600095c9ca29651965c540a7480833b"/>
+    <FileStats path="org/openmrs/web/OpenmrsBindingInitializer.java" bugCount="0" size="42"/>
+    <FileStats path="org/openmrs/web/StaticDispatcherServlet.java" bugCount="0" size="26"/>
+    <FileStats path="org/openmrs/web/WebConstants.java" bugCount="1" size="41" bugHash="ed9506a492b5b5bee106645aef4f2875"/>
+    <FileStats path="org/openmrs/web/WebDaemon.java" bugCount="0" size="26"/>
+    <FileStats path="org/openmrs/web/WebUtil.java" bugCount="1" size="142" bugHash="d71c81531886fa43657f852377037af6"/>
+    <FileStats path="org/openmrs/web/controller/PseudoStaticContentController.java" bugCount="0" size="48"/>
+    <FileStats path="org/openmrs/web/filter/GZIPFilter.java" bugCount="0" size="67"/>
+    <FileStats path="org/openmrs/web/filter/GZIPRequestStream.java" bugCount="0" size="13"/>
+    <FileStats path="org/openmrs/web/filter/GZIPRequestWrapper.java" bugCount="0" size="9"/>
+    <FileStats path="org/openmrs/web/filter/GZIPResponseStream.java" bugCount="0" size="77"/>
+    <FileStats path="org/openmrs/web/filter/GZIPResponseWrapper.java" bugCount="0" size="55"/>
+    <FileStats path="org/openmrs/web/filter/JspClassLoaderFilter.java" bugCount="0" size="11"/>
+    <FileStats path="org/openmrs/web/filter/OpenmrsFilter.java" bugCount="0" size="34"/>
+    <FileStats path="org/openmrs/web/filter/StartupFilter.java" bugCount="2" size="140" bugHash="26771936ffb8cfdb6f628d9dc7adaabe"/>
+    <FileStats path="org/openmrs/web/filter/initialization/InitializationFilter.java" bugCount="9" size="1039" bugHash="4de4c33dbd596524999d4bf58bcc7d06"/>
+    <FileStats path="org/openmrs/web/filter/initialization/InitializationWizardModel.java" bugCount="7" size="88" bugHash="7b64929502ac403fecdd8d82d28e29e9"/>
+    <FileStats path="org/openmrs/web/filter/initialization/TestInstallUtil.java" bugCount="3" size="125" bugHash="e9755fe3aa82939fe4801efd9f505d25"/>
+    <FileStats path="org/openmrs/web/filter/initialization/WizardTask.java" bugCount="0" size="29"/>
+    <FileStats path="org/openmrs/web/filter/startuperror/StartupErrorFilter.java" bugCount="0" size="39"/>
+    <FileStats path="org/openmrs/web/filter/startuperror/StartupErrorFilterModel.java" bugCount="0" size="17"/>
+    <FileStats path="org/openmrs/web/filter/update/UpdateFilter.java" bugCount="3" size="374" bugHash="6d278576e1853859020e47a255898107"/>
+    <FileStats path="org/openmrs/web/filter/update/UpdateFilterModel.java" bugCount="4" size="34" bugHash="4ccb8266fcdd9ac6e659ca5451a37219"/>
+    <FileStats path="org/openmrs/web/filter/util/CustomResourceLoader.java" bugCount="0" size="46"/>
+    <FileStats path="org/openmrs/web/filter/util/ErrorMessageConstants.java" bugCount="0" size="42"/>
+    <FileStats path="org/openmrs/web/filter/util/FilterUtil.java" bugCount="3" size="132" bugHash="917865118bf3f2a153a7c990e840636b"/>
+    <FileStats path="org/openmrs/web/filter/util/LocalizationTool.java" bugCount="0" size="26"/>
+    <FileStats path="org/springframework/http/converter/json/MappingJacksonHttpMessageConverter.java" bugCount="0" size="72"/>
+    <FileStats path="org/springframework/web/servlet/view/json/MappingJacksonJsonView.java" bugCount="0" size="95"/>
+    <PackageStats package="org.openmrs" total_bugs="1" total_types="1" total_size="17" priority_2="1">
+      <ClassStats class="org.openmrs.OpenmrsCharacterEscapes" sourceFile="OpenmrsCharacterEscapes.java" interface="false" size="17" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="org.openmrs.module.web" total_bugs="4" total_types="5" total_size="524" priority_2="4">
+      <ClassStats class="org.openmrs.module.web.ModuleResourcesServlet" sourceFile="ModuleResourcesServlet.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.openmrs.module.web.ModuleServlet" sourceFile="ModuleServlet.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="org.openmrs.module.web.ModuleServlet$SimpleServletConfig" sourceFile="ModuleServlet.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="org.openmrs.module.web.WebModuleUtil" sourceFile="WebModuleUtil.java" interface="false" size="428" bugs="4" priority_2="4"/>
+      <ClassStats class="org.openmrs.module.web.WebModuleUtil$1" sourceFile="WebModuleUtil.java" interface="false" size="5" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.openmrs.module.web.filter" total_bugs="2" total_types="5" total_size="233" priority_1="2">
+      <ClassStats class="org.openmrs.module.web.filter.ModuleFilter" sourceFile="ModuleFilter.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="org.openmrs.module.web.filter.ModuleFilterChain" sourceFile="ModuleFilterChain.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.openmrs.module.web.filter.ModuleFilterConfig" sourceFile="ModuleFilterConfig.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="org.openmrs.module.web.filter.ModuleFilterDefinition" sourceFile="ModuleFilterDefinition.java" interface="false" size="69" bugs="1" priority_1="1"/>
+      <ClassStats class="org.openmrs.module.web.filter.ModuleFilterMapping" sourceFile="ModuleFilterMapping.java" interface="false" size="105" bugs="1" priority_1="1"/>
+    </PackageStats>
+    <PackageStats package="org.openmrs.web" total_bugs="9" total_types="9" total_size="624" priority_2="5" priority_1="4">
+      <ClassStats class="org.openmrs.web.DispatcherServlet" sourceFile="DispatcherServlet.java" interface="false" size="36" bugs="1" priority_1="1"/>
+      <ClassStats class="org.openmrs.web.Listener" sourceFile="Listener.java" interface="false" size="305" bugs="6" priority_2="4" priority_1="2"/>
+      <ClassStats class="org.openmrs.web.Listener$1" sourceFile="Listener.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.openmrs.web.OpenmrsBindingInitializer" sourceFile="OpenmrsBindingInitializer.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.openmrs.web.StaticDispatcherServlet" sourceFile="StaticDispatcherServlet.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="org.openmrs.web.WebConstants" sourceFile="WebConstants.java" interface="false" size="41" bugs="1" priority_2="1"/>
+      <ClassStats class="org.openmrs.web.WebDaemon" sourceFile="WebDaemon.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="org.openmrs.web.WebDaemon$1" sourceFile="WebDaemon.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.openmrs.web.WebUtil" sourceFile="WebUtil.java" interface="false" size="142" bugs="1" priority_1="1"/>
+    </PackageStats>
+    <PackageStats package="org.openmrs.web.controller" total_bugs="0" total_types="1" total_size="48">
+      <ClassStats class="org.openmrs.web.controller.PseudoStaticContentController" sourceFile="PseudoStaticContentController.java" interface="false" size="48" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.openmrs.web.filter" total_bugs="2" total_types="8" total_size="406" priority_2="1" priority_1="1">
+      <ClassStats class="org.openmrs.web.filter.GZIPFilter" sourceFile="GZIPFilter.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.GZIPRequestStream" sourceFile="GZIPRequestStream.java" interface="false" size="13" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.GZIPRequestWrapper" sourceFile="GZIPRequestWrapper.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.GZIPResponseStream" sourceFile="GZIPResponseStream.java" interface="false" size="77" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.GZIPResponseWrapper" sourceFile="GZIPResponseWrapper.java" interface="false" size="55" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.JspClassLoaderFilter" sourceFile="JspClassLoaderFilter.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.OpenmrsFilter" sourceFile="OpenmrsFilter.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.StartupFilter" sourceFile="StartupFilter.java" interface="false" size="140" bugs="2" priority_2="1" priority_1="1"/>
+    </PackageStats>
+    <PackageStats package="org.openmrs.web.filter.initialization" total_bugs="19" total_types="7" total_size="1281" priority_2="17" priority_1="2">
+      <ClassStats class="org.openmrs.web.filter.initialization.InitializationFilter" sourceFile="InitializationFilter.java" interface="false" size="695" bugs="7" priority_2="7"/>
+      <ClassStats class="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion" sourceFile="InitializationFilter.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1" sourceFile="InitializationFilter.java" interface="false" size="256" bugs="2" priority_2="2"/>
+      <ClassStats class="org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1$1PrintingChangeSetExecutorCallback" sourceFile="InitializationFilter.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.initialization.InitializationWizardModel" sourceFile="InitializationWizardModel.java" interface="false" size="88" bugs="7" priority_2="7"/>
+      <ClassStats class="org.openmrs.web.filter.initialization.TestInstallUtil" sourceFile="TestInstallUtil.java" interface="false" size="125" bugs="3" priority_2="1" priority_1="2"/>
+      <ClassStats class="org.openmrs.web.filter.initialization.WizardTask" sourceFile="WizardTask.java" interface="false" size="29" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.openmrs.web.filter.startuperror" total_bugs="0" total_types="2" total_size="56">
+      <ClassStats class="org.openmrs.web.filter.startuperror.StartupErrorFilter" sourceFile="StartupErrorFilter.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.startuperror.StartupErrorFilterModel" sourceFile="StartupErrorFilterModel.java" interface="false" size="17" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.openmrs.web.filter.update" total_bugs="7" total_types="5" total_size="408" priority_2="7">
+      <ClassStats class="org.openmrs.web.filter.update.UpdateFilter" sourceFile="UpdateFilter.java" interface="false" size="253" bugs="3" priority_2="3"/>
+      <ClassStats class="org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion" sourceFile="UpdateFilter.java" interface="false" size="69" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion$1" sourceFile="UpdateFilter.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion$1$1PrintingChangeSetExecutorCallback" sourceFile="UpdateFilter.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.update.UpdateFilterModel" sourceFile="UpdateFilterModel.java" interface="false" size="34" bugs="4" priority_2="4"/>
+    </PackageStats>
+    <PackageStats package="org.openmrs.web.filter.util" total_bugs="3" total_types="4" total_size="246" priority_2="3">
+      <ClassStats class="org.openmrs.web.filter.util.CustomResourceLoader" sourceFile="CustomResourceLoader.java" interface="false" size="46" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.util.ErrorMessageConstants" sourceFile="ErrorMessageConstants.java" interface="false" size="42" bugs="0"/>
+      <ClassStats class="org.openmrs.web.filter.util.FilterUtil" sourceFile="FilterUtil.java" interface="false" size="132" bugs="3" priority_2="3"/>
+      <ClassStats class="org.openmrs.web.filter.util.LocalizationTool" sourceFile="LocalizationTool.java" interface="false" size="26" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.springframework.http.converter.json" total_bugs="0" total_types="1" total_size="72">
+      <ClassStats class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" sourceFile="MappingJacksonHttpMessageConverter.java" interface="false" size="72" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.springframework.web.servlet.view.json" total_bugs="0" total_types="1" total_size="95">
+      <ClassStats class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" sourceFile="MappingJacksonJsonView.java" interface="false" size="95" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="468" invocations="1394" avgMicrosecondsPerInvocation="336" maxMicrosecondsPerInvocation="21880" standardDeviationMircosecondsPerInvocation="1003"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="428" invocations="440" avgMicrosecondsPerInvocation="974" maxMicrosecondsPerInvocation="65197" standardDeviationMircosecondsPerInvocation="4956"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="375" invocations="324" avgMicrosecondsPerInvocation="1158" maxMicrosecondsPerInvocation="20745" standardDeviationMircosecondsPerInvocation="2731"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="374" invocations="324" avgMicrosecondsPerInvocation="1156" maxMicrosecondsPerInvocation="15686" standardDeviationMircosecondsPerInvocation="2186"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="350" invocations="434" avgMicrosecondsPerInvocation="808" maxMicrosecondsPerInvocation="46205" standardDeviationMircosecondsPerInvocation="3363"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="344" invocations="1065" avgMicrosecondsPerInvocation="323" maxMicrosecondsPerInvocation="17350" standardDeviationMircosecondsPerInvocation="908"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="308" invocations="411" avgMicrosecondsPerInvocation="749" maxMicrosecondsPerInvocation="62428" standardDeviationMircosecondsPerInvocation="3806"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="299" invocations="411" avgMicrosecondsPerInvocation="727" maxMicrosecondsPerInvocation="50748" standardDeviationMircosecondsPerInvocation="3320"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="295" invocations="412" avgMicrosecondsPerInvocation="717" maxMicrosecondsPerInvocation="39607" standardDeviationMircosecondsPerInvocation="2747"/>
+      <ClassProfile name="edu.umd.cs.findbugs.FindBugs2" totalMilliseconds="286" invocations="2" avgMicrosecondsPerInvocation="143346" maxMicrosecondsPerInvocation="167609" standardDeviationMircosecondsPerInvocation="24263"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="180" invocations="49" avgMicrosecondsPerInvocation="3677" maxMicrosecondsPerInvocation="47181" standardDeviationMircosecondsPerInvocation="9233"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="171" invocations="299" avgMicrosecondsPerInvocation="574" maxMicrosecondsPerInvocation="24461" standardDeviationMircosecondsPerInvocation="1947"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="124" invocations="1401" avgMicrosecondsPerInvocation="88" maxMicrosecondsPerInvocation="2130" standardDeviationMircosecondsPerInvocation="111"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="121" invocations="479" avgMicrosecondsPerInvocation="252" maxMicrosecondsPerInvocation="20399" standardDeviationMircosecondsPerInvocation="1332"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="117" invocations="412" avgMicrosecondsPerInvocation="284" maxMicrosecondsPerInvocation="12597" standardDeviationMircosecondsPerInvocation="881"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="102" invocations="324" avgMicrosecondsPerInvocation="316" maxMicrosecondsPerInvocation="5438" standardDeviationMircosecondsPerInvocation="660"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="89" invocations="324" avgMicrosecondsPerInvocation="276" maxMicrosecondsPerInvocation="5024" standardDeviationMircosecondsPerInvocation="501"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="88" invocations="324" avgMicrosecondsPerInvocation="272" maxMicrosecondsPerInvocation="8095" standardDeviationMircosecondsPerInvocation="743"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="82" invocations="72" avgMicrosecondsPerInvocation="1148" maxMicrosecondsPerInvocation="13672" standardDeviationMircosecondsPerInvocation="2418"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="81" invocations="49" avgMicrosecondsPerInvocation="1659" maxMicrosecondsPerInvocation="29547" standardDeviationMircosecondsPerInvocation="4425"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="74" invocations="412" avgMicrosecondsPerInvocation="181" maxMicrosecondsPerInvocation="17668" standardDeviationMircosecondsPerInvocation="1087"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="61" invocations="49" avgMicrosecondsPerInvocation="1247" maxMicrosecondsPerInvocation="14249" standardDeviationMircosecondsPerInvocation="2974"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="59" invocations="324" avgMicrosecondsPerInvocation="184" maxMicrosecondsPerInvocation="5722" standardDeviationMircosecondsPerInvocation="483"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RuntimeExceptionCapture" totalMilliseconds="58" invocations="49" avgMicrosecondsPerInvocation="1200" maxMicrosecondsPerInvocation="15032" standardDeviationMircosecondsPerInvocation="2666"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="56" invocations="324" avgMicrosecondsPerInvocation="175" maxMicrosecondsPerInvocation="3869" standardDeviationMircosecondsPerInvocation="312"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="55" invocations="49" avgMicrosecondsPerInvocation="1133" maxMicrosecondsPerInvocation="13448" standardDeviationMircosecondsPerInvocation="2184"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="54" invocations="166" avgMicrosecondsPerInvocation="330" maxMicrosecondsPerInvocation="7716" standardDeviationMircosecondsPerInvocation="888"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="50" invocations="49" avgMicrosecondsPerInvocation="1038" maxMicrosecondsPerInvocation="9718" standardDeviationMircosecondsPerInvocation="1843"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CrossSiteScripting" totalMilliseconds="48" invocations="49" avgMicrosecondsPerInvocation="999" maxMicrosecondsPerInvocation="17798" standardDeviationMircosecondsPerInvocation="2711"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="45" invocations="1201" avgMicrosecondsPerInvocation="37" maxMicrosecondsPerInvocation="1087" standardDeviationMircosecondsPerInvocation="65"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="45" invocations="324" avgMicrosecondsPerInvocation="139" maxMicrosecondsPerInvocation="1824" standardDeviationMircosecondsPerInvocation="237"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

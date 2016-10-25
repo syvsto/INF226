@@ -277,80 +277,128 @@ We ran ZAP version 2.5.0 for our tests.
 \paragraph{FindBugs}
 
   The first scan detected 1058 potential bugs. Some of them are from test classes
-  and will not be mentioned here.
+  and will not be mentioned here. The report generated from the FindBugs GUI was
+  very uninformative and hard to navigate. We found a plugin to IntelliJ IDEA
+  that used Findbugs as the backend and produced a more informative rapport
+  where it was easy to exclude the testbase as IntelliJ had med a build of the
+  codebase giving at a sense of which code was where. In this new rapport we
+  had a total of 296 warnings and a separation between what codebugs was very
+  certan was a bug and what mabye could be a bug. In the following text we have
+  made a presentation of the bugs findbug is most certain is a potential
+  problem.
   
   \begin{itemize}
     \item Correctness
       \item Bad use of return value from method
+        \item This code is not in use. The method takes no input and returns no
+          input and is marked as todo
       \item Masked Field
-      \item Null pointer dereference
-      \item Questionable use of reference equality rather than calling equals
-      \item Superfluous instanceof
+        \item Class defines field that masks field in superclass
+          org.openmrs.web.filter.StartupFilter:
+          \item This error is mostly harmless. It may have potential for generating
+            errors in later updates to the code. The field is marked as
+            protected in the superclass so it is excessive in the child and
+            probably should be removed.
+        \item Field UpdateFilter.log masks field in superclass
+          org.openmrs.web.filter.StartupFilter
+          \item Same as above
     \item Bad practice
-      \item Bad use of return value from method
-      \item Checking String equality using == or !=
-      \item Confusing method name
-      \item Database resource not closed on all paths
       \item Droppet or ignored excepton
-      \item Dubious method invocation
-      \item Format string problem
-      \item Incorrect definition of Serializable class
+        \item method might ignore exception
+          \item This method might ignore an exception. In general, exceptions
+            should be handled or reported in some way, or they should be thrown
+            out of the method.
+            This error occured in the following classes:
+            \item ServiceContext.setModuleService
+            \item WorkflowCollectionEditor.setAsText
+            \item OpenmrsUtil.parse
+            \item BooleanConceptChangeSet.getInt
+            \item BooleanConceptChangeSet.createConcept
       \item Initialization circularity
-      \item Method ignores results of InputStream.read()
-      \item Questionable use of reference equality rather than calling equals()
-      \item Serializable class with no Version ID
-      \item Stream not closed on all paths
-      \item Unsafe inheritance
-    \item Experimental
-      \item Unsatified obligation to clean up stream or resource
+        \item Class makes active use of subclass during initialization and might
+          result in null value.
+          Class:
+          \item Operator 
     \item Internationalization 
       \item Dubious method used
+        \item Reliance on default encoding
+          \item Found code that does a bit to string conversion while assuming
+            the default platform encoding is suitable. This could make the code
+            behave differently on different platforms.
+            Classes:
+            \item HL7ServiceImpl
+            \item ModuleFileParser
+            \item ModuleUtil
+            \item TextHandler
+            \item DatabaseUpdater
+            \item HTTPClient
+            \item OpenmrsUtil
+            \item CreateCodedOrderFrequencyForDrugOrderFrequencyChangeset
+            \item MigrateConceptReferenceTermChangeSet
+            \item SourceMySqldiffFile
+            \item Listener
+            \item StartupFilter
+            \item TestInstallUtil
     \item Malicious code vulnerability
-      \item Method returning array may expose internal representation
       \item Mutable static field
-      \item Storing reference to mutable object
-      \item Use doPrivilieged
+        \item Field isn´t final but should be
+          \item public static field isn´t final and could be change by malicius
+            code or by accident.
+            Classes:
+            \item SchedulerConstants
+            \item OpenmrsConstants
+            \item Security
+        \item Field is mutable array
+          \item Same as above and field is refering to an array.
+            Class:
+            \item OpenmrsConstants
     \item Multithreaded code vulnerability
-      \item Inconsistent synchronization
-      \item Sleep with lock held
-      \item Static use of type Calendar or DateFormat
       \item Unintended contention or possible deadlock due tp locking on shared objects
+        \item Synchronization on Boolean
+          \item There is a risk of syncing on a object belonging to another
+            process since there is only two boolean objects. Resulting in a deadlock
+            Class:
+            \item HL7InQueueProcessor
       \item Unsynchronized Lazy Initialization
+        \item Incorrect lazy initialization and update of static field
+          \item Static field is not completed and could be accessed by another
+            prosess while it is still initializing wich would lead to a
+            multithreading bug
+            Class:
+            \item OpenmrsClassLoader
     \item Performance
-      \item Dubious method used
-      \item Inefficient Map Iterator
-      \item Inner class could be made static 
-      \item Private method is never called
       \item Questionable Boxing of primitive value
-      \item String concatination in loop using + operator
-      \item Unread field
-      \item Unread field should be static
-      \item Unused field
+        \item Boxing a primitive to compare
+          \item It´s more efficient to use static compare method on primitives
+            Class:
+            \item ModuleFactory
+        \item Boxing/unboxing to parse a primitive
+          \item a sting is boxed just to be unboxed for parsing. More
+            efficient to use static parse*** method.
+            Class:
+            \item BaseHyphenatedIdentifierValidator
     \item Security
       \item Potential SQL Problem
         \item Nonconstant string passed to execute or addBatch method on an SQL
-          statement (8)
-        \item A prepared statement is generated from a nonconstant String (6)
+          statement
+          \item The method invokes the execute or addBatch method on an SQL
+            statement with a String that seems to be dynamically generated.
+            Consider using a prepared statement instead. It is more efficient
+            and less vulnerable to SQL injection attacks. 
+            Classes:
+          \item ConceptValidatorChangeSet
+          \item MigrateAllergiesChangeSet
     \item Dodgy code
-      \item Bad casts of object references
-      \item Bad use of return value from method
-      \item Casting from integer values
-      \item Confused Inheritance
       \item Dead local store
-      \item Dubious method invocation
-      \item Misuse of static fields
-      \item Null pointer dereference
-      \item Prefer zero length arrays to null to indicate no results
-      \item Redundant Interfaces
-      \item Redundant comparison to null
-      \item RuntimeExceprion capture
-      \item Test for floating point equality
-      \item Unread field
-      \item Unused field
-      \item Unwritten field
-      \item Useless code
-      \item Useless control flow
-        
+        \item Dead store to local variable
+          \item  This instruction assigns a value to a local variable, but the
+            value is not read or used in any subsequent instruction. Often, this
+            indicates an error, because the value computed is never used.
+            Note that Sun's javac compiler often generates dead stores for final
+            local variables. Because FindBugs is a bytecode-based tool, there is
+            no easy way to eliminate these false positives.
+            Class:
+            \item PatientServiceImpl
 \paragraph{OWASP ZAP}
 
 A passive run of ZAP returns the following four possible vulnerabilities:

@@ -1,0 +1,1234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+		</style>
+</head>
+<body>
+<h1>FindBugs Report</h1>
+<p>Produced using <a href="http://findbugs.sourceforge.net">FindBugs</a>3.0.1.</p>
+<p>Project: 
+			openmrs[openmrs-web]</p>
+<h2>Metrics</h2>
+<p>4010 lines of code analyzed,
+	in 49 classes, 
+	in 12 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">9</td>
+<td align="right">2.24</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">38</td>
+<td align="right">9.48</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>47</b>
+</td>
+<td align="right">
+<b>11.72</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Summary</h2>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">12</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+</td>
+<td align="right">5</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">4</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">19</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>47</b>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h1>Warnings</h1>
+<p>Click on each warning link to see a full description of the issue, and
+	    details of how to resolve it.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_SAME_SIMPLE_NAME_AS_SUPERCLASS">Class names shouldn't shadow simple name of superclass</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>The class name org.openmrs.web.DispatcherServlet shadows the simple name of the superclass org.springframework.web.servlet.DispatcherServlet<br/>
+<br/>
+<br/>In file DispatcherServlet.java,
+					
+						lines 35
+						    to 107<br/>In class org.openmrs.web.DispatcherServlet<br/>In class org.springframework.web.servlet.DispatcherServlet<br/>At DispatcherServlet.java:[lines 35-107]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SE_BAD_FIELD">Non-transient non-serializable instance field in serializable class</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Class org.openmrs.module.web.filter.ModuleFilterDefinition defines non-transient non-serializable instance field module<br/>
+<br/>
+<br/>In file ModuleFilterDefinition.java,
+					
+						lines 
+						    to <br/>In class org.openmrs.module.web.filter.ModuleFilterDefinition<br/>Field org.openmrs.module.web.filter.ModuleFilterDefinition.module<br/>Actual type org.openmrs.module.Module<br/>In ModuleFilterDefinition.java</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SE_BAD_FIELD">Non-transient non-serializable instance field in serializable class</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Class org.openmrs.module.web.filter.ModuleFilterMapping defines non-transient non-serializable instance field module<br/>
+<br/>
+<br/>In file ModuleFilterMapping.java,
+					
+						lines 
+						    to <br/>In class org.openmrs.module.web.filter.ModuleFilterMapping<br/>Field org.openmrs.module.web.filter.ModuleFilterMapping.module<br/>Actual type org.openmrs.module.Module<br/>In ModuleFilterMapping.java</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Method ignores exceptional return value</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Exceptional return value of java.io.File.mkdir() ignored in org.openmrs.module.web.WebModuleUtil.startModule(Module, ServletContext, boolean)<br/>
+<br/>
+<br/>In file WebModuleUtil.java,
+					
+						line 131<br/>In class org.openmrs.module.web.WebModuleUtil<br/>In method org.openmrs.module.web.WebModuleUtil.startModule(Module, ServletContext, boolean)<br/>Called method java.io.File.mkdir()<br/>At WebModuleUtil.java:[line 131]<br/>At WebModuleUtil.java:[line 131]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Method ignores exceptional return value</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Exceptional return value of java.io.File.mkdirs() ignored in org.openmrs.module.web.WebModuleUtil.startModule(Module, ServletContext, boolean)<br/>
+<br/>
+<br/>In file WebModuleUtil.java,
+					
+						line 179<br/>In class org.openmrs.module.web.WebModuleUtil<br/>In method org.openmrs.module.web.WebModuleUtil.startModule(Module, ServletContext, boolean)<br/>Called method java.io.File.mkdirs()<br/>At WebModuleUtil.java:[line 179]<br/>At WebModuleUtil.java:[line 179]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Method ignores exceptional return value</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Exceptional return value of java.io.File.createNewFile() ignored in org.openmrs.web.filter.initialization.InitializationFilter.doGet(HttpServletRequest, HttpServletResponse)<br/>
+<br/>
+<br/>In file InitializationFilter.java,
+					
+						line 270<br/>In class org.openmrs.web.filter.initialization.InitializationFilter<br/>In method org.openmrs.web.filter.initialization.InitializationFilter.doGet(HttpServletRequest, HttpServletResponse)<br/>Called method java.io.File.createNewFile()<br/>At InitializationFilter.java:[line 270]<br/>At InitializationFilter.java:[line 270]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Method ignores exceptional return value</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Exceptional return value of java.io.File.delete() ignored in org.openmrs.web.filter.initialization.InitializationFilter.doGet(HttpServletRequest, HttpServletResponse)<br/>
+<br/>
+<br/>In file InitializationFilter.java,
+					
+						line 286<br/>In class org.openmrs.web.filter.initialization.InitializationFilter<br/>In method org.openmrs.web.filter.initialization.InitializationFilter.doGet(HttpServletRequest, HttpServletResponse)<br/>Called method java.io.File.delete()<br/>At InitializationFilter.java:[line 286]<br/>At InitializationFilter.java:[line 286]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Method ignores exceptional return value</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Exceptional return value of java.io.File.createNewFile() ignored in org.openmrs.web.filter.initialization.InitializationFilter.doPost(HttpServletRequest, HttpServletResponse)<br/>
+<br/>
+<br/>In file InitializationFilter.java,
+					
+						line 391<br/>In class org.openmrs.web.filter.initialization.InitializationFilter<br/>In method org.openmrs.web.filter.initialization.InitializationFilter.doPost(HttpServletRequest, HttpServletResponse)<br/>Called method java.io.File.createNewFile()<br/>At InitializationFilter.java:[line 391]<br/>At InitializationFilter.java:[line 391]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Method ignores exceptional return value</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Exceptional return value of java.io.File.delete() ignored in org.openmrs.web.filter.initialization.InitializationFilter.doPost(HttpServletRequest, HttpServletResponse)<br/>
+<br/>
+<br/>In file InitializationFilter.java,
+					
+						line 406<br/>In class org.openmrs.web.filter.initialization.InitializationFilter<br/>In method org.openmrs.web.filter.initialization.InitializationFilter.doPost(HttpServletRequest, HttpServletResponse)<br/>Called method java.io.File.delete()<br/>At InitializationFilter.java:[line 406]<br/>At InitializationFilter.java:[line 406]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Method ignores exceptional return value</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Exceptional return value of java.io.File.delete() ignored in org.openmrs.web.filter.initialization.InitializationFilter.importTestDataSet(InputStream, String, String, String)<br/>
+<br/>
+<br/>In file InitializationFilter.java,
+					
+						line 1119<br/>In class org.openmrs.web.filter.initialization.InitializationFilter<br/>In method org.openmrs.web.filter.initialization.InitializationFilter.importTestDataSet(InputStream, String, String, String)<br/>Called method java.io.File.delete()<br/>At InitializationFilter.java:[line 1119]<br/>At InitializationFilter.java:[line 1119]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Method ignores exceptional return value</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Exceptional return value of java.io.File.delete() ignored in org.openmrs.web.filter.initialization.TestInstallUtil.addZippedTestModules(InputStream)<br/>
+<br/>
+<br/>In file TestInstallUtil.java,
+					
+						line 216<br/>In class org.openmrs.web.filter.initialization.TestInstallUtil<br/>In method org.openmrs.web.filter.initialization.TestInstallUtil.addZippedTestModules(InputStream)<br/>Called method java.io.File.delete()<br/>At TestInstallUtil.java:[line 216]<br/>At TestInstallUtil.java:[line 216]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Method ignores exceptional return value</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Exceptional return value of java.io.File.delete() ignored in org.openmrs.web.Listener.clearDWRFile(ServletContext)<br/>
+<br/>
+<br/>In file Listener.java,
+					
+						line 373<br/>In class org.openmrs.web.Listener<br/>In method org.openmrs.web.Listener.clearDWRFile(ServletContext)<br/>Called method java.io.File.delete()<br/>At Listener.java:[line 373]<br/>At Listener.java:[line 373]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_EXPERIMENTAL">Experimental Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Method may fail to clean up stream or resource on checked exception</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>org.openmrs.web.filter.initialization.InitializationFilter.executeStatement(boolean, String, String, String, String[]) may fail to clean up java.sql.Statement on checked exception<br/>
+<br/>
+<br/>In file InitializationFilter.java,
+					
+						line 1162<br/>In class org.openmrs.web.filter.initialization.InitializationFilter<br/>In method org.openmrs.web.filter.initialization.InitializationFilter.executeStatement(boolean, String, String, String, String[])<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at InitializationFilter.java:[line 1162] is not discharged<br/>Path continues at InitializationFilter.java:[line 1164]<br/>Path continues at InitializationFilter.java:[line 1169]<br/>Path continues at InitializationFilter.java:[line 1170]<br/>Path continues at InitializationFilter.java:[line 1187]<br/>Path continues at InitializationFilter.java:[line 1191]<br/>Path continues at InitializationFilter.java:[line 1192]<br/>Remaining obligations: {Statement x 1}</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#OBL_UNSATISFIED_OBLIGATION">Method may fail to clean up stream or resource</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>org.openmrs.web.filter.update.UpdateFilter.isSuperUser(Connection, Integer) may fail to clean up java.sql.Statement<br/>
+<br/>
+<br/>In file UpdateFilter.java,
+					
+						line 467<br/>In class org.openmrs.web.filter.update.UpdateFilter<br/>In method org.openmrs.web.filter.update.UpdateFilter.isSuperUser(Connection, Integer)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at UpdateFilter.java:[line 467] is not discharged<br/>Path continues at UpdateFilter.java:[line 468]<br/>Path continues at UpdateFilter.java:[line 469]<br/>Path continues at UpdateFilter.java:[line 470]<br/>Path continues at UpdateFilter.java:[line 477]<br/>Remaining obligations: {Statement x 1}</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#OBL_UNSATISFIED_OBLIGATION">Method may fail to clean up stream or resource</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>org.openmrs.web.filter.util.FilterUtil.getUserIdByName(String, Connection) may fail to clean up java.sql.Statement<br/>
+<br/>
+<br/>In file FilterUtil.java,
+					
+						line 248<br/>In class org.openmrs.web.filter.util.FilterUtil<br/>In method org.openmrs.web.filter.util.FilterUtil.getUserIdByName(String, Connection)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at FilterUtil.java:[line 248] is not discharged<br/>Path continues at FilterUtil.java:[line 249]<br/>Path continues at FilterUtil.java:[line 250]<br/>Path continues at FilterUtil.java:[line 251]<br/>Path continues at FilterUtil.java:[line 252]<br/>Path continues at FilterUtil.java:[line 258]<br/>Remaining obligations: {Statement x 1}</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#OBL_UNSATISFIED_OBLIGATION">Method may fail to clean up stream or resource</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>org.openmrs.web.filter.util.FilterUtil.readSystemDefaultLocale(Connection) may fail to clean up java.sql.Statement<br/>
+<br/>
+<br/>In file FilterUtil.java,
+					
+						line 128<br/>In class org.openmrs.web.filter.util.FilterUtil<br/>In method org.openmrs.web.filter.util.FilterUtil.readSystemDefaultLocale(Connection)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at FilterUtil.java:[line 128] is not discharged<br/>Path continues at FilterUtil.java:[line 129]<br/>Path continues at FilterUtil.java:[line 130]<br/>Path continues at FilterUtil.java:[line 141]<br/>Path continues at FilterUtil.java:[line 150]<br/>Remaining obligations: {Statement x 1}</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Method may fail to clean up stream or resource on checked exception</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>org.openmrs.web.filter.util.FilterUtil.restoreLocale(String) may fail to clean up java.sql.Statement on checked exception<br/>
+<br/>
+<br/>In file FilterUtil.java,
+					
+						line 62<br/>In class org.openmrs.web.filter.util.FilterUtil<br/>In method org.openmrs.web.filter.util.FilterUtil.restoreLocale(String)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at FilterUtil.java:[line 62] is not discharged<br/>Path continues at FilterUtil.java:[line 63]<br/>Path continues at FilterUtil.java:[line 81]<br/>Path continues at FilterUtil.java:[line 82]<br/>Path continues at FilterUtil.java:[line 85]<br/>Path continues at FilterUtil.java:[line 86]<br/>Path continues at FilterUtil.java:[line 90]<br/>Path continues at FilterUtil.java:[line 91]<br/>Remaining obligations: {Statement x 1}</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DM_DEFAULT_ENCODING">Reliance on default encoding</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Found reliance on default encoding in org.openmrs.web.filter.initialization.TestInstallUtil.addTestData(String, int, String, String, String, String): new java.io.InputStreamReader(InputStream)<br/>
+<br/>
+<br/>In file TestInstallUtil.java,
+					
+						line 80<br/>In class org.openmrs.web.filter.initialization.TestInstallUtil<br/>In method org.openmrs.web.filter.initialization.TestInstallUtil.addTestData(String, int, String, String, String, String)<br/>Called method new java.io.InputStreamReader(InputStream)<br/>At TestInstallUtil.java:[line 80]<br/>At TestInstallUtil.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DM_DEFAULT_ENCODING">Reliance on default encoding</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Found reliance on default encoding in org.openmrs.web.filter.initialization.TestInstallUtil.getResourceInputStream(String, String, String): new java.io.OutputStreamWriter(OutputStream)<br/>
+<br/>
+<br/>In file TestInstallUtil.java,
+					
+						line 274<br/>In class org.openmrs.web.filter.initialization.TestInstallUtil<br/>In method org.openmrs.web.filter.initialization.TestInstallUtil.getResourceInputStream(String, String, String)<br/>Called method new java.io.OutputStreamWriter(OutputStream)<br/>At TestInstallUtil.java:[line 274]<br/>At TestInstallUtil.java:[line 274]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DM_DEFAULT_ENCODING">Reliance on default encoding</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Found reliance on default encoding in org.openmrs.web.filter.StartupFilter.renderTemplate(String, Map, HttpServletResponse): new java.io.InputStreamReader(InputStream)<br/>
+<br/>
+<br/>In file StartupFilter.java,
+					
+						line 269<br/>In class org.openmrs.web.filter.StartupFilter<br/>In method org.openmrs.web.filter.StartupFilter.renderTemplate(String, Map, HttpServletResponse)<br/>Called method new java.io.InputStreamReader(InputStream)<br/>At StartupFilter.java:[line 269]<br/>At StartupFilter.java:[line 269]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DM_DEFAULT_ENCODING">Reliance on default encoding</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Found reliance on default encoding in org.openmrs.web.Listener.clearDWRFile(ServletContext): new java.io.FileWriter(File)<br/>
+<br/>
+<br/>In file Listener.java,
+					
+						line 376<br/>In class org.openmrs.web.Listener<br/>In method org.openmrs.web.Listener.clearDWRFile(ServletContext)<br/>Called method new java.io.FileWriter(File)<br/>At Listener.java:[line 376]<br/>At Listener.java:[line 376]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#EI_EXPOSE_REP">May expose internal representation by returning reference to mutable object</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>org.openmrs.OpenmrsCharacterEscapes.getEscapeCodesForAscii() may expose internal representation by returning OpenmrsCharacterEscapes.asciiEscapes<br/>
+<br/>
+<br/>In file OpenmrsCharacterEscapes.java,
+					
+						line 37<br/>In class org.openmrs.OpenmrsCharacterEscapes<br/>In method org.openmrs.OpenmrsCharacterEscapes.getEscapeCodesForAscii()<br/>Field org.openmrs.OpenmrsCharacterEscapes.asciiEscapes<br/>At OpenmrsCharacterEscapes.java:[line 37]<br/>At OpenmrsCharacterEscapes.java:[line 37]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#MS_PKGPROTECT">Field should be package protected</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>org.openmrs.web.filter.StartupFilter.velocityEngine should be package protected<br/>
+<br/>
+<br/>In file StartupFilter.java,
+					
+						line 71<br/>In class org.openmrs.web.filter.StartupFilter<br/>Field org.openmrs.web.filter.StartupFilter.velocityEngine<br/>At StartupFilter.java:[line 71]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#MS_CANNOT_BE_FINAL">Field isn't final and can't be protected from malicious code</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>org.openmrs.web.WebConstants.WEBAPP_NAME isn't final and can't be protected from malicious code <br/>
+<br/>
+<br/>In file WebConstants.java,
+					
+						line 59<br/>In class org.openmrs.web.WebConstants<br/>Field org.openmrs.web.WebConstants.WEBAPP_NAME<br/>At WebConstants.java:[line 59]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#IS2_INCONSISTENT_SYNC">Inconsistent synchronization</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Inconsistent synchronization of org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion.hasUpdateWarnings; locked 66% of time<br/>
+<br/>
+<br/>In file UpdateFilter.java,
+					
+						line 267<br/>In class org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion<br/>Field org.openmrs.web.filter.update.UpdateFilter$UpdateFilterCompletion.hasUpdateWarnings<br/>Synchronized 66% of the time<br/>Unsynchronized access at UpdateFilter.java:[line 267]<br/>Synchronized access at UpdateFilter.java:[line 690]<br/>Synchronized access at UpdateFilter.java:[line 695]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SWL_SLEEP_WITH_LOCK_HELD">Method calls Thread.sleep() with a lock held</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>org.openmrs.web.filter.update.UpdateFilter.doPost(HttpServletRequest, HttpServletResponse) calls Thread.sleep() with a lock held<br/>
+<br/>
+<br/>In file UpdateFilter.java,
+					
+						line 205<br/>In class org.openmrs.web.filter.update.UpdateFilter<br/>In method org.openmrs.web.filter.update.UpdateFilter.doPost(HttpServletRequest, HttpServletResponse)<br/>At UpdateFilter.java:[line 205]<br/>At UpdateFilter.java:[line 205]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DM_GC">Explicit garbage collection; extremely dubious except in benchmarking code</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>org.openmrs.web.Listener.contextDestroyed(ServletContextEvent) forces garbage collection; extremely dubious except in benchmarking code<br/>
+<br/>
+<br/>In file Listener.java,
+					
+						line 606<br/>In class org.openmrs.web.Listener<br/>In method org.openmrs.web.Listener.contextDestroyed(ServletContextEvent)<br/>At Listener.java:[line 606]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#WMI_WRONG_MAP_ITERATOR">Inefficient use of keySet iterator instead of entrySet iterator</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>org.openmrs.module.web.WebModuleUtil.unloadFilters(Module) makes inefficient use of keySet iterator instead of entrySet iterator<br/>
+<br/>
+<br/>In file WebModuleUtil.java,
+					
+						line 597<br/>In class org.openmrs.module.web.WebModuleUtil<br/>In method org.openmrs.module.web.WebModuleUtil.unloadFilters(Module)<br/>Field org.openmrs.module.web.WebModuleUtil.moduleFiltersByName<br/>At WebModuleUtil.java:[line 597]<br/>At WebModuleUtil.java:[line 597]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#UC_USELESS_CONDITION">Condition has no effect</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Useless condition: it's known that c &gt;= ' ' at this point<br/>
+<br/>
+<br/>In file WebUtil.java,
+					
+						line 307<br/>In class org.openmrs.web.WebUtil<br/>In method org.openmrs.web.WebUtil.normalizeLocale(String)<br/>Value c &gt;= ' '<br/>Unreachable code at WebUtil.java:[line 307]<br/>At WebUtil.java:[line 307]<br/>At WebUtil.java:[line 307]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Possible null pointer dereference due to return value of called method</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Possible null pointer dereference in org.openmrs.module.web.WebModuleUtil.shutdownModules(ServletContext) due to return value of called method<br/>
+<br/>
+<br/>In file WebModuleUtil.java,
+					
+						line 701<br/>In class org.openmrs.module.web.WebModuleUtil<br/>In method org.openmrs.module.web.WebModuleUtil.shutdownModules(ServletContext)<br/>Value loaded from mod<br/>Dereferenced at WebModuleUtil.java:[line 701]<br/>Known null at WebModuleUtil.java:[line 701]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Possible null pointer dereference due to return value of called method</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Possible null pointer dereference in org.openmrs.web.Listener.copyCustomizationIntoWebapp(ServletContext, Properties) due to return value of called method<br/>
+<br/>
+<br/>In file Listener.java,
+					
+						line 434<br/>In class org.openmrs.web.Listener<br/>In method org.openmrs.web.Listener.copyCustomizationIntoWebapp(ServletContext, Properties)<br/>Value loaded from ?<br/>Dereferenced at Listener.java:[line 434]<br/>Known null at Listener.java:[line 434]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Possible null pointer dereference due to return value of called method</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Possible null pointer dereference in org.openmrs.web.Listener.loadBundledModules(ServletContext) due to return value of called method<br/>
+<br/>
+<br/>In file Listener.java,
+					
+						line 525<br/>In class org.openmrs.web.Listener<br/>In method org.openmrs.web.Listener.loadBundledModules(ServletContext)<br/>Value loaded from ?<br/>Dereferenced at Listener.java:[line 525]<br/>Known null at Listener.java:[line 525]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Redundant nullcheck of value known to be non-null</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Redundant nullcheck of inData, which is known to be non-null in org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1.run()<br/>
+<br/>
+<br/>In file InitializationFilter.java,
+					
+						line 1571<br/>In class org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1<br/>In method org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1.run()<br/>Value loaded from inData<br/>Return value of org.openmrs.web.filter.initialization.TestInstallUtil.getResourceInputStream(String, String, String) of type java.io.InputStream<br/>Redundant null check at InitializationFilter.java:[line 1571]<br/>Redundant null check at InitializationFilter.java:[line 1571]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Redundant nullcheck of value known to be non-null</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Redundant nullcheck of inModules, which is known to be non-null in org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1.run()<br/>
+<br/>
+<br/>In file InitializationFilter.java,
+					
+						line 1591<br/>In class org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1<br/>In method org.openmrs.web.filter.initialization.InitializationFilter$InitializationCompletion$1.run()<br/>Value loaded from inModules<br/>Return value of org.openmrs.web.filter.initialization.TestInstallUtil.getResourceInputStream(String, String, String) of type java.io.InputStream<br/>Redundant null check at InitializationFilter.java:[line 1591]<br/>Redundant null check at InitializationFilter.java:[line 1591]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#REC_CATCH_EXCEPTION">Exception is caught when Exception is not thrown</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Exception is caught when Exception is not thrown in org.openmrs.web.filter.initialization.InitializationFilter.isDatabaseEmpty(Properties)<br/>
+<br/>
+<br/>In file InitializationFilter.java,
+					
+						line 1850<br/>In class org.openmrs.web.filter.initialization.InitializationFilter<br/>In method org.openmrs.web.filter.initialization.InitializationFilter.isDatabaseEmpty(Properties)<br/>At InitializationFilter.java:[line 1850]<br/>At InitializationFilter.java:[line 1850]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Write to static field from instance method</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Write to static field org.openmrs.web.Listener.setupNeeded from instance method org.openmrs.web.Listener.contextInitialized(ServletContextEvent)<br/>
+<br/>
+<br/>In file Listener.java,
+					
+						line 198<br/>In class org.openmrs.web.Listener<br/>In method org.openmrs.web.Listener.contextInitialized(ServletContextEvent)<br/>Field org.openmrs.web.Listener.setupNeeded<br/>At Listener.java:[line 198]<br/>At Listener.java:[line 198]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.canCreate<br/>
+<br/>
+<br/>In file InitializationWizardModel.java,
+					
+						line 61<br/>In class org.openmrs.web.filter.initialization.InitializationWizardModel<br/>Field org.openmrs.web.filter.initialization.InitializationWizardModel.canCreate<br/>At InitializationWizardModel.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.canWrite<br/>
+<br/>
+<br/>In file InitializationWizardModel.java,
+					
+						line 74<br/>In class org.openmrs.web.filter.initialization.InitializationWizardModel<br/>Field org.openmrs.web.filter.initialization.InitializationWizardModel.canWrite<br/>At InitializationWizardModel.java:[line 74]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.cannotCreateErrorMessage<br/>
+<br/>
+<br/>In file InitializationWizardModel.java,
+					
+						line 68<br/>In class org.openmrs.web.filter.initialization.InitializationWizardModel<br/>Field org.openmrs.web.filter.initialization.InitializationWizardModel.cannotCreateErrorMessage<br/>At InitializationWizardModel.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.hasCurrentDatabaseUser<br/>
+<br/>
+<br/>In file InitializationWizardModel.java,
+					
+						line 93<br/>In class org.openmrs.web.filter.initialization.InitializationWizardModel<br/>Field org.openmrs.web.filter.initialization.InitializationWizardModel.hasCurrentDatabaseUser<br/>At InitializationWizardModel.java:[line 93]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.numberOfSteps<br/>
+<br/>
+<br/>In file InitializationWizardModel.java,
+					
+						line 237<br/>In class org.openmrs.web.filter.initialization.InitializationWizardModel<br/>Field org.openmrs.web.filter.initialization.InitializationWizardModel.numberOfSteps<br/>At InitializationWizardModel.java:[line 237]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.runtimePropertiesPath<br/>
+<br/>
+<br/>In file InitializationWizardModel.java,
+					
+						line 80<br/>In class org.openmrs.web.filter.initialization.InitializationWizardModel<br/>Field org.openmrs.web.filter.initialization.InitializationWizardModel.runtimePropertiesPath<br/>At InitializationWizardModel.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.initialization.InitializationWizardModel.setupPageUrl<br/>
+<br/>
+<br/>In file InitializationWizardModel.java,
+					
+						line 205<br/>In class org.openmrs.web.filter.initialization.InitializationWizardModel<br/>Field org.openmrs.web.filter.initialization.InitializationWizardModel.setupPageUrl<br/>At InitializationWizardModel.java:[line 205]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.update.UpdateFilterModel.footerTemplate<br/>
+<br/>
+<br/>In file UpdateFilterModel.java,
+					
+						line 34<br/>In class org.openmrs.web.filter.update.UpdateFilterModel<br/>Field org.openmrs.web.filter.update.UpdateFilterModel.footerTemplate<br/>At UpdateFilterModel.java:[line 34]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.update.UpdateFilterModel.headerTemplate<br/>
+<br/>
+<br/>In file UpdateFilterModel.java,
+					
+						line 31<br/>In class org.openmrs.web.filter.update.UpdateFilterModel<br/>Field org.openmrs.web.filter.update.UpdateFilterModel.headerTemplate<br/>At UpdateFilterModel.java:[line 31]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.update.UpdateFilterModel.setupPageUrl<br/>
+<br/>
+<br/>In file UpdateFilterModel.java,
+					
+						line 40<br/>In class org.openmrs.web.filter.update.UpdateFilterModel<br/>Field org.openmrs.web.filter.update.UpdateFilterModel.setupPageUrl<br/>At UpdateFilterModel.java:[line 40]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: org.openmrs.web.filter.update.UpdateFilterModel.superuserrole<br/>
+<br/>
+<br/>In file UpdateFilterModel.java,
+					
+						line 38<br/>In class org.openmrs.web.filter.update.UpdateFilterModel<br/>Field org.openmrs.web.filter.update.UpdateFilterModel.superuserrole<br/>At UpdateFilterModel.java:[line 38]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h1>
+<a name="Details">Warning Types</a>
+</h1>
+<h2>
+<a name="DM_GC">Explicit garbage collection; extremely dubious except in benchmarking code</a>
+</h2>
+
+  <p> Code explicitly invokes garbage collection.
+  Except for specific use in benchmarking, this is very dubious.</p>
+  <p>In the past, situations where people have explicitly invoked
+  the garbage collector in routines such as close or finalize methods
+  has led to huge performance black holes. Garbage collection
+   can be expensive. Any situation that forces hundreds or thousands
+   of garbage collections will bring the machine to a crawl.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="DM_DEFAULT_ENCODING">Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="EI_EXPOSE_REP">May expose internal representation by returning reference to mutable object</a>
+</h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="IS2_INCONSISTENT_SYNC">Inconsistent synchronization</a>
+</h2>
+
+  <p> The fields of this class appear to be accessed inconsistently with respect
+  to synchronization.&nbsp; This bug report indicates that the bug pattern detector
+  judged that
+  </p>
+  <ul>
+  <li> The class contains a mix of locked and unlocked accesses,</li>
+  <li> The class is <b>not</b> annotated as javax.annotation.concurrent.NotThreadSafe,</li>
+  <li> At least one locked access was performed by one of the class's own methods, and</li>
+  <li> The number of unsynchronized field accesses (reads and writes) was no more than
+       one third of all accesses, with writes being weighed twice as high as reads</li>
+  </ul>
+
+  <p> A typical bug matching this bug pattern is forgetting to synchronize
+  one of the methods in a class that is intended to be thread-safe.</p>
+
+  <p> You can select the nodes labeled "Unsynchronized access" to show the
+  code locations where the detector believed that a field was accessed
+  without synchronization.</p>
+
+  <p> Note that there are various sources of inaccuracy in this detector;
+  for example, the detector cannot statically detect all situations in which
+  a lock is held.&nbsp; Also, even when the detector is accurate in
+  distinguishing locked vs. unlocked accesses, the code in question may still
+  be correct.</p>
+
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="MS_CANNOT_BE_FINAL">Field isn't final and can't be protected from malicious code</a>
+</h2>
+
+  <p>
+ A mutable static field could be changed by malicious code or
+        by accident from another package.
+   Unfortunately, the way the field is used doesn't allow
+   any easy fix to this problem.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="MS_PKGPROTECT">Field should be package protected</a>
+</h2>
+
+  <p> A mutable static field could be changed by malicious code or
+   by accident.
+   The field could be made package protected to avoid
+   this vulnerability.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="NM_SAME_SIMPLE_NAME_AS_SUPERCLASS">Class names shouldn't shadow simple name of superclass</a>
+</h2>
+
+  <p> This class has a simple name that is identical to that of its superclass, except
+that its superclass is in a different package (e.g., <code>alpha.Foo</code> extends <code>beta.Foo</code>).
+This can be exceptionally confusing, create lots of situations in which you have to look at import statements
+to resolve references and creates many
+opportunities to accidentally define methods that do not override methods in their superclasses.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Possible null pointer dereference due to return value of called method</a>
+</h2>
+      
+<p> The return value from a method is dereferenced without a null check,
+and the return value of that method is one that should generally be checked
+for null.  This may lead to a <code>NullPointerException</code> when the code is executed.
+</p>
+      
+   
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="OBL_UNSATISFIED_OBLIGATION">Method may fail to clean up stream or resource</a>
+</h2>
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          To send feedback, either:
+          </p>
+          <ul>
+            <li>send email to findbugs@cs.umd.edu</li>
+            <li>file a bug report: <a href="http://findbugs.sourceforge.net/reportingBugs.html">http://findbugs.sourceforge.net/reportingBugs.html</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Method may fail to clean up stream or resource on checked exception</a>
+</h2>
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          To send feedback, either:
+          </p>
+          <ul>
+            <li>send email to findbugs@cs.umd.edu</li>
+            <li>file a bug report: <a href="http://findbugs.sourceforge.net/reportingBugs.html">http://findbugs.sourceforge.net/reportingBugs.html</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">Redundant nullcheck of value known to be non-null</a>
+</h2>
+
+<p> This method contains a redundant check of a known non-null value against
+the constant null.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="REC_CATCH_EXCEPTION">Exception is caught when Exception is not thrown</a>
+</h2>
+  
+  <p>
+  This method uses a try-catch block that catches Exception objects, but Exception is not
+  thrown within the try block, and RuntimeException is not explicitly caught.  It is a common bug pattern to
+  say try { ... } catch (Exception e) { something } as a shorthand for catching a number of types of exception
+  each of whose catch blocks is identical, but this construct also accidentally catches RuntimeException as well,
+  masking potential bugs.
+  </p>
+  <p>A better approach is to either explicitly catch the specific exceptions that are thrown,
+  or to explicitly catch RuntimeException exception, rethrow it, and then catch all non-Runtime Exceptions, as shown below:</p>
+  <pre>
+  try {
+    ...
+  } catch (RuntimeException e) {
+    throw e;
+  } catch (Exception e) {
+    ... deal with all non-runtime exceptions ...
+  }</pre>
+  
+     
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Method ignores exceptional return value</a>
+</h2>
+
+   <p> This method returns a value that is not checked. The return value should be checked
+since it can indicate an unusual or unexpected function execution. For
+example, the <code>File.delete()</code> method returns false
+if the file could not be successfully deleted (rather than
+throwing an Exception).
+If you don't check the result, you won't notice if the method invocation
+signals unexpected behavior by returning an atypical return value.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="SE_BAD_FIELD">Non-transient non-serializable instance field in serializable class</a>
+</h2>
+
+<p> This Serializable class defines a non-primitive instance field which is neither transient,
+Serializable, or <code>java.lang.Object</code>, and does not appear to implement
+the <code>Externalizable</code> interface or the
+<code>readObject()</code> and <code>writeObject()</code> methods.&nbsp;
+Objects of this class will not be deserialized correctly if a non-Serializable
+object is stored in this field.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Write to static field from instance method</a>
+</h2>
+
+  <p> This instance method writes to a static field. This is tricky to get
+correct if multiple instances are being manipulated,
+and generally bad practice.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="SWL_SLEEP_WITH_LOCK_HELD">Method calls Thread.sleep() with a lock held</a>
+</h2>
+      
+      <p>
+      This method calls Thread.sleep() with a lock held.  This may result
+      in very poor performance and scalability, or a deadlock, since other threads may
+      be waiting to acquire the lock.  It is a much better idea to call
+      wait() on the lock, which releases the lock and allows other threads
+      to run.
+      </p>
+      
+   
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="UC_USELESS_CONDITION">Condition has no effect</a>
+</h2>
+
+<p>This condition always produces the same result as the value of the involved variable was narrowed before. 
+Probably something else was meant or condition can be removed.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</h2>
+
+  <p> This field is never read.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="WMI_WRONG_MAP_ITERATOR">Inefficient use of keySet iterator instead of entrySet iterator</a>
+</h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        
+<p>
+<br/>
+<br/>
+</p>
+</body>
+</html>
