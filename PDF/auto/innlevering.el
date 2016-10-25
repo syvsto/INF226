@@ -12,7 +12,8 @@
     "article"
     "art10"
     "biblatex"
-    "inputenc")
+    "inputenc"
+    "comment")
    (LaTeX-add-bibliographies
     "kilder"))
  :latex)

@@ -2,6 +2,7 @@
 
 \usepackage[backend=bibtex, style=verbose-trad2]{biblatex}
 \usepackage[utf8]{inputenc}
+\usepackage{comment}
 \bibliography{kilder}
 
 \title{INF226 Obligatory assignment}
@@ -210,9 +211,8 @@ We ran ZAP version 2.5.0 for our tests.
   results. The reports might be a bit hard to navigate and there was some
   trouble generating a html report that potentially is more readable. Again the
   unit-test generated false positives.
-%  LocalWords:  SDLC
-  \newpage
-
+  
+\begin{comment}
 \paragraph{Dependencies}
   \begin{itemize}
     \item MySQL 1.6
@@ -221,6 +221,11 @@ We ran ZAP version 2.5.0 for our tests.
     \item jsp
     \item java .. 1.7
   \end{itemize}
+\end{comment}
+
+%  LocalWords:  SDLC SSL
+  \newpage
+  
 
 \section{Findings}
 
@@ -228,10 +233,10 @@ We ran ZAP version 2.5.0 for our tests.
 
 \paragraph{Fortify}
 
-  Audit Workbench found 60 critical vulnerablities, as well as 115 issues
+  Audit Workbench found 60 critical vulnerabilities, as well as 115 issues
   considered highly vulnerable. Following is a list of the categories designated
   by Audit Workbench for these vulnerabilities, as well as the number of
-  occurences of each vulnerability and a short explanation.
+  occurrences of each vulnerability and a short explanation.
 
   The critical vulnerabilities were in the
   following categories:
@@ -240,10 +245,10 @@ We ran ZAP version 2.5.0 for our tests.
   \item Command injections (4): The program tries to call an external command
     without validating where the command is from.
   \item Insecure SSL (3): Uses SSL certificates are based on default system
-    Cerftificate Authorities, which may be compromised, and sometimes are.
-  \item Hardcoded passwords (3): Lets an attacker log in if he or she has access
+    Certificate Authorities, which may be compromised, and sometimes are.
+  \item Hard coded passwords (3): Lets an attacker log in if he or she has access
     to the source code, which in this case means anyone.
-  \item Path manipulation (2): The program accesses a file with a filepath that
+  \item Path manipulation (2): The program accesses a file with a file path that
     can be chosen by the attacker.
   \item Privacy violation (49): The program mishandles confidential information
     in some way or another, for example by writing it to disk.
@@ -254,13 +259,13 @@ We ran ZAP version 2.5.0 for our tests.
   \begin{itemize}
   \item Header manipulation with cookies (1): The program doesn't validate data
     in an HTTP request, so cookies can be tampered or spoofed.
-  \item Hardcoded encryption key (3): Same issue as with hardcoded passwords.
+  \item Hard coded encryption key (3): Same issue as with hard coded passwords.
   \item Log forging (12): The program doesn't validate inputs that get written
     to the log, meaning malicious data could be entered.
   \item Empty passwords (6): The program assigns empty passwords, making it much
     easier to break into the application.
-  \item Hardcoded passwords (25): Same issue as with the critcal hardcoded passwords.
-  \item Passwords in Configuration File (36): Passwords are stored in plaintext
+  \item Hard coded passwords (25): Same issue as with the critical hard coded passwords.
+  \item Passwords in Configuration File (36): Passwords are stored in plain-text
     in a configuration file, meaning an attacker can get the password by getting
     the file.
   \item Privacy violation (10): Same issue as in the critical privacy violations.
@@ -278,17 +283,19 @@ We ran ZAP version 2.5.0 for our tests.
 \paragraph{FindBugs}
 
   The first scan detected 1058 potential bugs. Some of them are from test classes
+
+%  LocalWords:  JVM
   and will not be mentioned here. The report generated from the FindBugs GUI was
   very uninformative and hard to navigate. We found a plugin to IntelliJ IDEA
-  that used Findbugs as the backend and produced a more informative rapport
+  that used Findbugs as the back-end and produced a more informative rapport
   where it was easy to exclude the testbase as IntelliJ had generated a build of the
   codebase giving at a sense of which code was where. In this new rapport we
   had a total of 296 warnings and a separation between what FindBugs was very
-  certan was a bug and what mabye could be a bug. In the following text we have
-  made a presentation of the bugs findbug is most certain is a potential
+  certain was a bug and what maybe could be a bug. In the following text we have
+  made a presentation of the bugs FindBugs is most certain is a potential
   problem.
-  
-  
+
+
 Correctness
   \begin{itemize}
     \item Masked Field:
@@ -308,13 +315,13 @@ Correctness
   \end{itemize}
 Bad practice
   \begin{itemize}
-    \item Droppet or ignored excepton:
+    \item Dropped or ignored exception:
 
       This method might ignore an exception. In general, exceptions
       should be handled or reported in some way, or they should be thrown
       out of the method.
 
-      This error occured in the following classes:
+      This error occurred in the following classes:
 
       \begin{itemize}
         \item ServiceContext.setModuleService
@@ -323,7 +330,7 @@ Bad practice
         \item BooleanConceptChangeSet.getInt
         \item BooleanConceptChangeSet.createConcept
       \end{itemize}
-    \item Initialization circularity
+    \item Initialization circularity. 
 
       Class makes active use of subclass during initialization and might
       result in null value.
@@ -336,7 +343,7 @@ Bad practice
   \end{itemize}
 Internationalization 
   \begin{itemize}
-    \item Reliance on default encoding
+    \item Reliance on default encoding. 
       Found code that does a bit to string conversion while assuming
       the default platform encoding is suitable. This could make the code
       behave differently on different platforms.
@@ -361,8 +368,8 @@ Internationalization
   \end{itemize}
 Malicious code vulnerability
   \begin{itemize}
-    \item Mutable static field
-      Public static field isn´t final and could be change by malicius
+    \item Mutable static field. 
+      Public static field isn´t final and could be change by malicious
       code or by accident.
 
       Classes:
@@ -372,8 +379,8 @@ Malicious code vulnerability
         \item OpenmrsConstants
         \item Security
       \end{itemize}
-  \item Field is mutable array
-    Same as above and field is refering to an array.
+  \item Field is mutable array. 
+    Same as above and field is referring to an array.
 
     Class:
 
@@ -383,9 +390,10 @@ Malicious code vulnerability
   \end{itemize}
 Multithreaded code vulnerability
   \begin{itemize}
-    \item Unintended contention or possible deadlock due tp locking on shared objects:
+    \item Unintended contention or possible deadlock due to locking on shared
+      objects: 
       Synchronization on Boolean. There is a risk of syncing on a object
-      belonging to another process since there is only two boolean objects.
+      belonging to another process since there is only two Boolean objects.
       Resulting in a deadlock
 
       Class:
@@ -393,10 +401,10 @@ Multithreaded code vulnerability
       \begin{itemize}
         \item HL7InQueueProcessor
       \end{itemize}
-    \item Unsynchronized Lazy Initialization:
+    \item Unsynchronized Lazy Initialization: 
       Incorrect lazy initialization and update of static field. Static field
-      is not completed and could be accessed by another prosess while it is
-      still initializing wich would lead to a multithreading bug.
+      is not completed and could be accessed by another process while it is
+      still initializing which would lead to a multithreading bug.
 
       Class:
       \begin{itemize}
@@ -405,7 +413,7 @@ Multithreaded code vulnerability
   \end{itemize}
 Performance
   \begin{itemize}
-    \item Questionable Boxing of primitive value
+    \item Questionable Boxing of primitive value. 
       Boxing a primitive to compare. It´s more efficient to use static compare
       method on primitives.
 
@@ -413,7 +421,7 @@ Performance
       \begin{itemize}
           \item ModuleFactory
       \end{itemize}
-    \item Boxing/unboxing to parse a primitive
+    \item Boxing/unboxing to parse a primitive. 
       A sting is boxed just to be unboxed for parsing. More
       efficient to use static parse*** method.
 
@@ -424,7 +432,7 @@ Performance
   \end{itemize}
 Security
   \begin{itemize}
-    \item Potential SQL Problem
+    \item Potential SQL Problem. 
       Nonconstant string passed to execute or addBatch method on an SQL
       statement The method invokes the execute or addBatch method on an SQL
       statement with a String that seems to be dynamically generated.
@@ -439,8 +447,7 @@ Security
   \end{itemize}
 Dodgy code
   \begin{itemize}
-    \item Dead local store
-      This instruction assigns a value to a local variable, but the
+    \item Dead local store. This instruction assigns a value to a local variable, but the
       value is not read or used in any subsequent instruction. Often, this
       indicates an error, because the value computed is never used.
       Note that Sun's javac compiler often generates dead stores for final
@@ -449,6 +456,8 @@ Dodgy code
 
       Class:
       \begin{itemize}
+
+%  LocalWords:  multithreading
         \item PatientServiceImpl
       \end{itemize}
   \end{itemize}
@@ -482,17 +491,17 @@ application runs commands from external sources without validating them
 beforehand.
 
 \paragraph{External files}
-The vulnerabilities concerning passwords in cleartext found by Fortify are
+The vulnerabilities concerning passwords in clear text found by Fortify are
 mostly false positives, as they are found in localization files, and don't
 contain real passwords (instead containing the translation of the noun
 password). We will therefore disregard any vulnerability found in localization
-files. However, some files containing cleartext passwords are used for setting
+files. However, some files containing clear text passwords are used for setting
 up the server, and are thus relevant.
 
 \paragraph{Privacy violations}
 Many vulnerabilities found by Fortify were in the category Privacy Violations.
 Considering the type of application OpenMRS is (it manages patient journals),
-these are more important than for other applications, as patient jounals
+these are more important than for other applications, as patient journals
 contain lots of personal and sensitive information such as (possibly) social security
 numbers and medications used. Many of these files are about the the application
 logging login information and search terms, and the security of the logger is therefore of
@@ -504,18 +513,30 @@ server, if the attacker has root access you've probably lost your database and
 similar serious problems, and thus problems requiring memory access aren't as
 important. This might be more of a problem if the server is external (e.g.
 hosted on Amazon AWS or CloudFlare), but then, it is up to Amazon or CloudFlare
+
+%  LocalWords:  Javascript ClickJacking
 to secure their servers.
 
 \paragraph{Race conditions}
 These errors arise from Servlet being a singleton. Since the application changes
 member fields of this singleton, multiple request to get information can return
+
+
+%  LocalWords:  iframes
+%  LocalWords:  HttpOnly
 wrong results (if the member field is changed during requests). 
 
 \paragraph{Dynamic analysis}
 The run of OWASP ZAP didn't find any critical or highly vulnerable issues,
+
+%  LocalWords:  nosniff
 indicating that the front end is relatively well secured. The ZAP issues were
-related to Http headers (for example no SQL injection issues and direct XSS
+related to HTTP headers (for example no SQL injection issues and direct XSS
 issues). Since the critical issues were found by static analysis, we will focus
 more on the server errors.
 
+%  LocalWords:  XSS OWASP Servlet CloudFlare OpenMRS FindBugs
+
 \end{document}
+
+
