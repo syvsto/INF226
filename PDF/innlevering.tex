@@ -220,6 +220,7 @@ We ran ZAP version 2.5.0 for our tests.
     \item spring framework
     \item jsp
     \item java .. 1.7
+  \end{itemize}
 
 \section{Findings}
 
@@ -288,169 +289,169 @@ We ran ZAP version 2.5.0 for our tests.
   problem.
   
   
-    Correctness
+Correctness
+  \begin{itemize}
+    \item Masked Field:
+
+    Class defines field that masks field in superclass
+    org.openmrs.web.filter.StartupFilter:
+    This error is mostly harmless. It may have potential for generating
+    errors in later updates to the code. The field is marked as
+    protected in the superclass so it is excessive in the child and
+    probably should be removed.
+
+    \item Masked Field:
+
+    Field UpdateFilter.log masks field in superclass
+    org.openmrs.web.filter.StartupFilter:
+    Same as above.
+  \end{itemize}
+Bad practice
+  \begin{itemize}
+    \item Droppet or ignored excepton:
+
+      This method might ignore an exception. In general, exceptions
+      should be handled or reported in some way, or they should be thrown
+      out of the method.
+
+      This error occured in the following classes:
+
       \begin{itemize}
-        \item Masked Field:
-
-        Class defines field that masks field in superclass
-        org.openmrs.web.filter.StartupFilter:
-        This error is mostly harmless. It may have potential for generating
-        errors in later updates to the code. The field is marked as
-        protected in the superclass so it is excessive in the child and
-        probably should be removed.
-
-        \item Masked Field:
-
-        Field UpdateFilter.log masks field in superclass
-        org.openmrs.web.filter.StartupFilter:
-        Same as above.
+        \item ServiceContext.setModuleService
+        \item WorkflowCollectionEditor.setAsText
+        \item OpenmrsUtil.parse
+        \item BooleanConceptChangeSet.getInt
+        \item BooleanConceptChangeSet.createConcept
       \end{itemize}
-    Bad practice
+    \item Initialization circularity
+
+      Class makes active use of subclass during initialization and might
+      result in null value.
+
+      Class:
+
       \begin{itemize}
-        \item Droppet or ignored excepton:
-
-          This method might ignore an exception. In general, exceptions
-          should be handled or reported in some way, or they should be thrown
-          out of the method.
-
-          This error occured in the following classes:
-
-          \begin{itemize}
-            \item ServiceContext.setModuleService
-            \item WorkflowCollectionEditor.setAsText
-            \item OpenmrsUtil.parse
-            \item BooleanConceptChangeSet.getInt
-            \item BooleanConceptChangeSet.createConcept
-          \end{itemize}
-        \item Initialization circularity
-
-          Class makes active use of subclass during initialization and might
-          result in null value.
-
-          Class:
-
-          \begin{itemize}
-            \item Operator 
-          \end{itemize}
+        \item Operator 
       \end{itemize}
-    Internationalization 
+  \end{itemize}
+Internationalization 
+  \begin{itemize}
+    \item Reliance on default encoding
+      Found code that does a bit to string conversion while assuming
+      the default platform encoding is suitable. This could make the code
+      behave differently on different platforms.
+
+      Classes:
+
       \begin{itemize}
-        \item Reliance on default encoding
-          Found code that does a bit to string conversion while assuming
-          the default platform encoding is suitable. This could make the code
-          behave differently on different platforms.
-
-          Classes:
-          
-          \begin{itemize}
-            \item HL7ServiceImpl
-            \item ModuleFileParser
-            \item ModuleUtil
-            \item TextHandler
-            \item DatabaseUpdater
-            \item HTTPClient
-            \item OpenmrsUtil
-            \item CreateCodedOrderFrequencyForDrugOrderFrequencyChangeset
-            \item MigrateConceptReferenceTermChangeSet
-            \item SourceMySqldiffFile
-            \item Listener
-            \item StartupFilter
-            \item TestInstallUtil
-          \end{itemize}
+        \item HL7ServiceImpl
+        \item ModuleFileParser
+        \item ModuleUtil
+        \item TextHandler
+        \item DatabaseUpdater
+        \item HTTPClient
+        \item OpenmrsUtil
+        \item CreateCodedOrderFrequencyForDrugOrderFrequencyChangeset
+        \item MigrateConceptReferenceTermChangeSet
+        \item SourceMySqldiffFile
+        \item Listener
+        \item StartupFilter
+        \item TestInstallUtil
       \end{itemize}
-    Malicious code vulnerability
+  \end{itemize}
+Malicious code vulnerability
+  \begin{itemize}
+    \item Mutable static field
+      Public static field isn´t final and could be change by malicius
+      code or by accident.
+
+      Classes:
+
       \begin{itemize}
-        \item Mutable static field
-          Public static field isn´t final and could be change by malicius
-          code or by accident.
-          
-          Classes:
-
-          \begin{itemize}
-            \item SchedulerConstants
-            \item OpenmrsConstants
-            \item Security
-          \end{itemize}
-      \item Field is mutable array
-        Same as above and field is refering to an array.
-        
-        Class:
-        
-        \begin{itemize}
-          \item OpenmrsConstants
-        \end{itemize}
+        \item SchedulerConstants
+        \item OpenmrsConstants
+        \item Security
       \end{itemize}
-    Multithreaded code vulnerability
+  \item Field is mutable array
+    Same as above and field is refering to an array.
+
+    Class:
+
+    \begin{itemize}
+      \item OpenmrsConstants
+    \end{itemize}
+  \end{itemize}
+Multithreaded code vulnerability
+  \begin{itemize}
+    \item Unintended contention or possible deadlock due tp locking on shared objects:
+      Synchronization on Boolean. There is a risk of syncing on a object
+      belonging to another process since there is only two boolean objects.
+      Resulting in a deadlock
+
+      Class:
+
       \begin{itemize}
-        \item Unintended contention or possible deadlock due tp locking on shared objects:
-          Synchronization on Boolean. There is a risk of syncing on a object
-          belonging to another process since there is only two boolean objects.
-          Resulting in a deadlock
-
-          Class:
-
-          \begin{itemize}
-            \item HL7InQueueProcessor
-          \end{itemize}
-        \item Unsynchronized Lazy Initialization:
-          Incorrect lazy initialization and update of static field. Static field
-          is not completed and could be accessed by another prosess while it is
-          still initializing wich would lead to a multithreading bug.
-
-          Class:
-          \begin{itemize}
-              \item OpenmrsClassLoader
-          \end{itemize}
+        \item HL7InQueueProcessor
       \end{itemize}
-    Performance
+    \item Unsynchronized Lazy Initialization:
+      Incorrect lazy initialization and update of static field. Static field
+      is not completed and could be accessed by another prosess while it is
+      still initializing wich would lead to a multithreading bug.
+
+      Class:
       \begin{itemize}
-        \item Questionable Boxing of primitive value
-          Boxing a primitive to compare. It´s more efficient to use static compare
-          method on primitives.
-          
-          Class:
-          \begin{itemize}
-              \item ModuleFactory
-          \end{itemize}
-        \item Boxing/unboxing to parse a primitive
-          A sting is boxed just to be unboxed for parsing. More
-          efficient to use static parse*** method.
-          
-          Class:
-          \begin{itemize}
-            \item BaseHyphenatedIdentifierValidator
-          \end{itemize}
+          \item OpenmrsClassLoader
       \end{itemize}
-    Security
-      \begin{itemize}
-        \item Potential SQL Problem
-          Nonconstant string passed to execute or addBatch method on an SQL
-          statement The method invokes the execute or addBatch method on an SQL
-          statement with a String that seems to be dynamically generated.
-          Consider using a prepared statement instead. It is more efficient
-          and less vulnerable to SQL injection attacks. 
-          
-          Classes:
-          \begin{itemize}
-            \item ConceptValidatorChangeSet
-            \item MigrateAllergiesChangeSet
-          \end{itemize}
-      \end{itemize}
-    Dodgy code
-      \begin{itemize}
-        \item Dead local store
-            This instruction assigns a value to a local variable, but the
-            value is not read or used in any subsequent instruction. Often, this
-            indicates an error, because the value computed is never used.
-            Note that Sun's javac compiler often generates dead stores for final
-            local variables. Because FindBugs is a bytecode-based tool, there is
-            no easy way to eliminate these false positives.
+  \end{itemize}
+Performance
+  \begin{itemize}
+    \item Questionable Boxing of primitive value
+      Boxing a primitive to compare. It´s more efficient to use static compare
+      method on primitives.
 
-            Class:
-            \begin{itemize}
-              \item PatientServiceImpl
-            \end{itemize}
+      Class:
+      \begin{itemize}
+          \item ModuleFactory
       \end{itemize}
+    \item Boxing/unboxing to parse a primitive
+      A sting is boxed just to be unboxed for parsing. More
+      efficient to use static parse*** method.
+
+      Class:
+      \begin{itemize}
+        \item BaseHyphenatedIdentifierValidator
+      \end{itemize}
+  \end{itemize}
+Security
+  \begin{itemize}
+    \item Potential SQL Problem
+      Nonconstant string passed to execute or addBatch method on an SQL
+      statement The method invokes the execute or addBatch method on an SQL
+      statement with a String that seems to be dynamically generated.
+      Consider using a prepared statement instead. It is more efficient
+      and less vulnerable to SQL injection attacks. 
+
+      Classes:
+      \begin{itemize}
+        \item ConceptValidatorChangeSet
+        \item MigrateAllergiesChangeSet
+      \end{itemize}
+  \end{itemize}
+Dodgy code
+  \begin{itemize}
+    \item Dead local store
+      This instruction assigns a value to a local variable, but the
+      value is not read or used in any subsequent instruction. Often, this
+      indicates an error, because the value computed is never used.
+      Note that Sun's javac compiler often generates dead stores for final
+      local variables. Because FindBugs is a bytecode-based tool, there is
+      no easy way to eliminate these false positives.
+
+      Class:
+      \begin{itemize}
+        \item PatientServiceImpl
+      \end{itemize}
+  \end{itemize}
 \paragraph{OWASP ZAP}
 
 A passive run of ZAP returns the following four possible vulnerabilities:
@@ -468,6 +469,7 @@ A passive run of ZAP returns the following four possible vulnerabilities:
    automatically figure out the content type if X-Content-Type-Options is not
    set to 'nosniff', making it possible to do such operations as cross-site
    scripting \autocite[]{XFrameOptions}.
+\end{itemize}
 
 \subsection{Interpretations of the raw data}
 
