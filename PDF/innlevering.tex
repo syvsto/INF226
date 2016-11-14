@@ -176,8 +176,33 @@ We ran ZAP version 2.5.0 for our tests.
 \subsection{OpenMRS}
 \subsection{Tools}
 \paragraph{Audit Workbench}
+
+Audit Workbench was set up by downloading the HPE Fortify software suite, which
+contains installers for different Fortify software. The installer for Audit
+Workbench was run, without any issues. Setting up the Audit Workbench IDE
+required changing the -Xmx setting in the ``/Applications/HP_Fortify/
+HP_Fortify_SCA_and_Apps_16.10/Core/private-bin/awb/eclipse/Eclipse.app/
+Contents/MacOS/eclipse.ini'' file, which required a bit of dedication to find.
+The reason for this is that scanning a project requires more memory than is
+allocated to Audit Workbench by default. After that, running Audit Workbench was
+pretty straitforward.
+
 \paragraph{FindBugs}
+
+
+
 \paragraph{OWASP Zap}
+
+Running ZAP requires ZAP to be installed in the same location as OpenMRS when
+running OpenMRS locally. Therefore, we set up a virtual machine to run both ZAP,
+the Tomcat server and the MySQL server. The virtual machine used ran the the
+linux distribution Kali Linux, which is a specialized distro for penetration
+testing. It included OWASP ZAP, and we therefore did not need to set up the
+application itself. However, fully utilizing ZAP required using an addon for our
+browser (Firefox). The addon had an out-of-date signature, and thus needed
+Firefox to run addons without valid signatures. After changing that setting for
+Firefox and running the setup wizard for ZAP inside Firefox, it was ready to be used.
+
 \subsection{Summary}
 
 \section{Preliminary results}
@@ -547,6 +572,8 @@ more on the server errors.
 %  LocalWords:  XSS OWASP Servlet CloudFlare OpenMRS FindBugs
 \section{Analysis, evaluation and recommendations}  
 \subsection{Analysis of data}
+
+Exploit DB has four relatively new exploits listed for OpenMRS. Of these  
 
 \subsection{Evaluation}
 \paragraph{MySQL}
