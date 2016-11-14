@@ -1,5 +1,6 @@
-\documentclass{article} %skal vi legge til [a4paper] og endre til report? 
+\documentclass{report} %skal vi legge til [a4paper] og endre til report? 
 
+\usepackage[a4paper]{geometry}
 \usepackage[backend=bibtex, style=verbose-trad2]{biblatex}
 \usepackage[utf8]{inputenc}
 \usepackage{comment}
@@ -377,7 +378,7 @@ Internationalization
 Malicious code vulnerability
   \begin{itemize}
     \item Mutable static field. 
-      Public static field isn´t final and could be change by malicious
+      Public static field isn't final and could be change by malicious
       code or by accident.
 
       Classes:
@@ -422,7 +423,7 @@ Multithreaded code vulnerability
 Performance
   \begin{itemize}
     \item Questionable Boxing of primitive value. 
-      Boxing a primitive to compare. It´s more efficient to use static compare
+      Boxing a primitive to compare. It's more efficient to use static compare
       method on primitives.
 
       Class:
@@ -485,7 +486,7 @@ A passive run of ZAP returns the following four possible vulnerabilities:
  \item X-Content-Type-Options Header missing: Some older browsers try to
    automatically figure out the content type if X-Content-Type-Options is not
    set to 'nosniff', making it possible to do such operations as cross-site
-   scripting \autocite[]{XFrameOptions}.
+   scripting \autocite[]{XFrame}.
 \end{itemize}
 
 \subsection{Interpretations of the raw data}
@@ -544,6 +545,52 @@ issues). Since the critical issues were found by static analysis, we will focus
 more on the server errors.
 
 %  LocalWords:  XSS OWASP Servlet CloudFlare OpenMRS FindBugs
+\section{Analysis, evaluation and recommendations}  
+\subsection{Analysis of data}
+
+\subsection{Evaluation}
+\paragraph{MySQL}
+A recent vulnerability in MySQL could be used to gain root access to the
+database. Since OpenMRS has trouble using the newest MySQL versions, this is a
+large security issue. Patching would require more than updating to a new MySQL
+version, as OpenMRS won't run it. \autocite[]{Threatpost}
+
+\subsection{Recommendations}
+\paragraph{Updating source code}
+TODO: Skriv inn mulige ting i kodebasen som bør fokuseres på
+
+\paragraph{Recommended software}
+The install instructions for OpenMRS links the user to Tomcat 6, and with a
+generic statement about how ``there are issues with Tomcat 8.''. However, Tomcat
+7 works properly, and contains security fixes not included in Tomcat 6. Using
+Tomcat 7 is therefore recommended by us.
+
+\paragraph{User management}
+% Kopiert fra FlossManuals, bør omskrives
+Generally, Anonymous privileges should be kept very restricted, since patient
+information might otherwise be compromised. Privileges granted to the
+Authenticated role are granted to anyone that logs into your system, no matter
+what other role(s) they might be assigned. Granting privileges to the
+Authenticated role is an easy way to grant privileges to all users of the
+system. The System Developer role is automatically granted full access to the
+system and should only be granted to system administrators.
+
+Super users (system administrators) are automatically granted all privileges
+in the system; therefore, you must be very careful to protect your system
+administrator password.
+\autocite[]{FlossManuals}
+
+\paragraph{Race conditions}
+Of the different vulnerabilities, the ones concerning race conditions are 
+the second largest group. Since race conditions are becoming an increasingly
+more commmon cause of errors and can cause such errors as returning critical
+data, to non-authorized users, these errors should be considered extra important
+to fix.
+
+\autocite[]{Floss}
+
+
+\subsection{Summary}
 
 \end{document}
 

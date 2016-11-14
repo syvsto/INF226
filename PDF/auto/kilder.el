@@ -9,6 +9,9 @@
     "CVEDetails"
     "XFrame"
     "SRSD"
-    "VERACODE"))
+    "VERACODE"
+    "FLOSS"
+    "THREATPOST"
+    "ExploitDatabase"))
  :bibtex)
 
