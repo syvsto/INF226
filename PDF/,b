@@ -1,0 +1,30 @@
+
+\documentclass{article}
+
+\usepackage[backend=bibtex, style=verbose-trad2]{biblatex}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+%\bibliography{kildertemp}
+
+% \usepackag{array} <- har jeg ikke array package? Hvordan legger jeg den inn? (Håvar)
+
+\title{INF226 Obligatory assignment}
+\date{2016-10-02}
+\author{Håvar Eggereide and Syver Storm-Furru}
+
+
+\begin{document}
+
+\begin{center}
+\begin{tabular}{l | c | r}
+  \hline
+  1 & 2 & 3 \\ \hline
+  4 & 5 & 6 \\ \hline
+  7 & 8 & 9 \\ \hline
+  \hline
+
+\end{tabular}
+\end{center}
+
+
+\end{document}
