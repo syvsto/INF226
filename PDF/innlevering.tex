@@ -17,7 +17,7 @@
 \pagenumbering{arabic}
 \tableofcontents
 \newpage
-\section{Introduction}
+\chapter{Introduction}
 
   For our obligatory assignment we were tasked with analysing OpenMRS, a medical
   patient journal system. The analysis is performed both using static and
@@ -87,36 +87,7 @@
   database backend. It also exposes a programming API to users, and is modular
   and extendable.
 
-  \paragraph{Setup}
-
-  The setup process of OpenMRS is quite involved and time consuming when
-  attempting to do so on a personal computer, requiring both Tomcat, Java and
-  MySQL to be setup. The official documentation is useful, but different parts
-  of it uses different versions of e.g. Tomcat, so it can be confusing.
-  It also provides install instructions for Windows and Linux distributions
-  with Aptitude, but not for OSX or other Linux distributions. 
-
-  As mentioned, OpenMRS doesn't run on the newest version of MySQL (at the time
-  of writing MySQL 5.7), and the install instructions do not mention this. The
-  process of figuring this out, and of removing and reinstalling a previous
-  version of MySQL, proved to be a lengthy detour on an already long road.
-  The instructions are also not very specific when noting which files you need
-  to run OpenMRS in Tomcat, whether it is the source code, which was difficult
-  to build and only return a test suite on a normal compile, a readily packaged
-  complete install (which did not work properly), or a .war file that should be
-  uploaded to the Tomcat server.
-
-  We first attempted setting up OpenMRS on OSX 10.11, but ran into problems when
-  trying to install the correct version of MySQL, and therefore retried in an
-  empty virtual machine running Linux (tested with both Lubuntu and Kali Linux).
-  Following the install instructions were a lot easier when running Debian based
-  distributions containing Aptitude, but we still had to find and install a
-  previous version of MySQL. 
-
-  Once everything was installed OpenMRS had some extra setup that was required,
-  done through a web interface. This was mostly easy once the correct version of
-  MySQL was in place. You were also given a first username and password that
-  was, respectively, `admin' and `Admin123'.
+  
 
   \paragraph{Usage}
 
@@ -172,10 +143,36 @@ tools for manual searches for security vulnerabilities\autocite[]{ZAP}.
 
 We ran ZAP version 2.5.0 for our tests.
 
-\section{Setup and Configuration}
+\chapter{Setup and Configuration}
 \subsection{OpenMRS}
+  The setup process of OpenMRS is quite involved and time consuming when
+  attempting to do so on a personal computer, requiring both Tomcat, Java and
+  MySQL to be setup. The official documentation is useful, but different parts
+  of it uses different versions of e.g. Tomcat, so it can be confusing.
+  It also provides install instructions for Windows and Linux distributions
+  with Aptitude, but not for OSX or other Linux distributions. 
 
-% er en setup lengre oppe for akkurat OpenMRS s¨det trenger vi vel ikke her!
+  As mentioned, OpenMRS doesn't run on the newest version of MySQL (at the time
+  of writing MySQL 5.7), and the install instructions do not mention this. The
+  process of figuring this out, and of removing and reinstalling a previous
+  version of MySQL, proved to be a lengthy detour on an already long road.
+  The instructions are also not very specific when noting which files you need
+  to run OpenMRS in Tomcat, whether it is the source code, which was difficult
+  to build and only return a test suite on a normal compile, a readily packaged
+  complete install (which did not work properly), or a .war file that should be
+  uploaded to the Tomcat server.
+
+  We first attempted setting up OpenMRS on OSX 10.11, but ran into problems when
+  trying to install the correct version of MySQL, and therefore retried in an
+  empty virtual machine running Linux (tested with both Lubuntu and Kali Linux).
+  Following the install instructions were a lot easier when running Debian based
+  distributions containing Aptitude, but we still had to find and install a
+  previous version of MySQL. 
+
+  Once everything was installed OpenMRS had some extra setup that was required,
+  done through a web interface. This was mostly easy once the correct version of
+  MySQL was in place. You were also given a first username and password that
+  was, respectively, `admin' and `Admin123'.
 
 
 \subsection{Tools}
@@ -184,12 +181,10 @@ We ran ZAP version 2.5.0 for our tests.
 Audit Workbench was set up by downloading the HPE Fortify software suite, which
 contains installers for different Fortify software. The installer for Audit
 Workbench was run, without any issues. Setting up the Audit Workbench IDE
-required changing the -Xmx setting in the ``/Applications/HP_Fortify/
-HP_Fortify_SCA_and_Apps_16.10/Core/private-bin/awb/eclipse/Eclipse.app/
-Contents/MacOS/eclipse.ini'' file, which required a bit of dedication to find.
-The reason for this is that scanning a project requires more memory than is
-allocated to Audit Workbench by default. After that, running Audit Workbench was
-pretty strait forward.
+required changing the -Xmx setting in a deeply nested ``eclipse.ini'' file,
+which required a bit of dedication to find. The reason for this is that scanning
+a project requires more memory than is allocated to Audit Workbench by default.
+After that, running Audit Workbench was pretty straight forward.
 
 \paragraph{FindBugs}
 
@@ -215,8 +210,6 @@ browser (Firefox). The addon had an out-of-date signature, and thus needed
 Firefox to run addons without valid signatures. After changing that setting for
 Firefox and running the setup wizard for ZAP inside Firefox, it was ready to be used.
 
-\subsection{Summary}
-
 \section{Preliminary results}
 
 \subsection{Visible potential issues}
@@ -230,7 +223,7 @@ Firefox and running the setup wizard for ZAP inside Firefox, it was ready to be 
   has several vulnerabilities, some very serious \autocite[]{CVEDetails}. While some of these
   also are present in newer versions of MySQL, others are not, making the database slightly more vulnerable.
 
-\subsection{Tests of the software tools}
+\chapter{Tests of the software tools}
 
   After we set everything up, we ran a test run of each analysis tool, to make sure
   everything was functioning properly and to find any glaring issues, if any.
@@ -275,7 +268,7 @@ Firefox and running the setup wizard for ZAP inside Firefox, it was ready to be 
 
 \section{Findings}
 
-\subsection{Raw data}
+\section{Raw data}
 
 \paragraph{Fortify}
 
@@ -526,7 +519,7 @@ A passive run of ZAP returns the following four possible vulnerabilities:
    scripting \autocite[]{XFrame}.
 \end{itemize}
 
-\subsection{Interpretations of the raw data}
+\section{Interpretations of the raw data}
 
 \paragraph{Tests}
 Some of the critical errors found by both Fortify and FindBugs were in test
@@ -582,19 +575,19 @@ issues). Since the critical issues were found by static analysis, we will focus
 more on the server errors.
 
 %  LocalWords:  XSS OWASP Servlet CloudFlare OpenMRS FindBugs
-\section{Analysis, evaluation and recommendations}  
-\subsection{Analysis of data}
+\chapter{Analysis, evaluation and recommendations}  
+\section{Analysis of data}
 
 Exploit DB has four relatively new exploits listed for OpenMRS. Of these  
 
-\subsection{Evaluation}
+\section{Evaluation}
 \paragraph{MySQL}
 A recent vulnerability in MySQL could be used to gain root access to the
 database. Since OpenMRS has trouble using the newest MySQL versions, this is a
 large security issue. Patching would require more than updating to a new MySQL
 version, as OpenMRS won't run it. \autocite[]{Threatpost}
 
-\subsection{Recommendations}
+\section{Recommendations}
 \paragraph{Updating source code}
 TODO: Skriv inn mulige ting i kodebasen som bør fokuseres på
 
@@ -629,7 +622,7 @@ to fix.
 \autocite[]{Floss}
 
 
-\subsection{Summary}
+\section{Summary}
 
 \end{document}
 
