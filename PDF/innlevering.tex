@@ -139,9 +139,29 @@ Project. The software acts as a proxy between the host computer and a web
 application, performing different types of automatic scans, as well as having
 tools for manual searches for security vulnerabilities\autocite[]{ZAP}.
 
-%  LocalWords:  HPE
-
 We ran ZAP version 2.5.0 for our tests.
+
+\subsection{ThreadSafe} 
+
+``ThreadSafe is a static analysis tool for finding concurrency bugs and
+potential performance issues in Java programs.''
+ \autocite[]{THREADSAFE}
+
+The program is developed by Contemplate ltd. aiming to help developers discover
+concurrency issues in the code-base prior to the deploying of the application.
+Concurrency is a complicated issue, having the correct understanding of
+what it is and how it works is not easy. Then the next step
+of implementing it correctly can give rise to more complicated issues which are
+even harder to discover. For the developer to have a tool to aid in working with
+concurrency is of high value. Should a issue arise during runtime the
+ramifications, for a system like OpenMRS which potentially need to be operating
+24 hours a day, could possibly be disruption of the integrity of the database
+and halt operations.
+
+ThreadSafe is not open source and it is necessary to invest in a license if
+there is a need to integrate the application in the SDLC. There is however a
+free trial of 14 days available.
+%  LocalWords:  HPE
 
 \chapter{Setup and Configuration}
 \subsection{OpenMRS}
@@ -210,6 +230,22 @@ browser (Firefox). The addon had an out-of-date signature, and thus needed
 Firefox to run addons without valid signatures. After changing that setting for
 Firefox and running the setup wizard for ZAP inside Firefox, it was ready to be used.
 
+\paragraph{ThreadSafe} % Setup and Configuration
+
+ThreadSafe has three install options, two which are available in the trial
+version. These options are: A .jar file which is executable from the terminal
+taking input-arguments and a setup file for each project, plugin for a static
+analyzing tool called SonarQube and a plugin for the Eclipse IDE.
+
+As we were using a free trial we had to be limited to ether using the terminal
+program or the Eclipse plugin, which were the included options in the trial. As
+setting up a project configuration file for the terminal application seemed to
+open the possibility of misconfiguration, using the Eclipse plugin seemed the
+best alternative. Installing the plugin from the .zip file was easy, the only
+other thing necessary was to order a trial license and past this license in the
+Preferences -> ThreadSafe. We then let Eclipse build the Maven .pom file from
+the OpenMRS source-code and then everything was ready for scanning. 
+
 \section{Preliminary results}
 
 \subsection{Visible potential issues}
@@ -250,21 +286,16 @@ Firefox and running the setup wizard for ZAP inside Firefox, it was ready to be 
   results. The reports might be a bit hard to navigate and there was some
   trouble generating a html report that potentially is more readable. Again the
   unit-test generated false positives.
-  
-\begin{comment}
-\paragraph{Dependencies}
-  \begin{itemize}
-    \item MySQL 1.6
-    \item tomcat 7
-    \item spring framework
-    \item jsp
-    \item java .. 1.7
-  \end{itemize}
-\end{comment}
 
+\paragraph{ThreadSafe} % Test of the software tools
+
+The initial scan gave a few possible errors, all of them concerning ether the
+OpenMRS-API or the OpenMRS-WEB which might make sense as these expose surface to
+external modules. The scan also gave some false positives referring to
+unit-test.
+  
 %  LocalWords:  SDLC SSL
   \newpage
-  
 
 \section{Findings}
 
@@ -519,6 +550,43 @@ A passive run of ZAP returns the following four possible vulnerabilities:
    scripting \autocite[]{XFrame}.
 \end{itemize}
 
+\paragraph{ThreadSafe} % Raw data
+
+Excluding false positives from tests the scan gave 12 major and 1 minor
+warnings. No Critical or ``Blocker'' warnings were generated. The major warnings
+are as follows:
+
+\begin{itemize}
+\item Inconsistent synchronization of access to Field/a collection.
+
+  StartupFilter, UpdateFilter.
+
+\item Mixed synchronization of access to a field.
+
+  OpenmrsClassLoader, OrderSetServiceImpl, UpdateFilter.
+  
+\item No lock held while iterating on a synchronized collection view.
+  
+  UpdateFilter.
+
+\item Non atomic use of Get/Check/Put.
+
+  WebModuleUtil.
+
+\item Synchronizing on reusable objects.
+
+  ModuleFactory, WebModuleUtil.
+
+\item Unsafe iteration over synchronized collection.
+
+  HL7InQueueProcessor.
+  
+\item Unsynchronized access to field from asynchronously invoked method.
+  
+  WebModuleUtil.
+
+\end{itemize}
+
 \section{Interpretations of the raw data}
 
 \paragraph{Tests}
@@ -599,7 +667,10 @@ Tomcat 7 is therefore recommended by us.
 
 \paragraph{User management}
 % Kopiert fra FlossManuals, bør omskrives
-Generally, Anonymous privileges should be kept very restricted, since patient
+OpenMRS has three unchangeable user groups, Anonymous, Authenticated and System
+Developer. Floss Manuals (which the official OpenMRS wiki refers to), there are
+some specific recommendations for the privileges these users should recieve.
+From FlossManuals: ``Anonymous privileges should be kept very restricted, since patient
 information might otherwise be compromised. Privileges granted to the
 Authenticated role are granted to anyone that logs into your system, no matter
 what other role(s) they might be assigned. Granting privileges to the
@@ -609,8 +680,10 @@ system and should only be granted to system administrators.
 
 Super users (system administrators) are automatically granted all privileges
 in the system; therefore, you must be very careful to protect your system
-administrator password.
-\autocite[]{FlossManuals}
+administrator password.'' \autocite[]{FlossManuals}
+We recommend that users of the application follow these guidelines, as not
+complying can lead to granting privileges to all users of the system, ergo more
+easily letting attackers gain information not usually available to them.
 
 \paragraph{Race conditions}
 Of the different vulnerabilities, the ones concerning race conditions are 
