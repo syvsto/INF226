@@ -13,15 +13,22 @@
 
 \begin{document}
 
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+\newpage
 \subsection{ThreadSafe} % intro
 
 ``ThreadSafe is a static analysis tool for finding concurrency bugs and
-potential performance issues in Java programs.''\autocite[]{ThreadSafe}
+potential performance issues in Java programs.''
+ \autocite[]{THREADSAFE}
 
 The program is developed by Contemplate ltd. aiming to help developers discover
 concurrency issues in the code-base prior to the deploying of the application.
-Concurrency is a complicated issue, simply having the correct understanding of
-what it is and the theory of what it does isn't for everyone. Then the next step
+Concurrency is a complicated issue, having the correct understanding of
+what it is and how it works is not easy. Then the next step
 of implementing it correctly can give rise to more complicated issues which are
 even harder to discover. For the developer to have a tool to aid in working with
 concurrency is of high value. Should a issue arise during runtime the
@@ -63,13 +70,35 @@ warnings. No Critical or ``Blocker'' warnings were generated. The major warnings
 are as follows:
 
 \begin{itemize}
-\item Inconsistent synchronization of access to Field/a collection
-\item Mixed synchronization of access to a field
-\item No lock held while iterating on a synchronized collection view
-\item Non atomic use of Get/Check/Put
-\item Synchronizing on reusable objects
-\item Unsafe iteration over synchronized collection
-\item Unsynchronized access to field from asynchronously invoked method
+\item Inconsistent synchronization of access to Field/a collection.
+
+  StartupFilter, UpdateFilter.
+
+\item Mixed synchronization of access to a field.
+
+  OpenmrsClassLoader, OrderSetServiceImpl, UpdateFilter.
+  
+\item No lock held while iterating on a synchronized collection view.
+  
+  UpdateFilter.
+
+\item Non atomic use of Get/Check/Put.
+
+  WebModuleUtil.
+
+\item Synchronizing on reusable objects.
+
+  ModuleFactory, WebModuleUtil.
+
+\item Unsafe iteration over synchronized collection.
+
+  HL7InQueueProcessor.
+  
+\item Unsynchronized access to field from asynchronously invoked method.
+  
+  WebModuleUtil.
+
+\end{itemize}
   
  
 
