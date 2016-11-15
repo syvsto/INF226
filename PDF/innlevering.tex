@@ -299,7 +299,7 @@ unit-test.
 
 \section{Findings}
 
-\section{Raw data}
+\subsection{Raw data}
 
 \paragraph{Fortify}
 
@@ -587,7 +587,7 @@ are as follows:
 
 \end{itemize}
 
-\section{Interpretations of the raw data}
+\subsection{Interpretations of the raw data}
 
 \paragraph{Tests}
 Some of the critical errors found by both Fortify and FindBugs were in test
@@ -642,28 +642,67 @@ related to HTTP headers (for example no SQL injection issues and direct XSS
 issues). Since the critical issues were found by static analysis, we will focus
 more on the server errors.
 
+\subsection{Vulnerable external libraries/software}
+In order to find vulnerabilities in libraries and software OpenMRS is based on
+we looked at exploit-db.com, which is a database looking up vulnerabilities in
+the CVE and OSVDB databases. We looked for exploits in Tomcat, JRE, Java, and
+MySQL. We found the following relevant exploits:
+
+\begin{itemize}
+\item Tomcat: There are issues with the newest version of Tomcat (Tomcat 8) for
+  OpenMRS, and we therefore looked for exploits in Tomcat 7. There are
+  especially two exploits worth noting:
+  \begin{itemize}
+    \item EDB-ID 35011: Apache Tomcat 7.0.4 - 'sort' and 'orderBy' Parameters Cross-Site Scripting:
+      Since Tomcat doesn't sanitize user inputs properly, cross-site scripting
+      can be performed.
+    \item EDB-ID 40450: Apache Tomcat 8/7/6 - Privilege escalation: The default
+      Tomcat distributions available on Aptitude (Debian and Debian based distro
+      package manager) as well as RPM (RedHat and RedHat derivate distro packagr
+      manager) have a systemd config file that is insecure, run on boot, and can give
+      root access to an attacker. The payload for this file can be delivered
+      through a Tomcat shell in java web apps, or locally. This is a new exploit
+      (found 10/10/2016) and thus unlikely to be patched on servers running OpenMRS.
+  \end{itemize}
+\item MySQL: EDB-ID 40678: MySQL/MariaDB/PerconaDB System user Privilege
+  escalation / Race condition:
+  Lets a local user access and run database operations above their own privilege
+  level, and combined with other exploits, can give server root access to a user.
+  
+\item Java/JRE: OpenMRS runs on JRE 1.7, for which we couldn't find any relevant exploits.
+\end{itemize}\autocite[]{exploitdb}
+
 %  LocalWords:  XSS OWASP Servlet CloudFlare OpenMRS FindBugs
 \chapter{Analysis, evaluation and recommendations}  
-\section{Analysis of data}
 
-Exploit DB has four relatively new exploits listed for OpenMRS. Of these  
-
-\section{Evaluation}
+\section{Evaluation of external libraries}
 \paragraph{MySQL}
-A recent vulnerability in MySQL could be used to gain root access to the
-database. Since OpenMRS has trouble using the newest MySQL versions, this is a
-large security issue. Patching would require more than updating to a new MySQL
-version, as OpenMRS won't run it. \autocite[]{Threatpost}
+Being able to access and edit the database is very dangerous in a system that
+contains such sensitive data as patient journals.
+As noted, the EDB-ID 40678 vulnerability in MySQL could be used to gain root
+access to the database. It requires local access, but since OpenMRS can be used
+for example in a hospital with a lot of local users of different privileges (for
+example Medical Student, Laboratory Assistants and of course Doctors), the
+vulnerability is very relevant to OpenMRS. 
+
+\paragraph{Tomcat}
+Since a lot of servers running OpenMRS are Linux servers running e.g. Ubuntu
+(the official installation instructions list Windows and Ubuntu installation
+steps), EDB-ID 40450 is a dangerous exploit. It can be exploited through a web
+shell delivered through for example cross-site scripting or SQL injection, and
+can give root access to the server, giving the attacker full control.
 
 \section{Recommendations}
+
 \paragraph{Updating source code}
-TODO: Skriv inn mulige ting i kodebasen som bør fokuseres på
 
 \paragraph{Recommended software}
 The install instructions for OpenMRS links the user to Tomcat 6, and with a
-generic statement about how ``there are issues with Tomcat 8.''. However, Tomcat
-7 works properly, and contains security fixes not included in Tomcat 6. Using
-Tomcat 7 is therefore recommended by us.
+generic statement about how ``there are issues with Tomcat 8.''. In light of the
+Tomcat exploit found on Exploit-DB, the user should not be using a version of Tomcat
+from the package manager of the operating system if running a Linux server.
+Downloading the newest version of Tomcat 7 from Apache's homepage is therefore
+the reccomended course of action.
 
 \paragraph{User management}
 % Kopiert fra FlossManuals, bør omskrives
@@ -693,7 +732,6 @@ data, to non-authorized users, these errors should be considered extra important
 to fix.
 
 \autocite[]{FLOSS}
-
 
 \section{Summary}
 

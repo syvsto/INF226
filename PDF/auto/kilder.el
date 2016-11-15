@@ -13,6 +13,7 @@
     "FLOSS"
     "THREATPOST"
     "ExploitDatabase"
-    "ThreadSafe"))
+    "ThreadSafe"
+    "exploitdb"))
  :bibtex)
 
