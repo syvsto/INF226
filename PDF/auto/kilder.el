@@ -12,6 +12,7 @@
     "VERACODE"
     "FLOSS"
     "THREATPOST"
-    "ExploitDatabase"))
+    "ExploitDatabase"
+    "ThreadSafe"))
  :bibtex)
 

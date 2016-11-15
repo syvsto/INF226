@@ -1,0 +1,88 @@
+
+\documentclass{report} %skal vi legge til [a4paper] og endre til report? 
+
+\usepackage[a4paper]{geometry}
+\usepackage[backend=bibtex, style=verbose-trad2]{biblatex}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\bibliography{kilder}
+
+\title{INF226 Obligatory assignment}
+\date{2016-10-02}
+\author{Håvar Eggereide and Syver Storm-Furru}
+
+\begin{document}
+
+\subsection{ThreadSafe} % intro
+
+``ThreadSafe is a static analysis tool for finding concurrency bugs and
+potential performance issues in Java programs.''\autocite[]{ThreadSafe}
+
+The program is developed by Contemplate ltd. aiming to help developers discover
+concurrency issues in the code-base prior to the deploying of the application.
+Concurrency is a complicated issue, simply having the correct understanding of
+what it is and the theory of what it does isn't for everyone. Then the next step
+of implementing it correctly can give rise to more complicated issues which are
+even harder to discover. For the developer to have a tool to aid in working with
+concurrency is of high value. Should a issue arise during runtime the
+ramifications, for a system like OpenMRS which potentially need to be operating
+24 hours a day, could possibly be disruption of the integrity of the database
+and halt operations.
+
+ThreadSafe is not open source and it is necessary to invest in a license if
+there is a need to integrate the application in the SDLC. There is however a
+free trial of 14 days available.
+
+\paragraph{ThreadSafe} % Setup and Configuration
+
+ThreadSafe has three install options, two which are available in the trial
+version. These options are: A .jar file which is executable from the terminal
+taking input-arguments and a setup file for each project, plugin for a static
+analyzing tool called SonarQube and a plugin for the Eclipse IDE.
+
+As we were using a free trial we had to be limited to ether using the terminal
+program or the Eclipse plugin, which were the included options in the trial. As
+setting up a project configuration file for the terminal application seemed to
+open the possibility of misconfiguration, using the Eclipse plugin seemed the
+best alternative. Installing the plugin from the .zip file was easy, the only
+other thing necessary was to order a trial license and past this license in the
+Preferences -> ThreadSafe. We then let Eclipse build the Maven .pom file from
+the OpenMRS source-code and then everything was ready for scanning. 
+
+\paragraph{ThreadSafe} % Test of the software tools
+
+The initial scan gave a few possible errors, all of them concerning ether the
+OpenMRS-API or the OpenMRS-WEB which might make sense as these expose surface to
+external modules. The scan also gave some false positives referring to
+unit-test.
+
+\paragraph{ThreadSafe} % Raw data
+
+Excluding false positives from tests the scan gave 12 major and 1 minor
+warnings. No Critical or ``Blocker'' warnings were generated. The major warnings
+are as follows:
+
+\begin{itemize}
+\item Inconsistent synchronization of access to Field/a collection
+\item Mixed synchronization of access to a field
+\item No lock held while iterating on a synchronized collection view
+\item Non atomic use of Get/Check/Put
+\item Synchronizing on reusable objects
+\item Unsafe iteration over synchronized collection
+\item Unsynchronized access to field from asynchronously invoked method
+  
+ 
+
+%Interpretations of the raw data
+
+\paragraph{Race conditions}
+
+
+%Recommandations
+\paragraph{Race conditions}
+
+
+%  LocalWords:  SonarQube
+
+\end{document}
+%  LocalWords:  runtime SDLC ThreadSafe OpenMRS
