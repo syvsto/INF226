@@ -710,6 +710,22 @@ attacker writes a module for OpenMRS that gets installed and for example leaks
 information about the running state of the application to the attacker. FindBugs
 recommends returning a copy of data instead of mutating data in most cases. 
 
+\paragraph{OWASP ZAP}
+ZAP reported an SQL injection which was found in the Forgotten Password page of
+OpenMRS. As this page is available to all persons, both users and non-users, it
+is a quite significant vulnerability which can grant an attacker access to the
+user database. ZAP also reported multiple examples of ClickJacking
+vulnerabilities. Some of them are not in OpenMRS itself, but rather in a plugin
+for Firefox used by ZAP, and can be disregarded. Others are, however, in
+OpenMRS. Depending on the functionality in OpenMRS added by modules ClickJacking
+can be an issue, as it requires overlaying some sort of CSS and/or Javascript to
+trick users into clicking on something they did not intend to click. Some kind
+of XSS attack would therefore be needed. If for example a module is added to
+OpenMRS that recieves emails form patients and lets a doctor answer them, an attacker
+could perform a ClickJacking attack by overlaying an iFrame in the sent message
+and sending it to the doctor. ZAP recommends setting X-Frame-Options to for
+example DENY. OpenMRS has not set this header by default.
+
 \section{Evaluation of external libraries}
 \paragraph{MySQL}
 Being able to access and edit the database is very dangerous in a system that
@@ -766,7 +782,15 @@ an attacker, it also lets an attacker find information about the registered
 users, easing for example bruteforce attacks.
 According to OWASP, Sensitive Data Exposure should be mitigated by encrypting
 all sensitive data that's sent, as well as not storing sensitive data
-unnecessarily \autocite[]{owasptop10}.
+unnecessarily
+
+ZAP found one SQL Injection vulnerability. Injection vulnerabilities are the
+most common category on OWASP, and have been so for a long time. SQL injection
+attacks are easy to perform and can have a severe impact. In this case, the
+vulnerability was found in the Forgotten Password page, which is accessible to
+non-logged in users, and is therefore especially dangerous. As OWASP recommends
+for mitigating injection attacks, there should be server side evaluation of form
+input and all special characters should be escaped on the server \autocite[]{owasptop10}.
 
 
 \paragraph{Race conditions}
