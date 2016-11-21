@@ -1,0 +1,4148 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ZAP Scanning Report</title>
+</head>
+<body text="#000000">
+<p>
+<strong>ZAP Scanning Report</strong>
+</p>
+<p>
+
+</p>
+<p>
+<strong>Summary of Alerts</strong>
+</p>
+<table width="45%" border="0">
+<tr bgcolor="#666666">
+<td width="45%" height="24"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Risk 
+      Level</font></strong></td><td width="55%" align="center"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Number 
+      of Alerts</font></strong></td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><font size="2" face="Arial, Helvetica, sans-serif"><a href="#high">High</a></font></td><td align="center"><font size="2" face="Arial, Helvetica, sans-serif">1</font></td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><font size="2" face="Arial, Helvetica, sans-serif"><a href="#medium">Medium</a></font></td><td align="center"><font size="2" face="Arial, Helvetica, sans-serif">4</font></td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><font size="2" face="Arial, Helvetica, sans-serif"><a href="#low">Low</a></font></td><td align="center"><font size="2" face="Arial, Helvetica, sans-serif">16</font></td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><font size="2" face="Arial, Helvetica, sans-serif"><a href="#info">Informational</a></font></td><td align="center"><font size="2" face="Arial, Helvetica, sans-serif">0</font></td>
+</tr>
+</table>
+<p></p>
+<p></p>
+<p>
+<strong>Alert Detail</strong>
+</p>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="red" height="24">
+<td width="20%" valign="top"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><a name="high"></a>High (Medium)</font></strong></td><td width="80%"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">SQL Injection</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>SQL injection may be possible.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/forgotPassword.form</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>uname</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>ZAP AND 1=1 -- </p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>1</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Do not trust client side input, even if there is client side validation in place.  </p><p>In general, type check all data on the server side.</p><p>If the application uses JDBC, use PreparedStatement or CallableStatement, with parameters passed by '?'</p><p>If the application uses ASP, use ADO Command Objects with strong type checking and parameterized queries.</p><p>If database Stored Procedures can be used, use them.</p><p>Do *not* concatenate strings into queries in the stored procedure, or use 'exec', 'exec immediate', or equivalent functionality!</p><p>Do not create dynamic SQL queries using simple string concatenation.</p><p>Escape all data received from the client.</p><p>Apply a 'whitelist' of allowed characters, or a 'blacklist' of disallowed characters in user input.</p><p>Apply the principle of least privilege by using the least privileged database user possible.</p><p>In particular, avoid using the 'sa' or 'db-owner' database users. This does not eliminate SQL injection, but minimizes its impact.</p><p>Grant the minimum database access that is necessary for the application.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Other information</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p><p>The page results were successfully manipulated using the boolean conditions [ZAP AND 1=1 -- ] and [ZAP AND 1=2 -- ]</p><p>The parameter value being modified was NOT stripped from the HTML output for the purposes of the comparison</p><p>Data was returned for the original parameter.</p><p>The vulnerability was detected by successfully restricting the data originally returned, by manipulating the parameter</p></p>
+</font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/Top_10_2010-A1</p><p>https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>89</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>19</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="orange" height="24">
+<td width="20%" valign="top"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><a name="medium"></a>Medium (Medium)</font></strong></td><td width="80%"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">X-Frame-Options Header Not Set</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>X-Frame-Options header is not included in the HTTP response to protect against 'ClickJacking' attacks.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts/openmrsmessages.js?v=1.11.6&amp;locale=en</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/engine.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/interface/DWRAlertService.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/robots.txt</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/sitemap.xml</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/loginServlet</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/interface</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/login.htm</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/help.htm</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/index.html</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm?lang=en_GB</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/forgotPassword.form</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs.css?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs_green.css</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/style.css?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts/jquery-ui/css/green/jquery-ui.custom.css</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts/openmrsmessages.js?locale=en&amp;v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>32</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Most modern Web browsers support the X-Frame-Options HTTP header. Ensure it's set on all web pages returned by your site (if you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. ALLOW-FROM allows specific websites to frame the web page in supported web browsers).</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>16</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>15</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="orange" height="24">
+<td width="20%" valign="top"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><a name="medium"></a>Medium (Medium)</font></strong></td><td width="80%"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Format String Error</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>A Format String error occurs when the submitted data of an input string is evaluated as a command by the application. </p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm?lang=ZAP%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%0A</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>lang</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>ZAP%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s
+</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/login.htm?lang=ZAP%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%0A</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>lang</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>ZAP%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s
+</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/help.htm?lang=ZAP%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%0A</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>lang</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>ZAP%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s
+</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/forgotPassword.form?lang=ZAP%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%0A</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>lang</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>ZAP%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s
+</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm;jsessionid=DC3E099E41BA8E469492BDC3EA4B2230?lang=ZAP%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%25n%25s%0A</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>lang</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>ZAP%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s
+</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>5</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Rewrite the background program using proper deletion of bad character strings.  This will require a recompile of the background executable.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Other information</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p><p>Potential Format String Error.  The script closed the connection on a /%s</p></p>
+</font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/Format_string_attack</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>134</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>6</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="orange" height="24">
+<td width="20%" valign="top"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><a name="medium"></a>Medium (Medium)</font></strong></td><td width="80%"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">X-Frame-Options Header Not Set</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>X-Frame-Options header is not included in the HTTP response to protect against 'ClickJacking' attacks.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://blocklist.addons.mozilla.org/blocklist/3/%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D/45.3.0/Firefox/20160802213348/Linux_x86_64-gcc3/en-US/default/Linux%204.3.0-kali1-amd64%20(GTK%203.18.6%2Clibpulse%207.1.0)/default/default/2/6/1/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://blocklist.addons.mozilla.org/blocklist/3/%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D/45.3.0/Firefox/20160802213348/Linux_x86_64-gcc3/en-US/default/Linux%204.3.0-kali1-amd64%20(GTK%203.18.6%2Clibpulse%207.1.0)/default/default/3/7/1/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>2</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Most modern Web browsers support the X-Frame-Options HTTP header. Ensure it's set on all web pages returned by your site (if you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. ALLOW-FROM allows specific websites to frame the web page in supported web browsers).</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>16</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>15</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="orange" height="24">
+<td width="20%" valign="top"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><a name="medium"></a>Medium (Medium)</font></strong></td><td width="80%"><strong><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">X-Frame-Options Header Not Set</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>X-Frame-Options header is not included in the HTTP response to protect against 'ClickJacking' attacks.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=loop@mozilla.org&amp;version=1.1.14&amp;maxAppVersion=45.*&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=%7B972ce4c6-7e08-4474-a285-3208198ce6fd%7D&amp;version=45.3.0&amp;maxAppVersion=45.3.0&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=jid1-CZ1BeoFM9Mmlzg@jetpack&amp;version=0.4&amp;maxAppVersion=29.0a1&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>3</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Most modern Web browsers support the X-Frame-Options HTTP header. Ensure it's set on all web pages returned by your site (if you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. ALLOW-FROM allows specific websites to frame the web page in supported web browsers).</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>16</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>15</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Cookie No HttpOnly Flag</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>A cookie has been set without the HttpOnly flag, which means that the cookie can be accessed by JavaScript. If a malicious script can be run on this page then the cookie will be accessible and can be transmitted to another site. If this is a session cookie then session hijacking may be possible.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>EE8FD4097E046FF85204E6B7F1A982A4; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=EE8FD4097E046FF85204E6B7F1A982A4; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/loginServlet</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>__openmrs_language</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>en; Path=/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>__openmrs_language=en; Path=/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>E74E6E9765B33B806509FC2056CD7552; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=E74E6E9765B33B806509FC2056CD7552; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>B4966CDDCEDD3FC3DACC193CB7C79B27; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=B4966CDDCEDD3FC3DACC193CB7C79B27; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/engine.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>55BC6DF5BD8E6E2FEDD5B9850CF2CD32; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=55BC6DF5BD8E6E2FEDD5B9850CF2CD32; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/interface/DWRAlertService.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>09556B5571AEEB01CFC60A4A6F2A3A75; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=09556B5571AEEB01CFC60A4A6F2A3A75; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/loginServlet</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>2B0865EED40153AD0B8136D8D7AC1B07; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=2B0865EED40153AD0B8136D8D7AC1B07; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/interface</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>2E8DAF7CC665E230E7C476E054725E61; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=2E8DAF7CC665E230E7C476E054725E61; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>71C8E79D283E1A2222541D415DD884B5; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=71C8E79D283E1A2222541D415DD884B5; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/login.htm</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>4D09530AC211A700B8831F392450CD12; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=4D09530AC211A700B8831F392450CD12; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/help.htm</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>ABACE262E4C50BB5CCA6271B5A09E52D; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=ABACE262E4C50BB5CCA6271B5A09E52D; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/findPatient.htm</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>A69BDB0DC2F13754C2F73AE2F5D838BF; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=A69BDB0DC2F13754C2F73AE2F5D838BF; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/index.html</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>1279BD7DE5CFE9E5F9FE684793DC069B; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=1279BD7DE5CFE9E5F9FE684793DC069B; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts/openmrsmessages.js?v=1.11.6&amp;locale=en</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>92A9D21F116A51875A4805FE5EAA2708; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=92A9D21F116A51875A4805FE5EAA2708; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm?lang=en_GB</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>8ED2921963748F40B573E0F92AC11CD8; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=8ED2921963748F40B573E0F92AC11CD8; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm?lang=en_GB</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>__openmrs_language</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>en_GB; Path=/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>__openmrs_language=en_GB; Path=/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/forgotPassword.form</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>9F136989DEBA79A15C0BEAE5C81BF836; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=9F136989DEBA79A15C0BEAE5C81BF836; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs.css?v=1.11.6</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>6D9588A65509F21B675649B5AE450221; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=6D9588A65509F21B675649B5AE450221; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs_green.css</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>AA43FC12FAE859C6070904E2A5A97A2D; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=AA43FC12FAE859C6070904E2A5A97A2D; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/style.css?v=1.11.6</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Attack</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>9FEA991DDCCBF6D2B1D1A5D6D125B971; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>JSESSIONID=9FEA991DDCCBF6D2B1D1A5D6D125B971; Path=/openmrs/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>37</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Ensure that the HttpOnly flag is set for all cookies.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>http://www.owasp.org/index.php/HttpOnly</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>16</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>13</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Web Browser XSS Protection Not Enabled</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Web Browser XSS Protection is not enabled, or is disabled by the configuration of the 'X-XSS-Protection' HTTP response header on the web server</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts/openmrsmessages.js?v=1.11.6&amp;locale=en</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/engine.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/interface/DWRAlertService.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/robots.txt</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/sitemap.xml</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/loginServlet</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/interface</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/login.htm</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/help.htm</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/index.html</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm?lang=en_GB</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/forgotPassword.form</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs.css?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs_green.css</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/style.css?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts/jquery-ui/css/green/jquery-ui.custom.css</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts/openmrsmessages.js?locale=en&amp;v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>32</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Ensure that the web browser's XSS filter is enabled, by setting the X-XSS-Protection HTTP response header to '1'.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Other information</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p><p>The X-XSS-Protection HTTP response header allows the web server to enable or disable the web browser's XSS protection mechanism. The following values would attempt to enable it: </p><p>X-XSS-Protection: 1; mode=block</p><p>X-XSS-Protection: 1; report=http://www.example.com/xss</p><p>The following values would disable it:</p><p>X-XSS-Protection: 0</p><p>The X-XSS-Protection HTTP response header is currently supported on Internet Explorer, Chrome and Safari (WebKit).</p><p>Note that this alert is only raised if the response body could potentially contain an XSS payload (with a text-based content type, with a non-zero length).</p></p>
+</font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</p><p>https://blog.veracode.com/2014/03/guidelines-for-setting-security-headers/</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>933</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>14</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">X-Content-Type-Options Header Missing</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts/openmrsmessages.js?v=1.11.6&amp;locale=en</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/engine.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/interface/DWRAlertService.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/robots.txt</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/sitemap.xml</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/loginServlet</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/interface</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/login.htm</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/help.htm</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/dwr/index.html</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/index.htm?lang=en_GB</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/forgotPassword.form</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs.css?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs_green.css</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/style.css?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts/jquery-ui/css/green/jquery-ui.custom.css</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/openmrs.js?v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>http://localhost:8090/openmrs/scripts/openmrsmessages.js?locale=en&amp;v=1.11.6</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>32</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Other information</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p><p>This issue still applies to error type pages (401, 403, 500, etc) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At "High" threshold this scanner will not alert on client or server error responses.</p></p>
+</font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://www.owasp.org/index.php/List_of_useful_HTTP_headers</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>16</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>15</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Incomplete or No Cache-control and Pragma HTTP Header Set</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://blocklist.addons.mozilla.org/blocklist/3/%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D/45.3.0/Firefox/20160802213348/Linux_x86_64-gcc3/en-US/default/Linux%204.3.0-kali1-amd64%20(GTK%203.18.6%2Clibpulse%207.1.0)/default/default/2/6/1/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://blocklist.addons.mozilla.org/blocklist/3/%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D/45.3.0/Firefox/20160802213348/Linux_x86_64-gcc3/en-US/default/Linux%204.3.0-kali1-amd64%20(GTK%203.18.6%2Clibpulse%207.1.0)/default/default/3/7/1/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>2</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate, private; and that the pragma HTTP header is set with no-cache.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Web_Content_Caching</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>525</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>13</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Web Browser XSS Protection Not Enabled</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Web Browser XSS Protection is not enabled, or is disabled by the configuration of the 'X-XSS-Protection' HTTP response header on the web server</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://blocklist.addons.mozilla.org/blocklist/3/%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D/45.3.0/Firefox/20160802213348/Linux_x86_64-gcc3/en-US/default/Linux%204.3.0-kali1-amd64%20(GTK%203.18.6%2Clibpulse%207.1.0)/default/default/2/6/1/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://blocklist.addons.mozilla.org/blocklist/3/%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D/45.3.0/Firefox/20160802213348/Linux_x86_64-gcc3/en-US/default/Linux%204.3.0-kali1-amd64%20(GTK%203.18.6%2Clibpulse%207.1.0)/default/default/3/7/1/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>2</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Ensure that the web browser's XSS filter is enabled, by setting the X-XSS-Protection HTTP response header to '1'.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Other information</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p><p>The X-XSS-Protection HTTP response header allows the web server to enable or disable the web browser's XSS protection mechanism. The following values would attempt to enable it: </p><p>X-XSS-Protection: 1; mode=block</p><p>X-XSS-Protection: 1; report=http://www.example.com/xss</p><p>The following values would disable it:</p><p>X-XSS-Protection: 0</p><p>The X-XSS-Protection HTTP response header is currently supported on Internet Explorer, Chrome and Safari (WebKit).</p><p>Note that this alert is only raised if the response body could potentially contain an XSS payload (with a text-based content type, with a non-zero length).</p></p>
+</font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</p><p>https://blog.veracode.com/2014/03/guidelines-for-setting-security-headers/</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>933</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>14</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">X-Content-Type-Options Header Missing</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://blocklist.addons.mozilla.org/blocklist/3/%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D/45.3.0/Firefox/20160802213348/Linux_x86_64-gcc3/en-US/default/Linux%204.3.0-kali1-amd64%20(GTK%203.18.6%2Clibpulse%207.1.0)/default/default/2/6/1/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://blocklist.addons.mozilla.org/blocklist/3/%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D/45.3.0/Firefox/20160802213348/Linux_x86_64-gcc3/en-US/default/Linux%204.3.0-kali1-amd64%20(GTK%203.18.6%2Clibpulse%207.1.0)/default/default/3/7/1/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>2</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Other information</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p><p>This issue still applies to error type pages (401, 403, 500, etc) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At "High" threshold this scanner will not alert on client or server error responses.</p></p>
+</font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://www.owasp.org/index.php/List_of_useful_HTTP_headers</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>16</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>15</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Incomplete or No Cache-control and Pragma HTTP Header Set</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChVnb29nLWJhZGJpbnVybC1zaGF2YXI4AEACSgwIARD8mAcYgZkHIAFKDAgAEMeFBxjNhQcgAQ</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAEQ7JIPGPCSDyABSgwIARCg9g4YoPYOIAFKDAgBELPuDhiz7g4gAUoMCAEQwesOGMHrDiABSgwIARDq6Q4Y6ukOIAFKDAgBENrlDhja5Q4gAUoMCAEQ4eAOGOHgDiABSgwIARDc4A4Y3OAOIAFKDAgBENjgDhjY4A4gAUoMCAEQveAOGL3gDiABSgwIARC34A4Yt-AOIAFKDAgBELTgDhi04A4gAUoMCAEQr-AOGLHgDiABSgwIARCn4A4Yp-AOIAFKDAgBEPrfDhj63w4gAUoMCAEQ298OGNvfDiABSgwIARDE3w4YxN8OIAFKDAgBELffDhi33w4gAUoMCAEQo98OGKPfDiABSgwIARCZ3w4Ymd8OIAFKDAgBEJffDhiX3w4gAUoMCAEQk98OGJPfDiABSgwIARCK3w4Yit8OIAFKDAgBEIjfDhiI3w4gAUoMCAEQ3d4OGN3eDiABSgwIARDa3g4Y2t4OIAFKDAgBENfeDhjX3g4gAUoMCAEQyt4OGMreDiABSgwIARDB3g4Ywd4OIAFKDAgBEL3eDhi-3g4gAUoMCAEQrd4OGK3eDiABSgwIARCO3g4Yjt4OIAFKDAgBEPXdDhj13Q4gAUoMCAEQqN0OGKjdDiABSgwIARCe3Q4Ynt0OIAFKDAgBEILdDhiC3Q4gAUoMCAEQmNwOGJjcDiABSgwIARDq2w4Y6tsOIAFKDAgBEOTbDhjk2w4gAUoMCAEQktsOGJLbDiABSgwIARD02g4Y9NoOIAFKDAgBEPHaDhjx2g4gAUoMCAEQ19oOGNfaDiABSgwIARC_2g4Yv9oOIAFKDAgBEKnaDhip2g4gAUoMCAEQ2dkOGNnZDiABSgwIARDE2Q4YxNkOIAFKDAgBEKPZDhij2Q4gAUoMCAEQmtkOGJrZDiABSgwIARCR2A4Yk9kOIAE</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAEQm9YOGJDYDiAB</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAEQ-dQOGJrWDiAB</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAEQ2dMOGPjUDiABSgwIARCB0w4Y19MOIAE</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAEQ_NIOGIDTDiAB</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAEQ8ZIPGPKSDyABShIIABCw9g4Yk_gOIAEqBJwBngE</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAAQubgPGL-4DyABShIIABDc-w4Ygv0OIAEqBBI6ogE</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoaCAAQ2PkOGNv7DiABKgwTJXF_swHlAeYB-QE</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoPCAAQlPgOGNf5DiABKgEY</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChFnb29nLXBoaXNoLXNoYXZhcjgAQAJKDAgBEKuAEhirgBIgAUoMCAEQqYASGKmAEiABSgwIARClgBIYpYASIAFKDAgBEKCAEhijgBIgAUoMCAEQmoASGJ6AEiABSgwIARCWgBIYloASIAFKDAgBEJKAEhiUgBIgAUoMCAEQj4ASGI-AEiABSgwIARCGgBIYhoASIAFKDAgBEISAEhiEgBIgAUoMCAEQgIASGICAEiABSgwIARD7_xEY_v8RIAFKDAgBEPn_ERj5_xEgAUoMCAEQ9v8RGPf_ESABSgwIARD0_xEY9P8RIAFKDAgBEPD_ERjw_xEgAQ</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChFnb29nLXBoaXNoLXNoYXZhcjgAQAJKDAgBEL-GEhjDhhIgAUoMCAEQwYQSGMGEEiABSgwIARCxhBIYsYQSIAFKDAgBEPuDEhj7gxIgAUoMCAEQ0IMSGNCDEiABSgwIARDIgxIYyIMSIAFKDAgBELSDEhi0gxIgAUoMCAEQiYESGImBEiABSgwIARDPgBIYz4ASIAFKDAgBEM2AEhjNgBIgAUoMCAEQxYASGMWAEiABSgwIARDAgBIYwIASIAFKDAgBELeAEhi4gBIgAUoMCAEQsIASGLGAEiABSgwIARCtgBIYrYASIAFKDAgAENmVHBi9lhwgAQ</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChFnb29nLXBoaXNoLXNoYXZhcjgAQAJKDAgAEJGvHBiXrxwgAUoQCAAQ4pccGLCYHCABKgI9Pg</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChFnb29nLXBoaXNoLXNoYXZhcjgAQAJKDAgAEJOXHBjhlxwgAQ</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChFnb29nLXBoaXNoLXNoYXZhcjgAQAJKDAgAEL6WHBiSlxwgAQ</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChRnb29nLXVud2FudGVkLXNoYXZhcjgAQAJKDAgBELPdBBi63QQgAUoMCAAQnfsEGKP7BCAB</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAEQ4M4OGPzODiABSgwIARDJzg4Y3s4OIAFKDAgBEK_NDhjHzg4gAUoMCAEQmc0OGK3NDiAB</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAEQ_c4OGMDQDiAB</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAEQwdAOGPbRDiAB</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing-cache.google.com/safebrowsing/rd/ChNnb29nLW1hbHdhcmUtc2hhdmFyOABAAkoMCAEQ85IPGLCTDyABSgwIARCT6Q4Yk-kOIAFKDAgBEMfoDhjH6A4gAUoMCAEQgeMOGIHjDiABSgwIARCj4A4Yo-AOIAFKDAgBEJHbDhiR2w4gAUoMCAEQgNoOGIDaDiABSgwIARDY0w4Y2NMOIAFKDAgBEPfRDhj70g4gAQ</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>145</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate, private; and that the pragma HTTP header is set with no-cache.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Web_Content_Caching</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>525</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>13</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Incomplete or No Cache-control and Pragma HTTP Header Set</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://safebrowsing.google.com/safebrowsing/downloads?client=navclient-auto-ffox&amp;appver=45.3.0&amp;pver=2.2&amp;key=no-google-api-key</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>1</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate, private; and that the pragma HTTP header is set with no-cache.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Web_Content_Caching</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>525</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>13</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Incomplete or No Cache-control and Pragma HTTP Header Set</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://self-repair.mozilla.org/en-US/repair</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://self-repair.mozilla.org/api/v1/recipe/?enabled=true</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://self-repair.mozilla.org/api/v1/classify_client/</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>3</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate, private; and that the pragma HTTP header is set with no-cache.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Web_Content_Caching</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>525</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>13</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Cross-Domain JavaScript Source File Inclusion</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The page includes one or more script files from a third-party domain.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://self-repair.mozilla.org/en-US/repair</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Parameter</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Evidence</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>1</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p></p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>829</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>15</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Incomplete or No Cache-control and Pragma HTTP Header Set</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://services.addons.mozilla.org/en-US/firefox/api/1.5/search/guid:loop%40mozilla.org,%7B972ce4c6-7e08-4474-a285-3208198ce6fd%7D,jid1-CZ1BeoFM9Mmlzg%40jetpack?src=firefox&amp;appOS=Linux&amp;appVersion=45.3.0&amp;tMain=141&amp;tFirstPaint=2884&amp;tSessionRestored=3131</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>1</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate, private; and that the pragma HTTP header is set with no-cache.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Web_Content_Caching</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>525</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>13</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Incomplete or No Cache-control and Pragma HTTP Header Set</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://shavar.services.mozilla.com/downloads?client=navclient-auto-ffox&amp;appver=45.3.0&amp;pver=2.2</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>1</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate, private; and that the pragma HTTP header is set with no-cache.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Web_Content_Caching</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>525</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>13</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">X-Content-Type-Options Header Missing</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://shavar.services.mozilla.com/downloads?client=navclient-auto-ffox&amp;appver=45.3.0&amp;pver=2.2</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>1</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Other information</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p><p>This issue still applies to error type pages (401, 403, 500, etc) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At "High" threshold this scanner will not alert on client or server error responses.</p></p>
+</font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://www.owasp.org/index.php/List_of_useful_HTTP_headers</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>16</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>15</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Incomplete or No Cache-control and Pragma HTTP Header Set</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=loop@mozilla.org&amp;version=1.1.14&amp;maxAppVersion=45.*&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=%7B972ce4c6-7e08-4474-a285-3208198ce6fd%7D&amp;version=45.3.0&amp;maxAppVersion=45.3.0&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=jid1-CZ1BeoFM9Mmlzg@jetpack&amp;version=0.4&amp;maxAppVersion=29.0a1&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>3</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate, private; and that the pragma HTTP header is set with no-cache.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Web_Content_Caching</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>525</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>13</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Web Browser XSS Protection Not Enabled</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Web Browser XSS Protection is not enabled, or is disabled by the configuration of the 'X-XSS-Protection' HTTP response header on the web server</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=loop@mozilla.org&amp;version=1.1.14&amp;maxAppVersion=45.*&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=%7B972ce4c6-7e08-4474-a285-3208198ce6fd%7D&amp;version=45.3.0&amp;maxAppVersion=45.3.0&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=jid1-CZ1BeoFM9Mmlzg@jetpack&amp;version=0.4&amp;maxAppVersion=29.0a1&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>3</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Ensure that the web browser's XSS filter is enabled, by setting the X-XSS-Protection HTTP response header to '1'.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Other information</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p><p>The X-XSS-Protection HTTP response header allows the web server to enable or disable the web browser's XSS protection mechanism. The following values would attempt to enable it: </p><p>X-XSS-Protection: 1; mode=block</p><p>X-XSS-Protection: 1; report=http://www.example.com/xss</p><p>The following values would disable it:</p><p>X-XSS-Protection: 0</p><p>The X-XSS-Protection HTTP response header is currently supported on Internet Explorer, Chrome and Safari (WebKit).</p><p>Note that this alert is only raised if the response body could potentially contain an XSS payload (with a text-based content type, with a non-zero length).</p></p>
+</font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</p><p>https://blog.veracode.com/2014/03/guidelines-for-setting-security-headers/</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>933</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>14</p>
+</font></td>
+</tr>
+
+</table>
+<p></p>
+<table width="100%" border="0">
+  
+  
+<tr bgcolor="yellow" height="24">
+<a name="low"></a><td width="20%" valign="top"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Low (Medium)</font></strong></td><td width="80%"><strong><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">X-Content-Type-Options Header Missing</font></strong></td>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Description</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p></font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=loop@mozilla.org&amp;version=1.1.14&amp;maxAppVersion=45.*&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=%7B972ce4c6-7e08-4474-a285-3208198ce6fd%7D&amp;version=45.3.0&amp;maxAppVersion=45.3.0&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%">
+<blockquote>
+<font size="2" face="Arial, Helvetica, sans-serif">
+<p>URL</p>
+</font>
+</blockquote>
+</td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=2&amp;id=jid1-CZ1BeoFM9Mmlzg@jetpack&amp;version=0.4&amp;maxAppVersion=29.0a1&amp;status=userEnabled&amp;appID=%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D&amp;appVersion=45.3.0&amp;appOS=Linux&amp;appABI=x86_64-gcc3&amp;locale=nb-NO&amp;currentAppVersion=45.3.0&amp;updateType=112&amp;compatMode=normal</p>
+</font></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Instances</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>3</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Solution</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Other information</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p><p>This issue still applies to error type pages (401, 403, 500, etc) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At "High" threshold this scanner will not alert on client or server error responses.</p></p>
+</font></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>Reference</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif"><p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://www.owasp.org/index.php/List_of_useful_HTTP_headers</p></font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>CWE Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>16</p>
+</font></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8" valign="top">
+<td width="20%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>WASC Id</p>
+</font></td><td width="80%"><font size="2" face="Arial, Helvetica, sans-serif">
+<p>15</p>
+</font></td>
+</tr>
+
+</table>
+</body>
+</html>

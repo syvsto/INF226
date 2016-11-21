@@ -751,14 +751,30 @@ which has become the second most common vulnerability on the list. According to
 OWASP, these types of vulnerabilities can have severe consequences, letting an
 attacker gain control over any user account, and possibly even all user accounts.
 These errors are more difficult to exploit than the Security Misconfiguration
-ones, but also more difficult to find. \autocite[]{owasptop10}
+ones, but also more difficult to find. The OWASP recommendations for this
+category of vulnerabilities is more diffuse, especially for the specific issue
+of SSL certificates. The entry for Broken Authentication and Session management
+also links to the category Sensitive Data Exposure.
+
+Sensitive Data Exposure considers cases of data being transmitted in a way which
+can be stolen. Fortify lists just over 60 privacy violations that are either critical
+or high on the vulnerability spectrum, and some of these are found in such
+classes as HttpClient, which handles HTTP POST data, and which doesn't encrypt sent
+data. There are also multiple places the application logs things such as the
+username performing an operation. While this can help find the identity of
+an attacker, it also lets an attacker find information about the registered
+users, easing for example bruteforce attacks.
+According to OWASP, Sensitive Data Exposure should be mitigated by encrypting
+all sensitive data that's sent, as well as not storing sensitive data
+unnecessarily \autocite[]{owasptop10}.
+
 
 \paragraph{Race conditions}
 Of the different vulnerabilities, the ones concerning race conditions are 
 the second largest group. Since race conditions are becoming an increasingly
 more commmon cause of errors and can cause such errors as returning critical
-data, to non-authorized users, these errors should be considered extra important
-to fix.
+data to non-authorized users, these errors are a potentially important area for
+the developers to improve.
 
 \subsection{Recommendations for users and implementers}
 \paragraph{Recommended software}
@@ -787,8 +803,10 @@ administrator password.'' \autocite[]{FLOSS}
 We recommend that users of the application follow these guidelines, as not
 complying can lead to granting privileges to all users of the system, ergo more
 easily letting attackers gain information not usually available to them.
-
 \autocite[]{FLOSS}
+
+Also, as noted earlier, system administrators should take extra care to remove
+default users such as the user ``admin'' with the password ``Admin123''.
 
 \section{Summary}
 
