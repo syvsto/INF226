@@ -356,10 +356,10 @@ unit-test.
 
 %  LocalWords:  JVM
   and will not be mentioned here. The report generated from the FindBugs GUI was
-  very uninformative and hard to navigate. We found a plugin to IntelliJ IDEA
-  that used Findbugs as the back-end and produced a more informative rapport
+  very uninformative and hard to navigate. We found a plugin for IntelliJ IDEA
+  that used Findbugs as the back-end and produced a more informative report
   where it was easy to exclude the testbase as IntelliJ had generated a build of the
-  codebase giving at a sense of which code was where. In this new rapport we
+  codebase giving a sense of which code was where. In this new report we
   had a total of 296 warnings and a separation between what FindBugs was very
   certain was a bug and what maybe could be a bug. In the following text we have
   made a presentation of the bugs FindBugs is most certain is a potential
@@ -592,10 +592,7 @@ are as follows:
 \paragraph{Tests}
 Some of the critical errors found by both Fortify and FindBugs were in test
 classes, and are therefore not going to run while the application is deployed.
-These bugs and vulnerabilities are therefore disregarded. This especially
-applies to the Fortify results in the category Command Injection: The
-application runs commands from external sources without validating them
-beforehand.
+These bugs and vulnerabilities are therefore disregarded. 
 
 \paragraph{External files}
 The vulnerabilities concerning passwords in clear text found by Fortify are
@@ -674,6 +671,44 @@ MySQL. We found the following relevant exploits:
 
 %  LocalWords:  XSS OWASP Servlet CloudFlare OpenMRS FindBugs
 \chapter{Analysis, evaluation and recommendations}  
+\section{Evaluation of tool reports}
+\paragraph{Audit Workbench}
+Audit Workbench presented us with 60 critical errors, of which nearly all were
+found in tests. However, the vulnerabilities related to SSL certificates are not
+related to tests, and would let an attacker spoof a certificate and insert
+itself between the server and the endpoint. OpenMRS would trust the spoofed
+certificate and therefore let the user recieve unauthorized data. This is
+critical for instances of OpenMRS connected to the internet.
+
+There are also several issues in the ``high'' category: For example hard coded
+encryption keys, meaning anyone with access to the source code (which in an open
+source project is anyone) has access to the encryption key. Since the project
+uses AES encryption by default, which uses the same key for encryption and
+decryption, it means anyone has access to the decryption key. Another issue is
+that some default passwords are stored in cleartext, and while the application
+asks for the system administator to change default passwords, the task is
+delegated to the user, which may or may not comply. It would have been safer not
+to store any passwords in cleartext. 
+
+\paragraph{FindBugs}
+Most of the FindBugs errors were in the category Malicious Code Vulnerablity
+warnings, which, along with Security Warnings, is the most relevant category
+for our purposes. The warnings given a high priority by FindBugs are warnings
+about non-final properties that should be final. According to the description
+from FindBugs, these fields could be changed by malicious code or by accident by
+programmers working on OpenMRS or an OpenMRS module. Among the properties not
+set as final are properties setting the data directory OpenMRS uses, as well as
+a regular expression and other password requirement settings. If these get
+changed by accident or on purpose, it could let an attacker use either point the
+software to a location on the computer under his control, or by setting a custom
+regex, whitelist characters that would let the attacker perform SQL injection attacks.
+
+FindBugs also presents many warnings about OpenMRS returning references to
+mutable objects, something that can let an attacker understand how OpenMRS
+represents internal state and data. Again, this is mostly relevant if the
+attacker writes a module for OpenMRS that gets installed and for example leaks
+information about the running state of the application to the attacker. FindBugs
+recommends returning a copy of data instead of mutating data in most cases. 
 
 \section{Evaluation of external libraries}
 \paragraph{MySQL}
@@ -695,7 +730,35 @@ can give root access to the server, giving the attacker full control.
 \section{Recommendations}
 
 \subsection{Recommendations for developers}
-\paragraph{Updating source code}
+
+\paragraph{OWASP Top 10}
+Of the errors found by Fortify, most were in the current (2013) OWASP Top 10
+category of Security Misconfiguration, which includes default accounts that are
+enabled and unmodified. As previously stated, there were examples of default
+administrator users being asked to be removed by the system administrator. The
+safer approach would be to force the sysadmin to create a new
+administrator-level user and then automatically delete the default one. The same
+goes for database access credentials, and maybe also encryption keys, especially
+if the default enctryption method is AES. These vulnerabilities are, according to OWASP,
+easy to exploit, but also quite easy to find, and would therefore be a good
+target for something the developers could improve on, even just by providing
+documentation to system administrators of how to perform scans checking whether
+default values are in use.
+
+OpenMRS, using default SSL certificates for the system, could also be considered
+as part of the OWASP category Broken Authentication and Session Management,
+which has become the second most common vulnerability on the list. According to
+OWASP, these types of vulnerabilities can have severe consequences, letting an
+attacker gain control over any user account, and possibly even all user accounts.
+These errors are more difficult to exploit than the Security Misconfiguration
+ones, but also more difficult to find. \autocite[]{owasptop10}
+
+\paragraph{Race conditions}
+Of the different vulnerabilities, the ones concerning race conditions are 
+the second largest group. Since race conditions are becoming an increasingly
+more commmon cause of errors and can cause such errors as returning critical
+data, to non-authorized users, these errors should be considered extra important
+to fix.
 
 \subsection{Recommendations for users and implementers}
 \paragraph{Recommended software}
@@ -724,13 +787,6 @@ administrator password.'' \autocite[]{FLOSS}
 We recommend that users of the application follow these guidelines, as not
 complying can lead to granting privileges to all users of the system, ergo more
 easily letting attackers gain information not usually available to them.
-
-\paragraph{Race conditions}
-Of the different vulnerabilities, the ones concerning race conditions are 
-the second largest group. Since race conditions are becoming an increasingly
-more commmon cause of errors and can cause such errors as returning critical
-data, to non-authorized users, these errors should be considered extra important
-to fix.
 
 \autocite[]{FLOSS}
 

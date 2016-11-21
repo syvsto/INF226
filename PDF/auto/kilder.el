@@ -14,6 +14,7 @@
     "THREATPOST"
     "ExploitDatabase"
     "ThreadSafe"
-    "exploitdb"))
+    "exploitdb"
+    "owasptop10"))
  :bibtex)
 
