@@ -289,7 +289,7 @@ the OpenMRS source-code and then everything was ready for scanning.
 
 \paragraph{ThreadSafe} % Test of the software tools
 
-The initial scan gave a few possible errors, all of them concerning ether the
+The initial scan gave a few possible errors, all of them concerning either the
 OpenMRS-API or the OpenMRS-WEB which might make sense as these expose surface to
 external modules. The scan also gave some false positives referring to
 unit-test.
@@ -644,13 +644,16 @@ the browser used and in the ZAP addon for Firefox. We will therefore disregard
 all reported ZAP vulnerabilities that contain no mention of OpenMRS.
 
 \paragraph{Race conditions}
-These errors arise from Servlet being a singleton. Since the application changes
-member fields of this singleton, multiple request to get information can return
+Fortify found indications of problems relating to the use of singleton. This can
+cause resources to be shared between users. This is both a privacy problem and a
+possible corruption of the integrity of data fields.\autocite[]{owaspracecondition}
 
-
-%  LocalWords:  iframes
+ThreadSafe also pointed to some inconsistencies in handling fields and
+collocations of data. Most interesting is the two classes ModuleFactory and
+WebModuleUtil which seems to be operating somewhere between the OpenMRS core and
+possible external modules.
+%  LocalWords:  iframes ModuleFactory WebModuleUtil ThreadSafe
 %  LocalWords:  HttpOnly
-wrong results (if the member field is changed during requests). 
 
 \paragraph{Dynamic analysis}
 The run of OWASP ZAP didn't find any critical or highly vulnerable issues,
@@ -748,6 +751,29 @@ could perform a ClickJacking attack by overlaying an iFrame in the sent message
 and sending it to the doctor. ZAP recommends setting X-Frame-Options to for
 example DENY. OpenMRS has not set this header by default.
 
+\paragraph{ThreadSafe}
+As Fortify flagged a possible problem with the implementation of the singleton
+in openMRS with the possibility of information being shared between users we
+felt the need to dig deeper in the possibilities of problems in the concurrency.
+We introduced ThreadSafe as a dedicated tool to statically analyze
+the codebase, as concurrency is a complicated issue we thought a tool that
+was dedicated to searching for problems with concurrency would give results that
+could be trusted more.
+
+ThreadSafe pointed to inconsistencies in accessing fields and lists in several
+classes. There seems to be inconsistent locking of the libcachefolder in the
+openmrsClassLoader. Most interesting seems to be the number of inconsistencies
+in locking in the ModuleFactory, WebModuleUtil and in some of the filter
+classes. There are many classes in OpenMRS that uses the java.util.concurrent library to
+handle locking of resources, tho none of them seem to be a part of the OpenMRS
+web library. As modules are a key element in the operation of OpenMRS is seems
+critical that a collection of classes that relate to each other, as the
+ModuleFactory most likely is related to the WebModuleUtil and WebModuleUtil uses
+filters and initiates singletons, all seems to contain the same possible error
+types and these types are crucial to runtime operation. All of which
+significantly increases the possibility of a problem materializing creating
+problems during operation. 
+
 \section{Evaluation of external libraries}
 \paragraph{MySQL}
 Being able to access and edit the database is very dangerous in a system that
@@ -764,6 +790,8 @@ Since a lot of servers running OpenMRS are Linux servers running e.g. Ubuntu
 steps), EDB-ID 40450 is a dangerous exploit. It can be exploited through a web
 shell delivered through for example cross-site scripting or SQL injection, and
 can give root access to the server, giving the attacker full control.
+
+Nevne http-only flagg?
 
 \section{Recommendations}
 
@@ -820,7 +848,13 @@ Of the different vulnerabilities, the ones concerning race conditions are
 the second largest group. Since race conditions are becoming an increasingly
 more commmon cause of errors and can cause such errors as returning critical
 data to non-authorized users, these errors are a potentially important area for
-the developers to improve.
+the developers to improve. It seems that the java library for concurrency is the
+one used in the codebase. So as the ThreadSafe rapport stated there seems to be
+a collection of potential bugs aggregating around handling of the modules and
+there might also according to the Fortify rapport be some misconception around
+how the singletons operate and when they are used. Then a possible change to take
+into consideration is to implement the java concurrency library in the
+OpenMRS-Web library and especially around the handling of modules and filters. 
 
 \subsection{Recommendations for users and implementers}
 \paragraph{Recommended software}
