@@ -242,9 +242,9 @@ program or the Eclipse plugin, which were the included options in the trial. As
 setting up a project configuration file for the terminal application seemed to
 open the possibility of misconfiguration, using the Eclipse plugin seemed the
 best alternative. Installing the plugin from the .zip file was easy, the only
-other thing necessary was to order a trial license and past this license in the
+other thing necessary was to order a trial license and paste this license in the
 Preferences subcategory ThreadSafe. We then let Eclipse build the Maven .pom file from
-the OpenMRS source-code and then everything was ready for scanning. 
+the OpenMRS source-code and everything was ready for scanning. 
 
 \section{Preliminary results}
 
@@ -791,8 +791,6 @@ steps), EDB-ID 40450 is a dangerous exploit. It can be exploited through a web
 shell delivered through for example cross-site scripting or SQL injection, and
 can give root access to the server, giving the attacker full control.
 
-Nevne http-only flagg?
-
 \section{Recommendations}
 
 \subsection{Recommendations for developers}
@@ -855,6 +853,14 @@ how the singletons operate and when they are used. Then a possible change to tak
 into consideration is to implement the java concurrency library in the
 OpenMRS-Web library and especially around the handling of modules and filters. 
 
+ignoring errors?
+
+nullpointers?
+
+unhandled return values?
+
+
+
 \subsection{Recommendations for users and implementers}
 \paragraph{Recommended software}
 The install instructions for OpenMRS links the user to Tomcat 6, and with a
@@ -882,7 +888,6 @@ administrator password.'' \autocite[]{FLOSS}
 We recommend that users of the application follow these guidelines, as not
 complying can lead to granting privileges to all users of the system, ergo more
 easily letting attackers gain information not usually available to them.
-\autocite[]{FLOSS}
 
 Also, as noted earlier, system administrators should take extra care to remove
 default users such as the user ``admin'' with the password ``Admin123''.
