@@ -550,6 +550,22 @@ A passive run of ZAP returns the following four possible vulnerabilities:
    scripting \autocite[]{XFrame}.
 \end{itemize}
 
+When re-running ZAP and giving it access to an administrator user, as well as
+manually performing the scans, another couple of vulnerabilities show up. The
+new list contains the following, in addition to the previously mentioned:
+
+\begin{itemize}
+  \item SQL Injection: Considered a high vulnerability, it can grant access to
+    an attacker through manipulation of SQL queries in input forms.
+  \item Format String error: Considered a medium vulnerability, it happens when
+    an input string is evaluated as a command.
+  \item Incomplete or No cache-control and Pragma HTTP Header Set: Considered a
+    low vulnerability, can let both the browser and proxies cache content
+  \item Cross-domain JavaScript source file inclusion: Considered a low
+    vulnerability. Is reported because ZAP has found a site using a script from
+    another party.
+\end{itemize}
+
 \paragraph{ThreadSafe} % Raw data
 
 Excluding false positives from tests the scan gave 12 major and 1 minor
@@ -620,6 +636,12 @@ hosted on Amazon AWS or CloudFlare), but then, it is up to Amazon or CloudFlare
 
 %  LocalWords:  Javascript ClickJacking
 to secure their servers.
+
+\paragraph{Misleading results}
+Especially in the ZAP scan, multiple results, such as some (but not all) of the
+vulnerabilities enabling ClickJacking attacks, are found in websites related to
+the browser used and in the ZAP addon for Firefox. We will therefore disregard
+all reported ZAP vulnerabilities that contain no mention of OpenMRS.
 
 \paragraph{Race conditions}
 These errors arise from Servlet being a singleton. Since the application changes
