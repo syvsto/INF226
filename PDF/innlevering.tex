@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{comment}
 \bibliography{kilder}
+\linespread{1.3}
 
 \title{INF226 Obligatory assignment}
 \date{2016-10-02}
@@ -347,8 +348,6 @@ unit-test.
     singleton class which takes concurrent connections, meaning data can be
     shared between users.
   \end{itemize}
-      
-\paragraph{Configuration Files}  
 
 \paragraph{FindBugs}
 
@@ -893,6 +892,23 @@ Also, as noted earlier, system administrators should take extra care to remove
 default users such as the user ``admin'' with the password ``Admin123''.
 
 \section{Summary}
+
+summering av programmer og opplevelsen av å bruke default
+
+Vi kom fram til diverse sikkerhetshull gjennom statisk og dynamisk kodeanalyse
+
+Stort spenn i type feil fra implementasjon (design av) brukere og roller til
+concurrency.
+
+Statisk kodeanalyse virker helt essensiell for å finne concurrency feil i java.
+
+Designfeil må alltid forståes gjennom manuell kodeanalyse. antakelig behov for
+mer.
+
+Første gangs bruk av verktøy så ikke alle feil er nødvendigvis riktige og vi
+kjenner ikke til koden så manuelle kontroller er ikke så presise.
+
+
 
 \end{document}
 
