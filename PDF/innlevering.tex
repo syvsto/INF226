@@ -845,19 +845,12 @@ Since race conditions are becoming an increasingly
 more commmon cause of errors and can cause such errors as returning critical
 data to non-authorized users, these errors are a potentially important area for
 the developers to improve. It seems that the java library for concurrency is the
-one used in the codebase. So as the ThreadSafe rapport stated there seems to be
+one used in the codebase. So as the ThreadSafe report stated there seems to be
 a collection of potential bugs aggregating around handling of the modules and
 there might also according to the Fortify rapport be some misconception around
 how the singletons operate and when they are used. Then a possible change to take
-into consideration is to implement the java concurrency library in the
+into consideration is to implement the java concurrency utilities library in the
 OpenMRS-Web library and especially around the handling of modules and filters. 
-
-ignoring errors?
-
-nullpointers?
-
-unhandled return values?
-
 
 
 \subsection{Recommendations for users and implementers}
@@ -894,41 +887,41 @@ default users such as the user ``admin'' with the password ``Admin123''.
 \section{Summary}
 
 The static analysis was done with the tools Fortify, FindBugs and ThreadSafe.
-All of the tools was easy to set up and the initial scan was easy to initiate.
-Except the memory allocation for Fortify which was a bit of a hassle. All of the
+All of the tools were easy to set up and the initial scans were easy to initiate,
+except Fortify which required a bit of tinkering to allocate enough memory for it. All of the
 tools have more advanced features and the possibility for tailoring the settings
 more appropriate the needs of the project, both of which we did not have the
 time or experience to do. 
 
-During our project the support for FindBugs has been discontinued. This has not
-affected our project and an alternative for future projects might be SonarQube,
-which is another static analysis tool that seems more user-friendly and with more
-complete results(bigger rule collection).
+A note on FindBugs: During our project the maintainer of FindBugs discontinued
+it. This did not affect our project, but an alternative for future projects
+might be SonarQube, which is another static analysis tool that seems more
+user-friendly and with more complete results(bigger rule collection).
 
 The dynamic analysis tool we used was OWASP Zap. This program has a steeper
-learning curve and is a lot harder to analyze. For a more effective use there is
-a need for a better understanding of functionalities the program offers at the
-same time to have a good understanding of the results there is a certain amount
-of understanding of the program need.
+learning curve and the results were a lot harder to analyze. For a more
+effective use than what we achieved there is a need for a better understanding
+of functionalities the program offers at the same time to have a good
+understanding of the results there is a certain amount of understanding of
+the program need.
 
 Even with our short time using the tools the effort did return interesting
 results in all areas of the codebase giving rapports of potential errors of
-very different nature. Per example concurrency vulnerabilities and weakness in
-design of users and roles. 
-
-Especially since this is a Java application and concurrency is not well
-supported in the standard java library it is essential to have a good tool
-for finding errors in the implementation of concurrent classes.
+very different nature, for example concurrency vulnerabilities and weakness in
+design of users and roles. Especially the concurrency vulnerabilites seem
+prevalent. Since OpenMRS is a Java application and concurrency is not a first-class 
+citizen in Java it is essential to have a good tool for finding errors in the
+implementation of concurrent classes, as the bugs found by ThreadSafe confirms.
 
 The potential weaknesses we found in the design of roles and users could not be
 discovered with static analysis alone. We recognize that automatic tools for
 analysis is not enough, so to discover faults in the design manual analysis and
 learning how the code is implemented is necessary.
 
-Første gangs bruk av verktøy så ikke alle feil er nødvendigvis riktige og vi
-kjenner ikke til koden så manuelle kontroller er ikke så presise.
-
-
+To finish off, we would like to state that since this is our first foray into
+security testing, the results should be taken with a grain of salt, and might
+not reflect the real state of security in OpenMRS. However, we feel that we
+found relevant issues in many areas, and consider the analysis a success.
 
 \end{document}
 
